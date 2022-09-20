@@ -3,6 +3,7 @@ body {
     padding: 0px;
 }
 
+/***  ESTILIZACAO CABECALHO ***/
 .header {
     background-color: black;
     padding: 15px;
@@ -18,15 +19,29 @@ body {
     height: 32px;
 }
 
+.header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
 .header nav ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     gap: 15px;
     list-style: none;
+    margin: 0px;
 }
 
 .header nav ul li a{
     text-decoration: none;
     color: white;
+}
+
+.header-busca i {
+    display: none;
 }
