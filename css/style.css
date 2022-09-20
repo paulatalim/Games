@@ -4,14 +4,18 @@ body {
 }
 
 /***  ESTILIZACAO CABECALHO ***/
-.header {
-    background-color: black;
-    padding: 15px;
+.header,
+.header nav,
+.header nav ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
 
+.header {
+    background-color: black;
+    padding: 15px;
 }
 
 .header img {
@@ -20,18 +24,10 @@ body {
 }
 
 .header nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     gap: 30px;
 }
 
 .header nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     gap: 15px;
     list-style: none;
     margin: 0px;
