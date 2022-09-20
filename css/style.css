@@ -15,7 +15,7 @@ body {
 
 .header {
     background-color: black;
-    padding: 15px;
+    padding: 15px 20px 15px 30px;
 }
 
 .header img {
@@ -38,6 +38,26 @@ body {
     color: white;
 }
 
-.header-busca i {
-    display: none;
+/* Campo de busca */
+.header-busca {
+    border: 1px solid #fff;
+    padding: 5px 15px;
+    border-radius: 10px;
 }
+.header-busca i {
+    color: #fff;
+}
+
+.header-busca input {
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+.header-busca input:focus {
+    background-color: black;
+    border: 0 0 1px 0;
+    outline: none;
+}
+
