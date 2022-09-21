@@ -16,6 +16,7 @@ body {
 .header {
     background-color: black;
     padding: 15px 20px 15px 30px;
+    width: 100%;
 }
 
 .header img {
@@ -61,22 +62,29 @@ body {
     outline: none;
 }
 
-/* CARROSEL */
+/*** DESTAQUES ***/
 .destaques {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: black;
+    width: 100%;
 }
 
 #destaques {
+    position: absolute;
+    margin: 15px;
     text-align: center;
     font-size: 24pt;
+    z-index: 1;
 }
 
 .carousel {
+    position: relative;
     background-color: red;
     width: 100%;
-    padding: 30px 50px;
+    padding: 70px 50px 30px 50px;
+    z-index: 0;
 }
 
 .carousel-item {
@@ -94,13 +102,10 @@ body {
 }
 
 
-.img1 {
-    height: 400px;
-    width: 400px;
+.carousel-control-next,
+.carousel-control-prev {
+    width: 10%;
 }
-
-
-
 .quote {
     color: rgba(0,0,0,.1);
     text-align: center;
@@ -144,8 +149,35 @@ body {
     border-radius: 100px;
 }
 
+/*** LANCAMENTOS ***/
+.carregar-lancamentos {
+    align-content: right;
+}
+
+/*** PLATAFORMAS ***/
+.plataformas {
+    margin: 20px;
+}
+
+.plataformas-itens {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-around;
+    width: 100%;
+} 
 
 
 footer {
-    margin-top:50px;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+    color: #fff;
 }
