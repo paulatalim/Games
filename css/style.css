@@ -1,6 +1,7 @@
 body {
     margin: 0px;
     padding: 0px;
+   
 }
 
 /***  ESTILIZACAO CABECALHO ***/
@@ -16,7 +17,7 @@ body {
 .header {
     background-color: black;
     padding: 15px 20px 15px 30px;
-    width: 100%;
+
 }
 
 .header img {
@@ -150,13 +151,18 @@ body {
 }
 
 /*** LANCAMENTOS ***/
+.lancamentos {
+    padding: 20px;
+    width: 100%;
+}
 .carregar-lancamentos {
     align-content: right;
 }
 
 /*** PLATAFORMAS ***/
 .plataformas {
-    margin: 20px;
+    padding: 20px;
+
 }
 
 .plataformas-itens {
@@ -165,7 +171,19 @@ body {
     align-items:center;
     justify-content: space-around;
     width: 100%;
-} 
+}
+
+/*** PUBLISHER ***/
+.publisher {
+    padding-left: 20px;
+}
+.publisher-itens {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-around;
+    width: 100%;
+}
 
 
 footer {
