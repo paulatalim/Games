@@ -75,23 +75,31 @@ body {
 
 .carousel {
     background-color: red;
+    width: 100%;
+    padding: 30px 50px;
 }
 
 .carousel-item {
-    height: 400px;
-    width: 400px;
+    height: 70vh;
+    align-items: center;
 }
+
+ .trailer {
+    display: flex;
+    gap:30px;
+}
+
+.infos {
+    width: 50%;
+}
+
+
 .img1 {
     height: 400px;
     width: 400px;
 }
 
 
-
-.carrousel {
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
 
 .quote {
     color: rgba(0,0,0,.1);
