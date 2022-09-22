@@ -236,6 +236,36 @@ button i {
     text-align: right;
 }
 
+/*** SOBRE ***/
+.editorial-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.editorial-item p {
+    margin: auto 0;
+    margin-left: 5px;
+}
+
+.redes-sociais {
+    margin: 20px 0;;
+}
+
+/* .redes-sociais-icones {
+    margin: 0px 30px;
+} */
+
+.redes-sociais-icones a {
+    margin-right: 20px;
+}
+
+
+.redes-sociais-icones a i{
+    color: black;
+}
+
+
 /*** RODAPÉ ***/
 footer {
     background-color: #000;
