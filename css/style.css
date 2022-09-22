@@ -83,11 +83,12 @@
     position: relative;
     background-color: red;
     padding: 70px 50px 30px 50px;
+    height: 100%;
     z-index: 0;
 }
 
 .carousel-item {
-    height: 70vh;
+    height: 100%;
     align-items: center;
 }
 
@@ -145,9 +146,9 @@
 
 /*** LANCAMENTOS ***/
 .lancamentos, .plataformas, .publisher {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 15px 30px;
+    padding: 15px 0px;
 }
 
 .filtro {
@@ -161,6 +162,12 @@
     padding: 5px;
 }
 
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
 button i {
     color: #fff;
     margin-right: 7px;
@@ -175,7 +182,7 @@ button i {
 }
 
 .carregar-lancamentos {
-    align-content: right;
+    text-align: right;
 }
 
 /*** PLATAFORMAS ***/
@@ -202,6 +209,10 @@ button i {
 
 .publisher-itens .item div {
     align-items: flex-end;
+}
+
+.card-maisDetalhes {
+    text-align: right;
 }
 
 /*** RODAPÉ ***/
