@@ -147,7 +147,7 @@ body {
 }
 
 /*** LANCAMENTOS ***/
-.lancamentos, .plataformas, .publisher {
+.lancamentos, .plataformas, .publisher, .sobre {
     max-width: 1000px;
     margin: 0 auto;
     padding: 15px 0px;
