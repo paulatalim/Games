@@ -21,10 +21,10 @@
         
         <nav>
             <input type="checkbox" id="menuToggle">
-            <label for="menuToggle" class="menu-icon">
-                <i class="fa fa-bars"></i>
-                <i class="fa fa-times-circle"></i>
-            </label>
+                <label for="menuToggle" class="menu-icon">
+                    <i class="fa fa-bars"></i>
+                    <i class="fa fa-times-circle"></i>
+                </label>
             <ul class="menu">
                 <li><a href="#destaques">Destaques</a> </li> <p>|</p>
                 <li><a href="#lancamentos">Lançamentos</a> </li> <p>|</p>
@@ -32,11 +32,12 @@
                 <li><a href="#publisher">Publisher</a></li>
             </ul>
 
-            <div class="header-busca">
-                <i id="lupa-buscar" class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" name="Busca" placeholder="Pesquisar games">
-                <i id="sair-buscar" class="fa-solid fa-xmark"></i>
-            </div>
+            <input type="checkbox" id="header-buscar">
+                <label for="header-busca" class="buscar-itens">
+                    <i id="lupa-buscar" class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" name="Busca" placeholder="Pesquisar games">
+                    <i id="sair-buscar" class="fa-solid fa-xmark"></i>
+                </label>
         </nav>
     </header>
 
@@ -56,7 +57,7 @@
                     <div class="carousel-item active">
                         <div class="trailer">
                             <!-- Trailer jogo -->
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/FcITAzKW3fY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="100%"  src="https://www.youtube.com/embed/FcITAzKW3fY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                             <!-- Informacoes do jogo -->
                             <div class="infos">
@@ -70,11 +71,17 @@
                     <div class="carousel-item">
                         <div class="trailer">
                             <!-- Trailer jogo -->
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/FcITAzKW3fY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe 
+                                width="100%" 
+                                src="https://www.youtube.com/embed/ai3o0XtrnM8" 
+                                title="YouTube video player" 
+                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
 
                             <!-- Informacoes do jogo -->
                             <div class="infos">
-                                <h2>Fall Guys</h2>
+                                <h2>Ratchet & Clank</h2>
                                 <p>
                                     <strong>Sobre: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam magni   delectus nulla vero esse laudantium ad neque eaque, minima blanditiis tenetur, maxime adipisci eligendi nesciunt! Natus eaque molestias beatae, cumque fugiat libero officiis provident facere cum quia saepe. Modi nam aspernatur vel porro! Nisi dolore molestiae sed tempora, aut eveniet! Fugiat aut minus culpa libero perferendis dignissimos vero esse illo dolore cupiditate adipisci nihil obcaecati eos cumque dolor vitae animi deleniti maxime tenetur tempora, praesentium enim dolorem. Molestias neque rem dolorum nemo error nihil ex excepturi aut omnis quis amet, praesentium sint explicabo sapiente asperiores autem itaque ea qui possimus? 
                                 </p>
@@ -131,32 +138,58 @@
             <div class="cards col-12">
                 <div class="col-lg-3 col-md-4 col-sm-12 card">
                     <h5>Ratchet & Clank</h5>
-                    <iframe width="100%" src="https://www.youtube.com/embed/ai3o0XtrnM8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe 
+                        width="100%" 
+                        src="https://www.youtube.com/embed/ai3o0XtrnM8" 
+                        title="YouTube video player" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                     <a href="#">Mais detalhes...</a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 card">
-                    <h5>Marvel's Spider-Man: Miles Morales</h5>
-                    <iframe width="100%" height="auto" src="https://www.youtube.com/embed/qjRzm9A7DU4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h5>Spider-Man: Miles Morales</h5>
+                    <iframe 
+                        width="100%" 
+                        src="https://www.youtube.com/embed/qjRzm9A7DU4" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                     <a href="#">Mais detalhes...</a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 card">
-                    <h5>Marvel's Spider-Man: Miles Morales</h5>
-                    <iframe width="100%" src="https://www.youtube.com/embed/qjRzm9A7DU4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h5>Sonic Frontiers</h5>
+                    <iframe 
+                        width="100%" 
+                        src="https://www.youtube.com/embed/kCaAos6FeV0" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                     <a href="#">Mais detalhes...</a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 card">
-                    <h5>Marvel's Spider-Man: Miles Morales</h5>
-                    <iframe width="100%" src="https://www.youtube.com/embed/qjRzm9A7DU4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h5>Hogwarts Legacy</h5>
+                    <iframe 
+                        width="100%" 
+                        src="https://www.youtube.com/embed/3fCY7_HxOGI" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                     <a href="#">Mais detalhes...</a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 card">
-                    <h5>Marvel's Spider-Man: Miles Morales</h5>
-                    <iframe width="100%" src="https://www.youtube.com/embed/qjRzm9A7DU4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h5>The Last of Us</h5>
+                    <iframe width="100%" src="https://www.youtube.com/embed/WxjeV10H1F0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <a href="#">Mais detalhes...</a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 card">
-                    <h5>Marvel's Spider-Man: Miles Morales</h5>
-                    <iframe width="100%" src="https://www.youtube.com/embed/qjRzm9A7DU4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h5>Stray</h5>
+                    <iframe width="100%" src="https://www.youtube.com/embed/XgPRPi--F5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <a href="#">Mais detalhes...</a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 card">
@@ -172,49 +205,58 @@
 
         <!-- Plataformas -->
         <section class="row plataformas">
-            <div class="col-12"><h1 id="#plataformas">Plataformas</h1></div>
+            <div class="col-12">
+                <h1 id="plataformas">Plataformas</h1>
+            </div>
             <!--Itens-->
             <div class="plataformas-itens">
-                <div class="col-3 plataforma1">
+                <div class="col-sm-12 col-3 plataforma1">
                     <h3>Play Station 5</h3>
 
                     <div class="plataforma-img">
                         <img width="70%" src="./img/playStation_logo.png" alt="Logo da playstation 5">
                     </div>
-
-                    <h5>Principais Jogos: </h5>
-                    <ul>
-                        <li>Ratchet & Clank</li>
-                        <li>Marvel's Spider-Man: Miles Morales</li>
-                        <li>Item 3</li>
-                    </ul>
+                    <div class="plataforma-info">
+                        <h5>Principais Jogos: </h5>
+                        <ul>
+                            <li>Ratchet & Clank</li>
+                            <li>Marvel's Spider-Man: Miles Morales</li>
+                            <li>Stray</li>
+                        </ul>
+                    </div>
                     <div class="card-maisDetalhes"><a href="#">Mais detalhes...</a></div>
                 </div>
-                <div class="col-3 plataforma2">
+                <div class="col-sm-12 col-3 plataforma2">
                     <h3>Epic Games</h3>
 
                     <div class="plataforma-img">
                         <img width="70%" src="./img/Epic_Games_logo.png" alt="Logo da Epic Games">
                     </div>
-                    <ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                    </ul>
+                    <div class="plataforma-info">
+                        <h5>Principais Jogos: </h5>
+                        <ul>
+                            <li>Fall Guys</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </div>
                     <div class="card-maisDetalhes"><a href="#">Mais detalhes...</a></div>
                 </div>
-                <div class="col-3 plataforma3">
+                <div class="col-sm-12 col-3 plataforma3">
                     <h3>Xbox One</h3>
 
                     <div class="plataforma-img">
                         <img width="70%" src="./img/Xbox_one_logo.png" alt="Logo Xbox_one">
                     </div>
+                    <div class="plataforma-info">
+                        <h5>Principais Jogos: </h5>
 
-                    <ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                    </ul>
+                        <ul>
+                            <li>Hogwarts Legacy</li>
+                            <li>Sonic Frontiers</li>
+                            <li>Item 3</li>
+                        </ul>
+                    </div>
                     <div class="card-maisDetalhes"><a href="#">Mais detalhes...</a></div>
                 </div>
             </div>
