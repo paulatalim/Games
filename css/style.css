@@ -171,6 +171,15 @@ body {
     flex-wrap: wrap;
     margin: 10px 0;
 }
+
+.card {
+    background-color: whitesmoke;
+    border: none;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 button i {
     color: #fff;
     margin-right: 7px;
