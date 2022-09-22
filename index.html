@@ -18,12 +18,18 @@
 <body>
     <header class="conteiner header">
         <img src="./img/controle-de-video-game.png" alt="">
+        
         <nav>
-            <ul>
-                <li><a href="#destaques">Destaques</a></li>
-                <li><a href="#lancamentos">Lançamentos</a></li>
-                <li><a href="#plataformas">Plataformas</a></li>
-                <li><a href="#">Publisher</a></li>
+            <input type="checkbox" id="menuToggle">
+            <label for="menuToggle" class="menu-icon">
+                <i class="fa fa-bars"></i>
+                <i class="fa fa-times-circle"></i>
+            </label>
+            <ul class="menu">
+                <li><a href="#destaques">Destaques</a> </li> <p>|</p>
+                <li><a href="#lancamentos">Lançamentos</a> </li> <p>|</p>
+                <li><a href="#plataformas">Plataformas</a> </li> <p>|</p>
+                <li><a href="#publisher">Publisher</a></li>
             </ul>
 
             <div class="header-busca">
@@ -33,7 +39,6 @@
             </div>
         </nav>
     </header>
-
 
     <main class="conteiner">
         <!--Destaques-->
@@ -124,44 +129,44 @@
             </div>
 
             <div class="cards col-12">
-                <div class="col-3 card">
+                <div class="col-lg-3 col-md-4 col-sm-12 card">
                     <h5>Ratchet & Clank</h5>
                     <iframe width="100%" src="https://www.youtube.com/embed/ai3o0XtrnM8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <a href="#">Mais detalhes...</a>
                 </div>
-                <div class="col-3 card">
+                <div class="col-lg-3 col-md-4 col-sm-12 card">
                     <h5>Marvel's Spider-Man: Miles Morales</h5>
                     <iframe width="100%" height="auto" src="https://www.youtube.com/embed/qjRzm9A7DU4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <a href="#">Mais detalhes...</a>
                 </div>
-                <div class="col-3 card">
+                <div class="col-lg-3 col-md-4 col-sm-12 card">
                     <h5>Marvel's Spider-Man: Miles Morales</h5>
                     <iframe width="100%" src="https://www.youtube.com/embed/qjRzm9A7DU4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <a href="#">Mais detalhes...</a>
                 </div>
-                <div class="col-3 card">
+                <div class="col-lg-3 col-md-4 col-sm-12 card">
                     <h5>Marvel's Spider-Man: Miles Morales</h5>
                     <iframe width="100%" src="https://www.youtube.com/embed/qjRzm9A7DU4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <a href="#">Mais detalhes...</a>
                 </div>
-                <div class="col-3 card">
+                <div class="col-lg-3 col-md-4 col-sm-12 card">
                     <h5>Marvel's Spider-Man: Miles Morales</h5>
                     <iframe width="100%" src="https://www.youtube.com/embed/qjRzm9A7DU4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <a href="#">Mais detalhes...</a>
                 </div>
-                <div class="col-3 card">
+                <div class="col-lg-3 col-md-4 col-sm-12 card">
                     <h5>Marvel's Spider-Man: Miles Morales</h5>
                     <iframe width="100%" src="https://www.youtube.com/embed/qjRzm9A7DU4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <a href="#">Mais detalhes...</a>
                 </div>
-                <div class="col-3 card">
+                <div class="col-lg-3 col-md-4 col-sm-12 card">
                     <h5>Marvel's Spider-Man: Miles Morales</h5>
                     <iframe width="100%" src="https://www.youtube.com/embed/qjRzm9A7DU4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <a href="#">Mais detalhes...</a>
                 </div>
             </div>
             <div class="col-12 carregar-lancamentos">
-                <button id="button-lancamentos"><i class="fa-solid fa-plus"></i>Carregar mais lançamentos</button>
+                <button id="button"><i class="fa-solid fa-plus"></i>Carregar mais lançamentos</button>
             </div>
         </section>
 
@@ -170,7 +175,7 @@
             <div class="col-12"><h1 id="#plataformas">Plataformas</h1></div>
             <!--Itens-->
             <div class="plataformas-itens">
-                <div class="col-4 plataforma1">
+                <div class="col-3 plataforma1">
                     <h3>Play Station 5</h3>
 
                     <div class="plataforma-img">
@@ -185,7 +190,7 @@
                     </ul>
                     <div class="card-maisDetalhes"><a href="#">Mais detalhes...</a></div>
                 </div>
-                <div class="col-4 plataforma2">
+                <div class="col-3 plataforma2">
                     <h3>Epic Games</h3>
 
                     <div class="plataforma-img">
@@ -198,7 +203,7 @@
                     </ul>
                     <div class="card-maisDetalhes"><a href="#">Mais detalhes...</a></div>
                 </div>
-                <div class="col-4 plataforma3">
+                <div class="col-3 plataforma3">
                     <h3>Xbox One</h3>
 
                     <div class="plataforma-img">
@@ -215,7 +220,7 @@
             </div>
 
             <div class="col-12 carregar-plataforma">
-                <button id="button-plataforma"><i class="fa-solid fa-plus"></i>Carregar mais Plataformas</button>
+                <button id="button"><i class="fa-solid fa-plus"></i>Carregar mais Plataformas</button>
             </div>
         </section>
 
@@ -256,7 +261,7 @@
             </div>
 
             <div class="col-12 carregar-publisher">
-                <button id="button-publisher"><i class="fa-solid fa-plus"></i>Carregar mais Publisher</button>
+                <button id="button"><i class="fa-solid fa-plus"></i>Carregar mais Publisher</button>
             </div>
         </section>
 
@@ -296,7 +301,9 @@
     </main>
 
     <footer>
-        <p>Copyright 2020 - Disciplina de Desenvolvolvimento de Interfaces Web - <strong>ICEI PUC Minas</strong></p>
+        <p>
+            Copyright 2020 - Disciplina de Desenvolvolvimento de Interfaces Web - <strong>ICEI PUC Minas</strong>
+        </p>
         <img src="./img/controle-de-video-game.png" alt="icone da pagina, joy stick">
     </footer>
 

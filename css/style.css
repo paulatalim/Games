@@ -28,7 +28,7 @@ body {
     gap: 30px;
 }
 
-.header nav ul {
+.menu {
     gap: 15px;
     list-style: none;
     margin: 0px;
@@ -37,6 +37,11 @@ body {
 .header nav ul li a{
     text-decoration: none;
     color: white;
+}
+
+.menu p{
+    color: white;
+    margin: auto 0;
 }
 
 /* Campo de busca */
@@ -64,16 +69,16 @@ body {
 
 /*** DESTAQUES ***/
 .destaques {
+    background-color: rgb(40, 40, 40);
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: black;
     width: 100%;
 }
 
 #destaques {
-    position: absolute;
-    margin: 15px;
+    margin: 20px;
+    margin-top: 30px;
     text-align: center;
     font-size: 24pt;
     z-index: 1;
@@ -81,9 +86,8 @@ body {
 }
 
 .carousel {
-    position: relative;
-    background-color: rgb(40, 40, 40);
-    padding: 70px 50px 30px 50px;
+    padding: 50px;
+    padding-top: 20px;
     height: 100%;
     z-index: 0;
 }
@@ -95,6 +99,9 @@ body {
 
  .trailer {
     display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: center;
     gap:30px;
 }
 
@@ -153,6 +160,10 @@ body {
     padding: 15px 0px;
 }
 
+.lancamentos {
+    margin: 50px auto;
+}
+
 .filtro {
     padding: 10px;
 }
@@ -185,12 +196,28 @@ button i {
     margin-right: 7px;
 }
 
-#button-lancamentos, #button-plataforma, #button-publisher {
+#button {
     background-color: rgb(52, 52, 52);
     color: #fff;
     border-radius: 5px;
-    padding: 5px 7px;
+    padding: 5px 10px;
     margin-top: 20px;
+
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.411);
+    border: none;
+
+    transition: top 0.2s;
+    position: relative;
+}
+
+#button:hover {
+    background-color: rgb(94, 94, 94);
+}
+
+#button:active {
+    background-color: rgb(77, 77, 77);
+    top: 5px;
+    box-shadow: none;
 }
 
 .carregar-lancamentos, .carregar-plataforma, .carregar-publisher {
@@ -203,6 +230,7 @@ button i {
     flex-direction: row;
     align-items:center;
     justify-content: space-around;
+    flex-wrap: wrap;
     gap:15px;
     width: 100%;
 }
@@ -217,7 +245,6 @@ button i {
     background-color: #fff;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.342);
     border-radius: 20px;
-
 }
 
 .plataforma-img {
@@ -261,19 +288,13 @@ button i {
     margin: 20px 0;;
 }
 
-/* .redes-sociais-icones {
-    margin: 0px 30px;
-} */
-
 .redes-sociais-icones a {
     margin-right: 20px;
 }
 
-
 .redes-sociais-icones a i{
     color: black;
 }
-
 
 /*** RODAPÉ ***/
 footer {
@@ -282,10 +303,103 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
-    padding: 20px;
+    padding: 20px 10%;
 }
 
 footer p {
     margin: 0;
     color: #fff;
+}
+
+/*** MENU MOBILE ***/
+#menuToggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .header{
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 20;
+    }
+
+    .header nav {
+        display: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .menu {
+        display: flex;
+        position: fixed;
+        flex-wrap: wrap;
+        align-content: center;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 0%;
+        background-color: rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+        -webkit-transition: height 0.3s;
+        -moz-transition: height 0.3s;
+        -ms-transition: height 0.3s;
+        -o-transition: height 0.3s;
+        transition: height 0.3s;
+        z-index: 30;
+    }
+
+    .menu p {
+        display: none;
+    }
+
+    .menu li {
+      display: block;
+      width: 100%;
+      margin-left: 0px;
+      margin-bottom: 20px;
+    }
+  
+    .menu li a {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu-icon {
+        width: 50px;
+        height: inherit;
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        line-height: 60px;
+        color: white;
+        z-index: 999;
+    }
+
+    #menuToggle:checked ~ label i:nth-child(2) {
+      display: block;
+    }
+    #menuToggle:checked ~ label i:first-child {
+      display: none;
+    }
+    #menuToggle:not(:checked) ~ label i:first-child {
+      display: block;
+    }
+    #menuToggle:not(:checked) ~ label i:nth-child(2) {
+      display: none;
+    }
+  
+    #menuToggle:checked ~ .menu {
+        height: 100%;
+    }
+
+    .menu-icon i {
+        font-size: 1.7em;
+    }
 }
