@@ -68,9 +68,9 @@ body {
     outline: none;
 }
 
-#menuToggle, #header-buscar {
+ #menuToggle, #header-buscar {
     display: none;
-}
+} 
 
 .menu-icon {
     display: none;
@@ -407,6 +407,68 @@ footer p {
 
     /**PLATAFOMAS**/
     .plataforma-info {
+        display: none;
+    }
+}
+
+@media screen and (min-width:601px) and (max-width:980px){
+    /* MENU MOBILE */
+    .buscar-itens {
+        display: flex;
+        justify-content: flex-end;
+        height: inherit;
+        border: none;
+        z-index: 30;
+        text-align: right;
+    }
+
+    #lupa-buscar {
+        position: relative;
+        right: 10px;
+    }
+
+    .buscar-itens input {
+        height: 100%;
+        width: 0%;
+        align-items: center;
+        overflow: hidden;
+        -webkit-transition: width 0.3s;
+        -moz-transition: width 0.3s;
+        -ms-transition: width 0.3s;
+        -o-transition: width 0.3s;
+        transition: width 0.3s;
+    }
+
+    #header-buscar:checked ~ label i:nth-child(3) {
+        display: block;
+    }
+    #header-buscar:checked ~ label i:first-child {
+        display: none;
+    }
+    #header-buscar:not(:checked) ~ label i:first-child {
+        display: block;
+    }
+    #header-buscar:not(:checked) ~ label i:nth-child(3) {
+        display: none;
+    }
+
+    #header-buscar:checked ~ .buscar-itens input {
+        width: 100%;
+    }
+
+    /*  DESTAQUES   */
+    .trailer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .infos {
+        text-align: center;
+    }
+
+    .infos p {
         display: none;
     }
 }
