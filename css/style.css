@@ -270,24 +270,21 @@ button i {
     text-align: left;
     margin: 0 10%;
 }
+
 .publisher-itens {
     display: flex;
     flex-direction: row;
     align-items:center;
     flex-wrap: wrap;
     justify-content: space-around;
-    
 }
 
 .publisher1 {
     margin-left:auto;
 }
+
 .publisher3 {
     margin-right:auto;
-}
-
-.publisher-itens .item div {
-    align-items: flex-end;
 }
 
 .card-maisDetalhes {
@@ -333,8 +330,59 @@ footer p {
     color: #fff;
 }
 
-/*** MENU MOBILE ***/
+
+@media screen and (max-width: 600px) {
+    /* BUSCA MOBILE */
+    .buscar-itens {
+        display: flex;
+        justify-content: flex-end;
+        height: inherit;
+        border: none;
+        z-index: 30;
+        text-align: right;
+    }
+
+    #lupa-buscar {
+        position: relative;
+        right: 10px;
+    }
+
+    .buscar-itens input {
+        height: 100%;
+        width: 0%;
+        align-items: center;
+        overflow: hidden;
+        -webkit-transition: width 0.3s;
+        -moz-transition: width 0.3s;
+        -ms-transition: width 0.3s;
+        -o-transition: width 0.3s;
+        transition: width 0.3s;
+    }
+
+    #header-buscar:checked ~ label i:nth-child(3) {
+        display: block;
+    }
+    #header-buscar:checked ~ label i:first-child {
+        display: none;
+    }
+    #header-buscar:not(:checked) ~ label i:first-child {
+        display: block;
+    }
+    #header-buscar:not(:checked) ~ label i:nth-child(3) {
+        display: none;
+    }
+
+    #header-buscar:checked ~ .buscar-itens input {
+        width: 100%;
+    }
+
+    nav {
+        text-align: end;
+    }
+}
+
 @media screen and (max-width: 800px) {
+    /*** MENU MOBILE ***/
     .header{
         position: fixed;
         top: 0px;
@@ -419,66 +467,6 @@ footer p {
         justify-content: centers;
     }
 
-    /* MENU MOBILE */
-    .buscar-itens {
-        display: flex;
-        justify-content: flex-end;
-        height: inherit;
-        border: none;
-        z-index: 30;
-        text-align: right;
-    }
-
-    #lupa-buscar {
-        position: relative;
-        right: 10px;
-    }
-
-    .buscar-itens input {
-        height: 100%;
-        width: 0%;
-        align-items: center;
-        overflow: hidden;
-        -webkit-transition: width 0.3s;
-        -moz-transition: width 0.3s;
-        -ms-transition: width 0.3s;
-        -o-transition: width 0.3s;
-        transition: width 0.3s;
-    }
-
-    #header-buscar:checked ~ label i:nth-child(3) {
-        display: block;
-    }
-    #header-buscar:checked ~ label i:first-child {
-        display: none;
-    }
-    #header-buscar:not(:checked) ~ label i:first-child {
-        display: block;
-    }
-    #header-buscar:not(:checked) ~ label i:nth-child(3) {
-        display: none;
-    }
-
-    #header-buscar:checked ~ .buscar-itens input {
-        width: 100%;
-    }
-
-    nav {
-        text-align: end;
-    }
-
-    /**PLATAFOMAS**/
-    .plataforma-info {
-        display: none;
-    }
-
-    .plataforma1, .plataforma2, .plataforma3 {
-        margin: 10px auto;
-    }
-}
-
-@media screen and (min-width:601px) and (max-width:980px){
-    
     /*  DESTAQUES   */
     .trailer {
         display: flex;
@@ -493,5 +481,19 @@ footer p {
 
     .infos p {
         display: none;
+    }
+
+    /**PLATAFOMAS e PUBLISHERS**/
+    .plataforma-info, .item ul {
+        display: none;
+    }
+
+    .plataforma1, .plataforma2, .plataforma3, .item {
+        margin: 10px auto;
+    }
+
+    /* SOBRE */
+    .sobre h1 {
+        text-align: center;
     }
 }
