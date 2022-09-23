@@ -256,12 +256,12 @@ button i {
     margin-right: auto;
 }
 
-.plataforma-img {
+.card-img {
     text-align: center;
 }
 
 /*** PUBLISHER ***/
-.publisher{
+.publisher {
     background-color: rgb(208, 208, 208);  
 }
 
@@ -279,11 +279,11 @@ button i {
 }
 
 .publisher1 {
-    margin-left:auto;
+    margin-left: auto;
 }
 
 .publisher3 {
-    margin-right:auto;
+    margin-right: auto;
 }
 
 .card-maisDetalhes {
@@ -329,71 +329,7 @@ footer p {
     color: #fff;
 }
 
-
-@media screen and (max-width: 400px) {
-    .infos {
-        width: 100%;
-    }
-
-    .infos h2 {
-        font-size: 20pt;
-    }
-
-    .filtro {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    /* BUSCA MOBILE */
-    .buscar-itens {
-        display: flex;
-        justify-content: flex-end;
-        height: inherit;
-        border: none;
-        z-index: 30;
-        text-align: right;
-    }
-
-    #lupa-buscar {
-        position: relative;
-        right: 10px;
-    }
-
-    .buscar-itens input {
-        height: 100%;
-        width: 0%;
-        align-items: center;
-        overflow: hidden;
-        -webkit-transition: width 0.3s;
-        -moz-transition: width 0.3s;
-        -ms-transition: width 0.3s;
-        -o-transition: width 0.3s;
-        transition: width 0.3s;
-    }
-
-    #header-buscar:checked ~ label i:nth-child(3) {
-        display: block;
-    }
-    #header-buscar:checked ~ label i:first-child {
-        display: none;
-    }
-    #header-buscar:not(:checked) ~ label i:first-child {
-        display: block;
-    }
-    #header-buscar:not(:checked) ~ label i:nth-child(3) {
-        display: none;
-    }
-
-    #header-buscar:checked ~ .buscar-itens input {
-        width: 100%;
-    }
-
-    nav {
-        text-align: end;
-    }
-}
-
+/*** MEDIA QUERY ***/
 @media screen and (max-width: 800px) {
     /*** MENU MOBILE ***/
     .header{
@@ -507,8 +443,74 @@ footer p {
     .sobre-info, .editorial-info {
         margin:0 auto;
     }
-    
+
     .sobre h1 {
         text-align: center;
     }
 }
+
+@media screen and (max-width: 600px) {
+    /* BUSCA MOBILE */
+    .buscar-itens {
+        display: flex;
+        justify-content: flex-end;
+        height: inherit;
+        border: none;
+        z-index: 30;
+        text-align: right;
+    }
+
+    #lupa-buscar {
+        position: relative;
+        right: 10px;
+    }
+
+    .buscar-itens input {
+        height: 100%;
+        width: 0%;
+        align-items: center;
+        overflow: hidden;
+        -webkit-transition: width 0.3s;
+        -moz-transition: width 0.3s;
+        -ms-transition: width 0.3s;
+        -o-transition: width 0.3s;
+        transition: width 0.3s;
+    }
+
+    #header-buscar:checked ~ label i:nth-child(3) {
+        display: block;
+    }
+    #header-buscar:checked ~ label i:first-child {
+        display: none;
+    }
+    #header-buscar:not(:checked) ~ label i:first-child {
+        display: block;
+    }
+    #header-buscar:not(:checked) ~ label i:nth-child(3) {
+        display: none;
+    }
+
+    #header-buscar:checked ~ .buscar-itens input {
+        width: 100%;
+    }
+
+    nav {
+        text-align: end;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .infos {
+        width: 100%;
+    }
+
+    .infos h2 {
+        font-size: 20pt;
+    }
+
+    .filtro {
+        display: none;
+    }
+}
+
+
