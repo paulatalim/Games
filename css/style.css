@@ -262,8 +262,7 @@ button i {
 
 /*** PUBLISHER ***/
 .publisher{
-    background-color: rgb(208, 208, 208);
-   
+    background-color: rgb(208, 208, 208);  
 }
 
 #publisher {
@@ -330,6 +329,20 @@ footer p {
     color: #fff;
 }
 
+
+@media screen and (max-width: 400px) {
+    .infos {
+        width: 100%;
+    }
+
+    .infos h2 {
+        font-size: 20pt;
+    }
+
+    .filtro {
+        display: none;
+    }
+}
 
 @media screen and (max-width: 600px) {
     /* BUSCA MOBILE */
@@ -444,7 +457,6 @@ footer p {
         z-index: 999;
     }
 
-
     #menuToggle:checked ~ label i:nth-child(2) {
       display: block;
     }
@@ -457,7 +469,6 @@ footer p {
     #menuToggle:not(:checked) ~ label i:nth-child(2) {
       display: none;
     }
-  
     #menuToggle:checked ~ .menu {
         height: 100%;
     }
@@ -493,6 +504,10 @@ footer p {
     }
 
     /* SOBRE */
+    .sobre-info, .editorial-info {
+        margin:0 auto;
+    }
+    
     .sobre h1 {
         text-align: center;
     }
