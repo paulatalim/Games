@@ -200,6 +200,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+
 button i {
     color: #fff;
     margin-right: 7px;
@@ -234,17 +235,8 @@ button i {
 }
 
 /*** PLATAFORMAS ***/
-.plataformas-itens {
-    display: flex;
-    flex-direction: row;
-    align-items:center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap:15px;
-    width: 100%;
-}
-
 .plataforma1, .plataforma2, .plataforma3 {
+    margin: 0 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -256,6 +248,14 @@ button i {
     border-radius: 20px;
 }
 
+.plataforma1 {
+    margin-left: auto;
+}
+
+.plataforma3 {
+    margin-right: auto;
+}
+
 .plataforma-img {
     text-align: center;
 }
@@ -263,15 +263,27 @@ button i {
 /*** PUBLISHER ***/
 .publisher{
     background-color: rgb(208, 208, 208);
+   
 }
 
+#publisher {
+    text-align: left;
+    margin: 0 10%;
+}
 .publisher-itens {
     display: flex;
     flex-direction: row;
     align-items:center;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 100%;
+    
+}
+
+.publisher1 {
+    margin-left:auto;
+}
+.publisher3 {
+    margin-right:auto;
 }
 
 .publisher-itens .item div {
@@ -322,7 +334,7 @@ footer p {
 }
 
 /*** MENU MOBILE ***/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .header{
         position: fixed;
         top: 0px;
@@ -378,11 +390,12 @@ footer p {
         display: block;
         position: absolute;
         top: 15px;
-        right: 30px;
+        right: 60px;
         line-height: 60px;
         color: white;
         z-index: 999;
     }
+
 
     #menuToggle:checked ~ label i:nth-child(2) {
       display: block;
@@ -403,15 +416,9 @@ footer p {
 
     .menu-icon i {
         font-size: 1.7em;
+        justify-content: centers;
     }
 
-    /**PLATAFOMAS**/
-    .plataforma-info {
-        display: none;
-    }
-}
-
-@media screen and (min-width:601px) and (max-width:980px){
     /* MENU MOBILE */
     .buscar-itens {
         display: flex;
@@ -456,6 +463,22 @@ footer p {
         width: 100%;
     }
 
+    nav {
+        text-align: end;
+    }
+
+    /**PLATAFOMAS**/
+    .plataforma-info {
+        display: none;
+    }
+
+    .plataforma1, .plataforma2, .plataforma3 {
+        margin: 10px auto;
+    }
+}
+
+@media screen and (min-width:601px) and (max-width:980px){
+    
     /*  DESTAQUES   */
     .trailer {
         display: flex;
