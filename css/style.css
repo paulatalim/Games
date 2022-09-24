@@ -343,125 +343,6 @@ footer p {
 
 /*** MEDIA QUERY ***/
 @media screen and (max-width: 800px) {
-    /*** MENU MOBILE ***/
-    .header{
-        position: fixed;
-        top: 0px;
-        width: 100%;
-        z-index: 20;
-    }
-
-    .header nav {
-        display: absolute;
-        width: 100%;
-        height: 100%;
-    }
-
-    .menu {
-        display: flex;
-        position: fixed;
-        flex-wrap: wrap;
-        align-content: center;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 0%;
-        background-color: rgba(0, 0, 0, 0.7);
-        overflow: hidden;
-        -webkit-transition: height 0.3s;
-        -moz-transition: height 0.3s;
-        -ms-transition: height 0.3s;
-        -o-transition: height 0.3s;
-        transition: height 0.3s;
-        z-index: 30;
-    }
-
-    .menu p {
-        display: none;
-    }
-
-    .menu li {
-      display: block;
-      width: 100%;
-      margin-left: 0px;
-      margin-bottom: 20px;
-    }
-  
-    .menu li a {
-        display: block;
-        text-align: center;
-        width: 100%;
-    }
-
-    .menu-icon {
-        width: 50px;
-        height: inherit;
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 60px;
-        line-height: 60px;
-        color: white;
-        z-index: 999;
-    }
-
-    #menuToggle:checked ~ label i:nth-child(2) {
-      display: block;
-    }
-    #menuToggle:checked ~ label i:first-child {
-      display: none;
-    }
-    #menuToggle:not(:checked) ~ label i:first-child {
-      display: block;
-    }
-    #menuToggle:not(:checked) ~ label i:nth-child(2) {
-      display: none;
-    }
-    #menuToggle:checked ~ .menu {
-        height: 100%;
-    }
-
-    .menu-icon i {
-        font-size: 1.7em;
-        justify-content: centers;
-    }
-
-    /*  DESTAQUES   */
-    .trailer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .infos {
-        text-align: center;
-    }
-
-    .infos p {
-        display: none;
-    }
-
-    /**PLATAFOMAS e PUBLISHERS**/
-    .plataforma-info, .publisher-info {
-        display: none;
-    }
-
-    .plataforma1, .plataforma2, .plataforma3, .item {
-        margin: 10px auto;
-    }
-
-    /* SOBRE */
-    .sobre-info, .editorial-info {
-        margin:0 auto;
-    }
-
-    .sobre h1 {
-        text-align: center;
-    }
-}
-
-@media screen and (max-width: 600px) {
     /* BUSCA MOBILE */
     .buscar-itens {
         display: flex;
@@ -506,9 +387,151 @@ footer p {
         width: 100%;
     }
 
+    #header-buscar:checked ~ .menu {
+        display: none;
+    }
+
     nav {
         text-align: end;
     }
+
+    .buscar-itens i {
+        justify-content: center;
+        font-size: 1.7em;
+    }
+
+    /*  DESTAQUES   */
+    .trailer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .infos {
+        text-align: center;
+    }
+
+    .infos p {
+        display: none;
+    }
+
+    /**PLATAFOMAS e PUBLISHERS**/
+    .plataforma-info, .publisher-info {
+        display: none;
+    }
+
+    .plataforma1, .plataforma2, .plataforma3, .item {
+        margin: 10px auto;
+    }
+
+    /* SOBRE */
+    .sobre-info, .editorial-info {
+        margin:0 auto;
+    }
+
+    .sobre h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /*** MENU MOBILE ***/
+    .header {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 20;
+    }
+
+    .header nav {
+        display: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .menu {
+        display: flex;
+        position: fixed;
+        flex-wrap: wrap;
+        align-content: center;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 0%;
+        background-color: rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+        -webkit-transition: height 0.3s;
+        -moz-transition: height 0.3s;
+        -ms-transition: height 0.3s;
+        -o-transition: height 0.3s;
+        transition: height 0.3s;
+        z-index: 30;
+    }
+
+    .menu p {
+        display: none;
+    }
+
+    .menu li {
+        display: block;
+        width: 100%;
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+    
+    .menu li a {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu-icon {
+        width: 50px;
+        height: inherit;
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 60px;
+        line-height: 60px;
+        color: white;
+        z-index: 999;
+    }
+
+    #menuToggle:checked ~ label i:nth-child(2) {
+        display: block;
+    }
+    #menuToggle:checked ~ label i:first-child {
+        display: none;
+    }
+    #menuToggle:not(:checked) ~ label i:first-child {
+        display: block;
+    }
+    #menuToggle:not(:checked) ~ label i:nth-child(2) {
+        display: none;
+    }
+    #menuToggle:checked ~ .menu {
+        height: 100%;
+    }
+
+    .menu-icon i {
+        font-size: 1.7em;
+        justify-content: center;
+    }
+
+    .buscar-itens i {
+        width: 50px;
+        height: inherit;
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 120px;
+        line-height: 60px;
+        color: white;
+        z-index: 999;
+    }
+
+    
 }
 
 @media screen and (max-width: 400px) {
