@@ -34,12 +34,17 @@ body {
     margin: 0px;
 }
 
-.header nav ul li a{
+.header nav ul li a {
     text-decoration: none;
     color: white;
+    transition: all 0.2s;
 }
 
-.menu p{
+.header nav ul li a:hover{
+    font-weight: 700;
+}
+
+.menu p {
     color: white;
     margin: auto 0;
 }
@@ -135,13 +140,13 @@ body {
 
 /*    Carousel Fade Transition   */
 #fade-quote-carousel.carousel {
-  padding-bottom: 60px;
+    padding-bottom: 60px;
 }
 #fade-quote-carousel.carousel .carousel-inner .item {
-  opacity: 0;
-  -webkit-transition-property: opacity;
-      -ms-transition-property: opacity;
-          transition-property: opacity;
+    opacity: 0;
+    -webkit-transition-property: opacity;
+        -ms-transition-property: opacity;
+            transition-property: opacity;
 }
 #fade-quote-carousel.carousel .carousel-inner .active {
   opacity: 1;
@@ -150,11 +155,11 @@ body {
           transition-property: opacity;
 }
 #fade-quote-carousel.carousel .carousel-indicators {
-  bottom: 10px;
+    bottom: 10px;
 }
 #fade-quote-carousel.carousel .carousel-indicators > li {
-  background-color: #e84a64;
-  border: none;
+    background-color: #e84a64;
+    border: none;
 }
 #fade-quote-carousel blockquote {
     text-align: center;
@@ -217,10 +222,9 @@ button i {
     border-radius: 5px;
     padding: 5px 10px;
     margin-top: 20px;
-
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.411);
     border: none;
-
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.411);
+    
     transition: top 0.2s;
     position: relative;
 }
