@@ -327,8 +327,12 @@ button i {
     margin-right: 20px;
 }
 
-.redes-sociais-icones a i{
+.redes-sociais-icones a i {
     color: black;
+}
+
+.redes-sociais-icones a i:hover {
+    color:rgb(60, 60, 60);
 }
 
 /*** RODAPÉ ***/
