@@ -111,12 +111,17 @@ body {
     flex-direction: row;
     align-items: top;
     justify-content: center;
-    gap:30px;
+    gap: 30px;
 }
 
 .infos {
-    width: 50%;
+    width: 80%;
     color: #fff;
+}
+
+#avaliacao {
+    color: red;
+    font-weight: 700;
 }
 
 .carousel-control-next, .carousel-control-prev {
@@ -531,7 +536,10 @@ footer p {
         z-index: 999;
     }
 
-    
+    /** DESTAQUES **/
+    .destaques {
+        margin-top: 108px;
+    }
 }
 
 @media screen and (max-width: 400px) {
