@@ -224,7 +224,7 @@ button i {
     margin-top: 20px;
     border: none;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.411);
-    
+    outline: none;
     transition: top 0.2s;
     position: relative;
 }
