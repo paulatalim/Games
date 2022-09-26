@@ -264,6 +264,10 @@ button i {
     margin-right: auto;
 }
 
+.plataforma-info {
+    line-height: 20px;
+}
+
 .card-img {
     text-align: center;
 }
@@ -309,6 +313,16 @@ button i {
 
 .card-maisDetalhes {
     text-align: right;
+}
+
+.card-maisDetalhes a, #lancamento-maisDetalhe {
+    color: #000;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.card-maisDetalhes a:hover, #lancamento-maisDetalhe:hover {
+    font-weight: 700;
 }
 
 /*** SOBRE ***/
