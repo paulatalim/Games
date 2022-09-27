@@ -5,47 +5,38 @@ body {
 }
 
 /***  ESTILIZACAO CABECALHO ***/
-.header,
-.header nav,
-.header nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .header {
     background-color: black;
     padding: 15px 20px 15px 30px;
     border-bottom: 0.5px solid rgb(213, 213, 213);
 }
 
-.header img {
-    width: 32px;
-    height: 32px;
+.navbar {
+    background-color: black;
+    justify-content: space-between;
 }
 
-.header nav {
-    gap: 30px;
+.navbar-collapse {
+    flex-grow: 0;
+    justify-content: end;
+    gap: 20px;
 }
 
-.menu {
-    gap: 15px;
-    list-style: none;
-    margin: 0px;
+.navbar-nav {
+    gap: 10px;
 }
 
-.header nav ul li a {
+.navbar-nav li a {
     text-decoration: none;
     color: white;
     transition: all 0.2s;
 }
 
-.header nav ul li a:hover{
+.navbar-nav li a:hover{
     font-weight: 700;
 }
 
-.menu p {
+.navbar-nav p {
     color: white;
     margin: auto 0;
 }
@@ -72,14 +63,6 @@ body {
     background-color: black;
     border: 0 0 1px 0;
     outline: none;
-}
-
- #menuToggle, #header-buscar {
-    display: none;
-} 
-
-.menu-icon {
-    display: none;
 }
 
 /*** DESTAQUES ***/
@@ -340,6 +323,16 @@ footer p {
 }
 
 /*** MEDIA QUERY ***/
+@media screen and (max-width: 990px) {
+    .navbar-nav p {
+        display: none;
+    }
+
+    #sair-buscar {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 800px) {
     /* BUSCA MOBILE */
     .buscar-itens {

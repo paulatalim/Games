@@ -16,8 +16,8 @@
     <title>Games Store</title>
 </head>
 <body>
-    <header class="conteiner header">
-        <img src="./img/controle-de-video-game.png" alt="">
+    <header class="header">
+        <!-- <img src="./img/controle-de-video-game.png" alt="">
         
         <nav>
             <input type="checkbox" id="menuToggle">
@@ -38,6 +38,34 @@
                     <input type="text" name="Busca" placeholder="Pesquisar games">
                     <i id="sair-buscar" class="fa-solid fa-xmark"></i>
                 </label>
+        </nav> -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="./img/controle-de-video-game.png" width="30" height="30" alt="">
+            </a>
+            <button class="navbar-toggler" 
+                    type="button" 
+                    data-toggle="collapse" 
+                    data-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a href="#destaques">Destaques</a></li> <p>|</p>
+                    <li class="nav-item active"><a href="#lancamentos">Lançamentos</a></li> <p>|</p>
+                    <li class="nav-item active"><a href="#plataformas">Plataformas</a></li> <p>|</p>
+                    <li class="nav-item active"><a href="#publisher">Publisher</a></li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 buscar-itens">
+                    <i id="lupa-buscar" class="fa-solid fa-magnifying-glass"></i>
+                    <input class="form-control mr-sm-2" type="search" name="Busca" placeholder="Pesquisar games" aria-label="Search">
+                    <i id="sair-buscar" class="fa-solid fa-xmark"></i>
+                </form>
+            </div>
         </nav>
     </header>
 
