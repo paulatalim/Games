@@ -17,6 +17,7 @@ body {
 .header {
     background-color: black;
     padding: 15px 20px 15px 30px;
+    border-bottom: 0.5px solid rgb(213, 213, 213);
 }
 
 .header img {
@@ -83,11 +84,12 @@ body {
 
 /*** DESTAQUES ***/
 .destaques {
-    background-color: rgb(40, 40, 40);
+    background-color: #000;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin:0;
 }
 
 #destaques {
@@ -132,7 +134,7 @@ body {
 }
 
 /*** LANCAMENTOS ***/
-.lancamentos, .plataformas, .publisher, .sobre {
+.lancamentos, .plataformas, .sobre {
     max-width: 1000px;
     margin: 0 auto;
     padding: 15px 0px;
@@ -240,7 +242,10 @@ button i {
 
 /*** PUBLISHER ***/
 .publisher {
-    background-color: rgb(208, 208, 208);  
+    background-color: rgb(208, 208, 208);
+    width: 100%;
+    margin: 0;
+    padding-bottom: 15px;
 }
 
 #publisher {
