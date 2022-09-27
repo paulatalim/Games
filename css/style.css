@@ -102,12 +102,10 @@ body {
 .carousel {
     padding: 50px;
     padding-top: 20px;
-    height: 100%;
     z-index: 0;
 }
 
 .carousel-item {
-    height: 100%;
     align-items: center;
 }
 
