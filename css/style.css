@@ -324,73 +324,13 @@ footer p {
 
 /*** MEDIA QUERY ***/
 @media screen and (max-width: 990px) {
-    .navbar-nav p {
-        display: none;
-    }
-
-    #sair-buscar {
+    /* NAV BAR */
+    .navbar-nav p, #sair-burcar {
         display: none;
     }
 }
 
 @media screen and (max-width: 800px) {
-    /* BUSCA MOBILE */
-    .buscar-itens {
-        display: flex;
-        justify-content: flex-end;
-        height: inherit;
-        border: none;
-        z-index: 30;
-        text-align: right;
-    }
-
-    #lupa-buscar {
-        position: relative;
-        right: 10px;
-    }
-
-    .buscar-itens input {
-        height: 100%;
-        width: 0%;
-        align-items: center;
-        overflow: hidden;
-        -webkit-transition: width 0.3s;
-        -moz-transition: width 0.3s;
-        -ms-transition: width 0.3s;
-        -o-transition: width 0.3s;
-        transition: width 0.3s;
-    }
-
-    #header-buscar:checked ~ label i:nth-child(3) {
-        display: block;
-    }
-    #header-buscar:checked ~ label i:first-child {
-        display: none;
-    }
-    #header-buscar:not(:checked) ~ label i:first-child {
-        display: block;
-    }
-    #header-buscar:not(:checked) ~ label i:nth-child(3) {
-        display: none;
-    }
-
-    #header-buscar:checked ~ .buscar-itens input {
-        width: 100%;
-    }
-
-    #header-buscar:checked ~ .menu {
-        display: none;
-    }
-
-    nav {
-        text-align: end;
-    }
-
-    .buscar-itens i {
-        justify-content: center;
-        font-size: 1.7em;
-    }
-
     /*  DESTAQUES   */
     .trailer {
         display: flex;
@@ -426,8 +366,8 @@ footer p {
     }
 }
 
-@media screen and (max-width: 600px) {
-    /*** MENU MOBILE ***/
+/* @media screen and (max-width: 600px) {
+    /* ** MENU MOBILE **
     .header {
         position: fixed;
         top: 0px;
@@ -520,15 +460,11 @@ footer p {
         line-height: 60px;
         color: white;
         z-index: 999;
-    }
-
-    /** DESTAQUES **/
-    .destaques {
-        margin-top: 108px;
-    }
-}
+    } *//*
+} */
 
 @media screen and (max-width: 400px) {
+    /* DESTAQUES */
     .infos {
         width: 100%;
     }
@@ -537,9 +473,8 @@ footer p {
         font-size: 20pt;
     }
 
+    /* LANÇAMENTOS */
     .filtro {
         display: none;
     }
 }
-
-
