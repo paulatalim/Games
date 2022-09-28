@@ -167,19 +167,28 @@
 
             <!-- filtros -->
             <div class="col-3 filtro">
-                <select name="ordem" id="ordem">
-                    <option>Ordem: Todas</option>
-                    <option value="action">Mais popular</option>
-                    <option value="puzzle">Menos popular</option>
-                </select>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="filtro-ordem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Gênero: TODAS
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="filtro-ordem">
+                        <a class="dropdown-item" href="#">Mais popular</a>
+                        <a class="dropdown-item" href="#">Menos popular</a>
+                    </div>
+                </div>
             </div>
-        
+            
             <div class="col-3 filtro">
-                <select name="genero" id="ordem">
-                    <option>Gênero: Todas</option>
-                    <option value="action">Ação</option>
-                    <option value="puzzle">Quebra-Cabeca</option>
-                </select>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="filtro-genero" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Gênero: TODOS
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="filtro-genero">
+                        <a class="dropdown-item" href="#">Ação</a>
+                        <a class="dropdown-item" href="#">Aventura</a>
+                        <a class="dropdown-item" href="#">Plataforma</a>
+                    </div>
+                </div>
             </div>
 
             <!-- cards -->
@@ -349,7 +358,7 @@
                     <ul>
                         <li>God of War II</li>
                         <li>The Last of Us Part II</li>
-                        <li>Item 3</li>
+                        <li>Spider-Man</li>
                     </ul>
                 </div>
                 <div class="card-maisDetalhes"><a href="https://www.sie.com/en/index.html">Mais detalhes...</a></div>
