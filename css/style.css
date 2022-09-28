@@ -7,7 +7,6 @@ body {
 /***  ESTILIZACAO CABECALHO ***/
 .header {
     background-color: black;
-    padding: 15px 20px 15px 30px;
     border-bottom: 0.5px solid rgb(213, 213, 213);
 }
 
@@ -325,13 +324,26 @@ footer p {
 /*** MEDIA QUERY ***/
 @media screen and (max-width: 990px) {
     /* NAV BAR */
-    .navbar-nav p, #sair-burcar {
+    .navbar-nav p, #sair-buscar {
         display: none;
     }
 }
 
 @media screen and (max-width: 800px) {
+    /* HEADER */
+    .header {
+        position: fixed;
+        z-index: 1;
+        border: none;
+        width: 100%;
+    }
+
     /*  DESTAQUES   */
+    .destaques {
+        position: relative;
+        top:58px;
+    }
+
     .trailer {
         display: flex;
         flex-direction: column;
