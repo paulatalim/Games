@@ -1,17 +1,16 @@
 body {
     margin: 0px;
     padding: 0px;
-    background-color: whitesmoke;
+    background-color: #f9f3ff;
 }
 
 /***  ESTILIZACAO CABECALHO ***/
 .header {
-    background-color: black;
     border-bottom: 0.5px solid rgb(213, 213, 213);
 }
 
 .navbar {
-    background-color: black;
+    background: rgb(131,0,255);
     justify-content: space-between;
 }
 
@@ -52,21 +51,26 @@ body {
 }
 
 .buscar-itens input {
-    background-color: black;
+    background-color: rgb(131,0,255);
     color: white;
     border: none;
     outline: none;
 }
 
 .buscar-itens input:focus {
-    background-color: black;
+    background-color: rgb(131,0,255);
     border: 0 0 1px 0;
     outline: none;
 }
 
+.buscar-itens input::placeholder {
+    color: #fff;
+}
+
 /*** DESTAQUES ***/
 .destaques {
-    background-color: #000;
+    background: rgb(131,0,255);
+    background: linear-gradient(180deg, rgba(131,0,255,1) 0%, rgba(120,8,215,1) 30%, rgba(110,15,179,1) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,13 +130,14 @@ body {
     margin: 50px auto;
 }
 
-.filtro {
-    padding: 10px;
+ #filtro-genero, #filtro-ordem {
+    background-color: #f9f3ff;
+    color: #000;
 }
 
-#filtro-genero, #filtro-ordem {
-    background-color: whitesmoke;
-    color: black;
+.dropdown-menu {
+    background-color: #f9f3ff;
+    border-color: #000;
 }
 
 .cards {
@@ -219,9 +224,25 @@ button i {
     text-align: center;
 }
 
+.card-maisDetalhes {
+    text-align: right;
+}
+
+.card-maisDetalhes a, #lancamento-maisDetalhe {
+    color: #000;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.card-maisDetalhes a:hover, #lancamento-maisDetalhe:hover {
+    font-weight: 700;
+    color:#6e0fb3;
+}
+
 /*** PUBLISHER ***/
 .publisher {
-    background-color: rgb(208, 208, 208);
+    background: rgb(131,0,255);
+    color: #fff;
     width: 100%;
     margin: 0;
     padding-bottom: 15px;
@@ -240,7 +261,7 @@ button i {
     justify-content: space-between;
     padding: 20px;
 
-    background-color: rgb(223, 223, 223);
+    background-color: #6b00d1;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.342);
     border-radius: 20px;
 }
@@ -261,17 +282,17 @@ button i {
     margin-right: auto;
 }
 
-.card-maisDetalhes {
+.link-publisher {
     text-align: right;
 }
 
-.card-maisDetalhes a, #lancamento-maisDetalhe {
-    color: #000;
+.link-publisher a {
     text-decoration: none;
+    color:#fff;
     transition: all 0.2s;
 }
 
-.card-maisDetalhes a:hover, #lancamento-maisDetalhe:hover {
+.link-publisher a:hover {
     font-weight: 700;
 }
 
@@ -305,7 +326,7 @@ button i {
 
 /*** RODAPÉ ***/
 footer {
-    background-color: #000;
+    background: rgb(131,0,255); 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -355,7 +376,7 @@ footer p {
     .infos p {
         display: none;
     }
-    
+
     /* LANÇAMENTOS */
     .filtro {
         display: none;
