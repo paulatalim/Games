@@ -66,23 +66,7 @@
 
     <a href="../../../index.html">Voltar</a>
     <script src="app.js"></script>    
-    <script>
-        document.body.onload = () => {
-            let filtroEspecie = document.querySelector('#filtroEspecie')
-            filtroEspecie.addEventListener ('change', ()=> {
-                FILTRO_ESPECIE = filtroEspecie.value
-                exibePets()
-            })
-
-            let filtroEstado = document.querySelector('#filtroEstado')
-            filtroEstado.addEventListener ('change', ()=> {
-                FILTRO_ESTADO = filtroEstado.value
-                exibePets()
-            })
-
-            exibePets();
-        }        
-    </script>
+    
 
 </body>
 </html>

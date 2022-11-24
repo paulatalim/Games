@@ -21,7 +21,9 @@ const dbMock = {
         { id: 4, descricao: 'Coelhos' },
     ]
 }
+
 let db = JSON.parse (localStorage.getItem('dbPets'))
+
 if (!db) {
     db = dbMock
 }
@@ -37,29 +39,6 @@ function getDescricaoEspecie (id) {
         return 'Não identificado'
 }
 
-function alteraImagem (event) {
-
-}
-
-function exibePets () {
-    let str = ''
-    for (let i=0; i < db.pets.length; i++) {
-        let pet = db.pets[i]
-        if (  ((FILTRO_ESPECIE == 0) || pet.idEspecie == FILTRO_ESPECIE) &&  
-              ((FILTRO_ESTADO == "") || pet.estado == FILTRO_ESTADO)) {
-            str += `<div class="card col-md-4" >
-            <img src="${pet.imagem}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">${pet.nome}</h5>
-              <p class="card-text"><span class="text-danger">${getDescricaoEspecie(pet.idEspecie)}</span><br>
-              ${pet.descricao}</p>
-              <a href="exibe_pet.html?id=${pet.id}" class="btn btn-primary">Mais detalhes</a>
-            </div>
-          </div>`
-        }
-    }
-    document.querySelector('#tela').innerHTML = str
-}
 
 function exibePet (id) {
     let idx = db.pets.findIndex (elem => elem.id == id)
@@ -80,12 +59,4 @@ function exibePet (id) {
         document.querySelector('#tela').innerHTML = '<h1>Pet não encontrado</h1>'    
     }
 
-}
-
-function alterarImagem (id, imageURI) {    
-    let idx = db.pets.findIndex (elem => elem.id == id)
-    if (idx != -1) {
-        db.pets[idx].imagem = imageURI
-        localStorage.setItem('dbPets', JSON.stringify (db))
-    }
 }
