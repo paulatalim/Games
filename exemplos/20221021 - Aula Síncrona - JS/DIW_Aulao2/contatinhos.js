@@ -16,33 +16,9 @@ if(!bancoContatos){
     ]
 }
 
-function limparForm(){
-    document.getElementById("nome").value="";
-    document.getElementById("cidade").value="";
-    document.getElementById("telefone").value="";
-}
-
-
 function filtro(){
     var filtro = document.getElementById("textoFiltro").value;
     exibirContatos(filtro.toLowerCase())
-}
-
-function cadastrarNovo(){
-    var nome = document.getElementById("nome").value;
-    var cidade = document.getElementById("cidade").value;
-    var telefone = document.getElementById("telefone").value;
-
-    var novoContato = {
-        "nomeContato": nome,
-        "cidadeContato": cidade,
-        "telContato": telefone
-    }
-
-    bancoContatos.push(novoContato);
-    localStorage.setItem("contatos",  JSON.stringify(bancoContatos));
-    limparForm();
-    exibirContatos('');
 }
 
 function exibirContatos(filtroBusca){

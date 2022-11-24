@@ -18,30 +18,19 @@
         <div class="container-fluid">
           <a class="navbar-brand" id="titulo">Contatinhos</a>
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" id="textoFiltro" placeholder="Search" aria-label="Search" oninput="filtro()">
+            <input 
+            class="form-control me-2" 
+            type="search" 
+            id="textoFiltro" 
+            placeholder="Search" 
+            aria-label="Search" 
+            oninput="filtro()">
             <button class="btn btn-outline-success" type="button" onclick="filtro()">Search</button>
           </form>
         </div>
     </nav>
 
-    <!-- barra de cadastro -->
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-           <button class="btn btn-outline-success" type="button" data-bs-toggle="collapse" 
-           data-bs-target="#formCadastro" aria-expanded="false" aria-controls="collapseExample">
-                -
-            </button>
-            <div class="collapse" id="formCadastro">
-                <a class="navbar-brand">Cadastre seu contato:</a>
-                <form class="d-flex" role="search" >
-                    <input class="form-control me-2" type="text" id="nome" placeholder="Nome" aria-label="Search">
-                    <input class="form-control me-2" type="text" id="cidade" placeholder="Cidade" aria-label="Search">
-                    <input class="form-control me-2" type="text" id="telefone" placeholder="Telefone" aria-label="Search">
-                    <button class="btn btn-outline-success" id="btnCadasto" type="button" onclick="cadastrarNovo()">+</button>
-                </form>
-            </div>
-        </div>
-    </nav>
+    
 
     <div class="container-fluid">
         <div class="row" id="tela">

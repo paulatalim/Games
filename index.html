@@ -40,13 +40,15 @@
                     <li class="nav-item active"><a href="#plataformas">Plataformas</a></li> <p>|</p>
                     <li class="nav-item active"><a href="#publisher">Publisher</a></li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0 buscar-itens">
-                    <i id="lupa-buscar" class="fa-solid fa-magnifying-glass"></i>
+                <form class="form-inline my-2 my-lg-0 buscar-itens" role="search">
+                    <i id="lupa-buscar" class="fa-solid fa-magnifying-glass" onclick="filtro()"></i>
                     <input class="form-control mr-sm-2" 
                             type="search" 
                             name="Busca" 
                             placeholder="Pesquisar games" 
-                            aria-label="Search">
+                            aria-label="Search"
+                            id="campo_buscar"
+                            oninput="filtro()">
                     <i id="sair-buscar" class="fa-solid fa-xmark"></i>
                 </form>
             </div>
@@ -54,6 +56,14 @@
     </header>
 
     <main class="conteiner">
+        <section class="row teste" id="teste_pesquisa">
+            <p>Testando1</p>
+        </section>
+        <section class="row">
+            <a href="./exemplos/20221021 - Aula Síncrona - JS/DIW_Aulao2/index.html">Exemplo de pesquisa 1</a>
+            <a href="./exemplos/">Exemplo de pagina de detalhes</a>
+        </section>
+
         <!--Destaques-->
         <section class="row destaques">
             <div class="col-12">
@@ -454,13 +464,7 @@
             </div>
         </section>
 
-        <section class="row teste" id="teste_pesquisa">
-            <p>Testando1</p>
-        </section>
-        <section class="row">
-            <a href="./exemplos/20221021 - Aula Síncrona - JS/DIW_Aulao2/index.html">Exemplo de pesquisa 1</a>
-            <a href="./exemplos/">Exemplo de pagina de detalhes</a>
-        </section>
+        
     </main>
 
     <footer>
