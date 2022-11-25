@@ -1,54 +1,3 @@
-let bancoGames =  JSON.parse(localStorage.getItem("games"));
-
-if(!bancoGames){
-
-    bancoGames = [
-        {
-            "nome": "Ratchet & Clank",
-            "id" : "1",
-            "avaliacao": "80",
-            "linkVideo": "https://www.youtube.com/embed/ai3o0XtrnM8",
-        },
-        {
-            "nome": "Spider-Man: Miles Morales",
-            "id" : "2",
-            "avaliacao": "80",
-            "linkVideo": "https://www.youtube.com/embed/qjRzm9A7DU4"
-        },
-        {
-            "nome": "Kena: Bridge of Spirits",
-            "id" : "3",
-            "avaliacao": "96",
-            "linkVideo": "https://www.youtube.com/embed/pWh5388AEHw"
-        },
-        {
-            "nome": "Guardians of the Galaxy",
-            "id" : "4",
-            "avaliacao": "96",
-            "linkVideo": "https://www.youtube.com/embed/3PnAnIT4f68"
-        },
-        {
-            "nome": "The Last of Us",
-            "id" : "5",
-            "avaliacao": "94",
-            "linkVideo": "https://www.youtube.com/embed/WxjeV10H1F0"
-        },
-        {
-            "nome": "Stray",
-            "id" : "6",
-            "avaliacao": "80",
-            "linkVideo": "https://www.youtube.com/embed/XgPRPi--F5E"
-            
-        },
-        {
-            "nome": "Pokémon UNITE",
-            "id" : "7",
-            "avaliacao": "90",
-            "linkVideo": "https://www.youtube.com/embed/Q3WMddjkuwM"
-        }
-    ]
-}
-
 function filtro(){
     var filtro = document.getElementById("campo_buscar").value;
     exibirGames(filtro.toLowerCase())
@@ -66,11 +15,13 @@ function exibirGames(filtroBusca){
                     str += `<div class="col-lg-3 col-md-4 col-sm-12 card" style="background-image: url(${jogo.background_image});">
                                 <h5>${jogo.name}</h5>
                                 <div class="info-card">
-                                    <p>Avaliação: ${jogo.rating}</p>
-                                    <p>Lançamento: ${jogo.released}</p>
-                                    <a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}">Mais Detalhes...</a>
+                                    
+                                        <p>Avaliação: ${jogo.rating}</p>
+                                        <p>Lançamento: ${jogo.released}</p>
+                                    
+                                        <div><a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}">Mais Detalhes...</a></div>
                                 </div>
-                            </div>`                    
+                            </div>`
                   }
             }
             document.getElementById('pesquisa_cards').innerHTML = str
@@ -90,22 +41,22 @@ function exibirGame (id) {
                 let str = `<div class="col-sm-12 col-md-6 col-12 Informacoes">
                                 <h1>${jogo.name}</h1>
                                 <div class="especificacoes">
-                                    <p><strong>Plataformas disponiveis:</strong> ${jogo.platforms[0].platform.name}`
+                                    <p><strong>Plataformas disponíveis:</strong> ${jogo.platforms[0].platform.name}`
                 
                 for(let j = 1; j < jogo.platforms.length; j++) {
                     str += `, ${jogo.platforms[j].platform.name}`
                 }
 
                 str += `</p>
-                        <p><strong>Genero:</strong> ${jogo.genres[0].name}`
+                        <p><strong>Gênero:</strong> ${jogo.genres[0].name}`
 
                 for (let j = 1; j < jogo.genres.length; j++) {
                     str+= `, ${jogo.genres[j].name}`
                 }
 
                 str +=         `</p>
-                                <p><strong>Data de lancamento: </strong>${jogo.released}</p>
-                                <p><strong>Rating: </strong>${jogo.rating}</p>
+                                <p><strong>Data de lançamento: </strong>${jogo.released}</p>
+                                <p><strong>Avaliação: </strong>${jogo.rating}</p>
                             </div>
                         </div>
                         <div class="col-6 cartaz" style="background-image: url(${jogo.background_image});"></div>`

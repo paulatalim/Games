@@ -1,17 +1,20 @@
 body {
     margin: 0px;
     padding: 0px;
-    background-color: #f9f3ff;
+    background-color: rgb(33, 33, 33);
+    color: #fff;
+    /* background-color: #f9f3ff; */
 }
 
 /***  ESTILIZACAO CABECALHO ***/
-.header {
+/* .header {
     border-bottom: 0.5px solid rgb(213, 213, 213);
-}
+} */
 
 .navbar {
     background: rgb(131,0,255);
     justify-content: space-between;
+    padding: 10px 10%;
 }
 
 .navbar-collapse {
@@ -127,7 +130,8 @@ body {
 }
 
 .lancamentos {
-    margin: 50px auto;
+    padding: 30px;
+    gap:15px;
 }
 
  #filtro-genero, #filtro-ordem {
@@ -144,9 +148,12 @@ body {
     padding: auto;
 }
 
+.info-card p {
+    line-height: 10px;
+}
 
-.info-card {
-    line-height: 5px;
+.info-card div {
+    margin-top: 15px;
 }
 
 .cards {
@@ -161,23 +168,18 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
-    backdrop-filter: brightness(50%);
 
     height: 300px;
-    color:whitesmoke;
+    color:rgb(255, 255, 255);
     padding: 30px 20px;
     border-radius: 10px;
+    border: none;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.342);
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 10px 5px;
-}
-
-.titulo-card-lancamento {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
 }
 
 button i {
@@ -245,15 +247,27 @@ button i {
     text-align: right;
 }
 
-.card-maisDetalhes a, #lancamento-maisDetalhe {
+.card-maisDetalhes, #lancamento-maisDetalhe {
+    background-color: rgb(152, 152, 152);
+    position: relative;
+    left: -15px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-align: left;
     color: #fff;
     text-decoration: none;
     transition: all 0.2s;
 }
 
-.card-maisDetalhes a:hover, #lancamento-maisDetalhe:hover {
+.card-maisDetalhes:hover, #lancamento-maisDetalhe:hover {
     font-weight: 700;
-    color:#6e0fb3;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.342);
+}
+
+.card-maisDetalhes:active, #lancamento-maisDetalhe:active {
+    font-weight: 700;
+    box-shadow: none;
+    top: 3px;
 }
 
 /*** PUBLISHER ***/
@@ -334,11 +348,11 @@ button i {
 }
 
 .redes-sociais-icones a i {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .redes-sociais-icones a i:hover {
-    color:rgb(60, 60, 60);
+    color:rgb(217, 217, 217);
 }
 
 /*** RODAPÉ ***/
@@ -374,7 +388,7 @@ footer p {
     }
 
     /*  DESTAQUES   */
-    .destaques {
+    .destaques, .lancamentos {
         position: relative;
         top:58px;
     }

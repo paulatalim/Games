@@ -58,7 +58,7 @@ main {
 }
 
 .especificacoes {
-    line-height: 10px;
+    line-height: 25px;
 }
 
 .cartaz {
@@ -88,8 +88,5 @@ footer p {
 @media screen and (max-width: 800px) {
     .cartaz {
         display: none;
-    }
-    .especificacoes {
-        line-height: 20px;
     }
 }
