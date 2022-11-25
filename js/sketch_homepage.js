@@ -55,28 +55,26 @@ function filtro(){
 }
 
 function exibirGames(filtroBusca){
-    var strCard = "";
-
-    for (let i = 0; i < bancoGames.length; i++) {
-        const game = bancoGames[i];
-        if(game.nome.toLowerCase().startsWith(filtroBusca)){
-            strCard += `<div class="col-lg-3 col-md-4 col-sm-12 card">
-                            <div class="titulo-card-lancamento">
-                                <h5>${game.nome}</h5>
-                                <h5>${game.avaliacao}</h5>
-                            </div>
-                            <iframe 
-                                width="100%" 
-                                src="${game.linkVideo}" 
-                                title="YouTube video player" 
-                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                            <a id="lancamento-maisDetalhe" href="./detalhes.html?id=${game.id}">Mais detalhes...</a>
-                        </div>`
-        }
-    }
-    document.querySelector('#pesquisa_cards').innerHTML = strCard;
+    fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
+        .then(res => res.json ())
+        .then(data => {
+            let str = ''
+            for (let i = 0; i < data.results.length; i++) {
+                let jogo = data.results[i]
+                let title = `${jogo.name}`
+                if(`${jogo.name}`.toLowerCase().startsWith(filtroBusca)){
+                    str += `<div class="col-lg-3 col-md-4 col-sm-12 novo_card" style="background-image: url(${jogo.background_image});">
+                                <h5>${jogo.name}</h5>
+                                <div class="info-card">
+                                    <p>Avaliação: ${jogo.rating}</p>
+                                    <p>Lançamento: ${jogo.released}</p>
+                                    <a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}">Mais Detalhes...</a>
+                                </div>
+                            </div>`                    
+                  }
+            }
+            document.getElementById('pesquisa_cards').innerHTML = str
+        })    
 }
 
 function exibirGame (id) {

@@ -140,18 +140,24 @@ body {
     border-color: #000;
 }
 
+#pesquisa_card {
+    padding: auto;
+}
+
 .novo_card {
-    background-image: url(../img/the-last-of-us-serie-hbo_9uy5.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
-    
+    backdrop-filter: brightness(50%);
+
     color:white;
     padding: 20px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 150px;
+    align-content: space-between;
+    margin: 15px 20px;
 }
 
 .info-card {
