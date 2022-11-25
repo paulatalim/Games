@@ -1,0 +1,10 @@
+.navbar {
+    background: rgb(131,0,255);
+    padding: 10px 30px;
+    justify-content: space-between;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+    justify-content: end;
+}
