@@ -78,28 +78,33 @@ function exibirGames(filtroBusca){
 }
 
 function exibirGame (id) {
-    let i = bancoGames.findIndex (elem => elem.id == id)
-    if (i != -1) {
-        let game = bancoGames[i]
-        let str =  `<div class="col-lg-3 col-md-4 col-sm-12 card">
-                        <div class="titulo-card-lancamento">
-                            <h5>${game.nome}</h5>
-                            <h5>${game.avaliacao}</h5>
-                        </div>
-                        <iframe 
-                            width="100%" 
-                            src="${game.linkVideo}" 
-                            title="YouTube video player" 
-                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>`
-    
-        document.querySelector('#card-game').innerHTML = str    
-    }
-    else {
-        document.querySelector('#card-game').innerHTML = '<h1>Jogo não encontrado</h1>'    
-    }
+    fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
+        .then(res => res.json ())
+        .then(data => {
+            let str = ''
+            let i = data.results.findIndex (elem => elem.id == id)
+            if (i != -1) {
+                let jogo = data.results[i]
+                let str =  `<div class="col-lg-3 col-md-4 col-sm-12 card">
+                                <div class="titulo-card-lancamento">
+                                    <h5>${game.nome}</h5>
+                                    <h5>${game.avaliacao}</h5>
+                                </div>
+                                <iframe 
+                                    width="100%" 
+                                    src="${game.linkVideo}" 
+                                    title="YouTube video player" 
+                                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>`
+            
+                document.querySelector('#card-game').innerHTML = str   
+            }
+            else {
+                document.querySelector('#card-game').innerHTML = '<h1>Jogo não encontrado</h1>'    
+            }
+        })
 }
 
 onload = () =>{
