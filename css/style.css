@@ -144,21 +144,6 @@ body {
     padding: auto;
 }
 
-.novo_card {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    backdrop-filter: brightness(50%);
-
-    color:white;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 150px;
-    align-content: space-between;
-    margin: 15px 20px;
-}
 
 .info-card {
     line-height: 5px;
@@ -167,17 +152,25 @@ body {
 .cards {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin: 10px 0;
 }
 
 .card {
-    background-color: whitesmoke;
-    border: none;
-    margin: 15px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    backdrop-filter: brightness(50%);
+
+    height: 300px;
+    color:whitesmoke;
+    padding: 30px 20px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin: 10px 5px;
 }
 
 .titulo-card-lancamento {
@@ -253,7 +246,7 @@ button i {
 }
 
 .card-maisDetalhes a, #lancamento-maisDetalhe {
-    color: #000;
+    color: #fff;
     text-decoration: none;
     transition: all 0.2s;
 }

@@ -63,7 +63,7 @@ function exibirGames(filtroBusca){
                 let jogo = data.results[i]
                 let title = `${jogo.name}`
                 if(`${jogo.name}`.toLowerCase().startsWith(filtroBusca)){
-                    str += `<div class="col-lg-3 col-md-4 col-sm-12 novo_card" style="background-image: url(${jogo.background_image});">
+                    str += `<div class="col-lg-3 col-md-4 col-sm-12 card" style="background-image: url(${jogo.background_image});">
                                 <h5>${jogo.name}</h5>
                                 <div class="info-card">
                                     <p>Avaliação: ${jogo.rating}</p>
