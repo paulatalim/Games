@@ -140,6 +140,24 @@ body {
     border-color: #000;
 }
 
+.novo_card {
+    background-image: url(../img/the-last-of-us-serie-hbo_9uy5.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    
+    color:white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+
+.info-card {
+    line-height: 5px;
+}
+
 .cards {
     display: flex;
     flex-direction: row;

@@ -8,49 +8,43 @@ if(!bancoGames){
             "id" : "1",
             "avaliacao": "80",
             "linkVideo": "https://www.youtube.com/embed/ai3o0XtrnM8",
-            "linkDetalhes" : "https://www.playstation.com/pt-br/games/ratchet-and-clank-rift-apart/"
         },
         {
             "nome": "Spider-Man: Miles Morales",
             "id" : "2",
             "avaliacao": "80",
-            "linkVideo": "https://www.youtube.com/embed/qjRzm9A7DU4",
-            "linkDetalhes" : "https://www.playstation.com/pt-br/games/marvels-spider-man-miles-morales/"
+            "linkVideo": "https://www.youtube.com/embed/qjRzm9A7DU4"
         },
         {
             "nome": "Kena: Bridge of Spirits",
             "id" : "3",
             "avaliacao": "96",
-            "linkVideo": "https://www.youtube.com/embed/pWh5388AEHw",
-            "linkDetalhes" : "https://store.epicgames.com/pt-BR/p/kena-bridge-of-spirits"
+            "linkVideo": "https://www.youtube.com/embed/pWh5388AEHw"
         },
         {
             "nome": "Guardians of the Galaxy",
             "id" : "4",
             "avaliacao": "96",
-            "linkVideo": "https://www.youtube.com/embed/3PnAnIT4f68",
-            "linkDetalhes" : "https://www.playstation.com/pt-br/games/marvels-guardians-of-the-galaxy/"
+            "linkVideo": "https://www.youtube.com/embed/3PnAnIT4f68"
         },
         {
             "nome": "The Last of Us",
             "id" : "5",
             "avaliacao": "94",
-            "linkVideo": "https://www.youtube.com/embed/WxjeV10H1F0",
-            "linkDetalhes" : "https://www.playstation.com/pt-br/games/the-last-of-us-part-i/"
+            "linkVideo": "https://www.youtube.com/embed/WxjeV10H1F0"
         },
         {
             "nome": "Stray",
             "id" : "6",
             "avaliacao": "80",
-            "linkVideo": "https://www.youtube.com/embed/XgPRPi--F5E",
-            "linkDetalhes" : "https://stray.game/"
+            "linkVideo": "https://www.youtube.com/embed/XgPRPi--F5E"
+            
         },
         {
             "nome": "Pokémon UNITE",
             "id" : "7",
             "avaliacao": "90",
-            "linkVideo": "https://www.youtube.com/embed/Q3WMddjkuwM",
-            "linkDetalhes" : "https://unite.pokemon.com/pt-br/"
+            "linkVideo": "https://www.youtube.com/embed/Q3WMddjkuwM"
         }
     ]
 }
