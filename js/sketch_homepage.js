@@ -78,31 +78,42 @@ function exibirGames(filtroBusca){
 }
 
 function exibirGame (id) {
+    
     fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
         .then(res => res.json ())
         .then(data => {
             let str = ''
             let i = data.results.findIndex (elem => elem.id == id)
+            
             if (i != -1) {
                 let jogo = data.results[i]
-                let str =  `<div class="col-lg-3 col-md-4 col-sm-12 card">
-                                <div class="titulo-card-lancamento">
-                                    <h5>${game.nome}</h5>
-                                    <h5>${game.avaliacao}</h5>
-                                </div>
-                                <iframe 
-                                    width="100%" 
-                                    src="${game.linkVideo}" 
-                                    title="YouTube video player" 
-                                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen>
-                                </iframe>
-                            </div>`
-            
-                document.querySelector('#card-game').innerHTML = str   
+                let str = `<div class="col-sm-12 col-md-6 col-12 Informacoes">
+                                <h1>${jogo.name}</h1>
+                                <div class="especificacoes">
+                                    <p><strong>Plataformas disponiveis:</strong> ${jogo.platforms[0].platform.name}`
+                
+                for(let j = 1; j < jogo.platforms.length; j++) {
+                    str += `, ${jogo.platforms[j].platform.name}`
+                }
+
+                str += `</p>
+                        <p><strong>Genero:</strong> ${jogo.genres[0].name}`
+
+                for (let j = 1; j < jogo.genres.length; j++) {
+                    str+= `, ${jogo.genres[j].name}`
+                }
+
+                str +=         `</p>
+                                <p><strong>Data de lancamento: </strong>${jogo.released}</p>
+                                <p><strong>Rating: </strong>${jogo.rating}</p>
+                            </div>
+                        </div>
+                        <div class="col-6 cartaz" style="background-image: url(${jogo.background_image});"></div>`
+                                    
+                document.querySelector('#card').innerHTML = str   
             }
             else {
-                document.querySelector('#card-game').innerHTML = '<h1>Jogo não encontrado</h1>'    
+                document.querySelector('#card').innerHTML = '<h1>Jogo não encontrado</h1>'    
             }
         })
 }

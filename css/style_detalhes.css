@@ -49,6 +49,7 @@ main {
 }
 
 .Informacoes {
+    width: 100%;
     padding-left: 10%;
     padding-right: 30px;
     display: flex;
@@ -64,6 +65,7 @@ main {
     height: 100%;
     background-repeat: no-repeat;
     background-position: 50%;
+    background-size: cover;
     margin: 0;
 }
 
@@ -74,10 +76,20 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap:20px;
     align-items: center;
 }
 
 footer p {
     margin: 0;
     color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+    .cartaz {
+        display: none;
+    }
+    .especificacoes {
+        line-height: 20px;
+    }
 }
