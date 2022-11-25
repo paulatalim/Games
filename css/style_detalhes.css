@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 /**HEADER**/
 .navbar {
     background: rgb(131,0,255);
@@ -11,8 +16,69 @@
 }
 
 /**CARD**/
+main {
+    margin: 0px;
+}
+
+.container {
+    max-width: 100%;
+    align-items: right;
+    margin: 0px;
+    padding: 0px;
+}
+
+@mixin make-container() {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
 .card {
+    background-color: #000;
+    color: #fff;
+    margin: 0px;
     display: flex;
     flex-direction: row;
     border: none;
+    border-radius: 0px;
+    align-items: center;
+    justify-content: space-between;
+    height: 80vh;
+}
+
+.Informacoes {
+    padding-left: 10%;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap:50px;
+}
+
+.especificacoes {
+    line-height: 10px;
+}
+
+.cartaz {
+    background-image: url(../img/the-last-of-us-serie-hbo_9uy5.png);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin: 0;
+}
+
+/**FOOTER**/
+footer {
+    background: rgb(131,0,255);
+    padding: 10px 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    color: #fff;
 }
