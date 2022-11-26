@@ -67,7 +67,7 @@ body {
 }
 
 /*** LANCAMENTOS ***/
-.lancamentos, .plataformas, .sobre {
+.lancamentos, .sobre {
     max-width: 1000px;
     margin: 0 auto;
     padding: 15px;
@@ -76,16 +76,6 @@ body {
 .lancamentos {
     padding: 30px;
     gap:15px;
-}
-
- #filtro-genero, #filtro-ordem {
-    background-color: #f9f3ff;
-    color: #000;
-}
-
-.dropdown-menu {
-    background-color: #f9f3ff;
-    border-color: #000;
 }
 
 #pesquisa_card {
@@ -136,38 +126,6 @@ body {
 
 .info-card div {
     margin-top: 15px;
-}
-
-button i {
-    color: #fff;
-    margin-right: 7px;
-}
-
-#button {
-    background-color: rgb(52, 52, 52);
-    color: #fff;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin-top: 20px;
-    border: none;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.411);
-    outline: none;
-    transition: top 0.2s;
-    position: relative;
-}
-
-#button:hover {
-    background-color: rgb(94, 94, 94);
-}
-
-#button:active {
-    background-color: rgb(77, 77, 77);
-    top: 5px;
-    box-shadow: none;
-}
-
-.carregar-lancamentos, .carregar-plataforma, .carregar-publisher {
-    text-align: right;
 }
 
 /*** PLATAFORMAS ***/
