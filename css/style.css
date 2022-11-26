@@ -197,7 +197,7 @@ footer p {
 /*** MEDIA QUERY ***/
 @media screen and (max-width: 990px) {
     /* NAV BAR */
-    .navbar-nav p, #sair-buscar {
+    .navbar-nav p {
         display: none;
     }
 }
