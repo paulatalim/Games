@@ -211,39 +211,10 @@ footer p {
         width: 100%;
     }
 
-    /*  DESTAQUES   */
-    .destaques, .lancamentos {
+    /* LANCAMENTOS */
+    .lancamentos {
         position: relative;
         top:58px;
-    }
-
-    .trailer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .infos {
-        text-align: center;
-    }
-
-    .infos p {
-        display: none;
-    }
-
-    /* LANÇAMENTOS */
-    .filtro {
-        display: none;
-    }
-
-    /* PLATAFOMAS e PUBLISHERS */
-    .plataforma-info, .publisher-info {
-        display: none;
-    }
-
-    .plataforma1, .plataforma2, .plataforma3, .item {
-        margin: 10px auto;
     }
 
     /* SOBRE */
@@ -253,16 +224,5 @@ footer p {
 
     .sobre h1 {
         text-align: center;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    /* DESTAQUES */
-    .infos {
-        width: 100%;
-    }
-
-    .infos h2 {
-        font-size: 20pt;
     }
 }
