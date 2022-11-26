@@ -13,13 +13,15 @@ function exibirGames(filtroBusca){
                 let title = `${jogo.name}`
                 if(`${jogo.name}`.toLowerCase().startsWith(filtroBusca)){
                     str += `<div class="col-lg-3 col-md-4 col-sm-12 card" style="background-image: url(${jogo.background_image});">
-                                <h5>${jogo.name}</h5>
-                                <div class="info-card">
-                                    
-                                        <p>Avaliação: ${jogo.rating}</p>
-                                        <p>Lançamento: ${jogo.released}</p>
-                                    
-                                        <div><a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}">Mais Detalhes...</a></div>
+                                <div class="card-conteudo">
+                                    <h5>${jogo.name}</h5>
+                                    <div class="info-card">
+                                        
+                                            <p>Avaliação: ${jogo.rating}</p>
+                                            <p>Lançamento: ${jogo.released}</p>
+                                        
+                                            <div><a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}">Mais Detalhes...</a></div>
+                                    </div>
                                 </div>
                             </div>`
                   }
