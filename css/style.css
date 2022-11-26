@@ -66,7 +66,6 @@ body {
     color: #fff;
 }
 
-/*** DESTAQUES ***/
 .destaques {
     background: rgb(131,0,255);
     background: linear-gradient(180deg, rgba(131,0,255,1) 0%, rgba(120,8,215,1) 30%, rgba(110,15,179,1) 100%);
