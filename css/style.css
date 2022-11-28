@@ -47,18 +47,22 @@ body {
 
 .buscar-itens i {
     color: #fff;
+    padding: 5px;
 }
 
 .buscar-itens input {
     background-color: rgb(131,0,255);
     color: white;
+    width: 85%;
     border: none;
     outline: none;
 }
 
 .buscar-itens input:focus {
     background-color: rgb(131,0,255);
-    border: 0 0 1px 0;
+    color: white;
+    width: 85%;
+    border: none;
     outline: none;
 }
 
