@@ -31,7 +31,6 @@ function exibirGames(filtroBusca){
 }
 
 function exibirGame (id) {
-    
     fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
         .then(res => res.json ())
         .then(data => {
@@ -66,7 +65,10 @@ function exibirGame (id) {
                 document.querySelector('#card').innerHTML = str   
             }
             else {
-                document.querySelector('#card').innerHTML = '<h1>Jogo não encontrado</h1>'    
+                document.querySelector('#card').innerHTML = `<div class="jogo-nao-encontrado">
+                                                                <h1>Jogo não encontrado</h1>
+                                                                <a href="./index.html">Voltar para Homepage</a>
+                                                            </div>`
             }
         })
 }
