@@ -7,17 +7,6 @@ body {
 /**HEADER**/
 .navbar {
     background: rgb(131,0,255);
-    padding: 10px 10%;
-    justify-content: space-between;
-}
-
-.navbar-collapse {
-    flex-grow: 0;
-    justify-content: end;
-}
-
-.navbar2 {
-    background: rgb(131,0,255);
     padding: 20px 10%;
 
     display: flex;
@@ -26,27 +15,27 @@ body {
     align-items: center;
 }
 
-.navbar2 a {
+.navbar a {
     position: relative;
     top: 0px;
     transition: all 0.1s;
 }
 
-.navbar2 a i {
+.navbar a i {
     color: rgb(255, 255, 255);
     box-shadow: 0px 4px 5px 0px #000000c4;
     transition: all 0.5s;
 }
 
-.navbar2 a i:hover {
+.navbar a i:hover {
     color: rgb(200, 200, 200);
 }
 
-.navbar2 a:active {
+.navbar a:active {
     top: 3px;
 }
 
-.navbar2 a i:active {
+.navbar a i:active {
     box-shadow: none;
 }
 
