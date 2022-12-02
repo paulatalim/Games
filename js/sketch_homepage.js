@@ -60,7 +60,7 @@ function exibirGame (id) {
                                 <p><strong>Avaliação: </strong>${jogo.rating}</p>
                             </div>
                         </div>
-                        <div class="col-6 cartaz" style="background-image: url(${jogo.background_image});"></div>`
+                        <div class="col-6 cartaz" style="background-image: url(${jogo.background_image});"><div class="filtro"></div></div>`
                                     
                 document.querySelector('#card').innerHTML = str   
             }
