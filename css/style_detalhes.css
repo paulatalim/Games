@@ -73,7 +73,7 @@ main {
 }
 
 .Informacoes {
-    width: 100%;
+    width: 50%;
     padding-left: 10%;
     padding-right: 30px;
     display: flex;
@@ -84,13 +84,13 @@ main {
 .especificacoes {
     line-height: 25px;
 }
-
 .cartaz {
+    width: 50%;
     height: 100%;
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: cover;
-    padding: 0;
+    padding: 0px;
     margin: 0;
 }
 
@@ -169,12 +169,20 @@ footer p {
 @media screen and (max-width: 800px) {
     .card {
         flex-direction: column-reverse;
-        justify-content: center;
+    }
+
+    .cartaz {
+        width: 100%;
+        height: 40%;
+    }
+
+    .filtro {
+        background: rgb(0,0,0);
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
     }
 
     .Informacoes {
-        padding: 0;
+        width: 100%;
+        height: 60%;
     }
-
-    
 }

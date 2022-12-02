@@ -39,7 +39,7 @@ function exibirGame (id) {
             
             if (i != -1) {
                 let jogo = data.results[i]
-                let str = `<div class="col-sm-12 col-md-6 col-12 Informacoes">
+                let str = `<div class="Informacoes">
                                 <h1>${jogo.name}</h1>
                                 <div class="especificacoes">
                                     <p><strong>Plataformas disponíveis:</strong> ${jogo.platforms[0].platform.name}`
@@ -60,7 +60,7 @@ function exibirGame (id) {
                                 <p><strong>Avaliação: </strong>${jogo.rating}</p>
                             </div>
                         </div>
-                        <div class="col-6 cartaz" style="background-image: url(${jogo.background_image});"><div class="filtro"></div></div>`
+                        <div class="cartaz" style="background-image: url(${jogo.background_image});"><div class="filtro"></div></div>`
                                     
                 document.querySelector('#card').innerHTML = str   
             }
