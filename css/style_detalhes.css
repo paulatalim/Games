@@ -1,18 +1,25 @@
 body {
-    background: rgb(131,0,255);
+    background: rgb(0, 0, 0);
     margin: 0;
     padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /**HEADER**/
 .navbar {
     background: rgb(131,0,255);
-    padding: 20px 10%;
+    padding: 10px 10%;
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    animation-name: animacao_navbar;
+    animation-duration: 1s;
 }
 
 .navbar a {
@@ -79,11 +86,15 @@ main {
     display: flex;
     flex-direction: column;
     gap:50px;
+
+    animation-name: animacao_card_informacoes;
+    animation-duration: 5s;
 }
 
 .especificacoes {
     line-height: 25px;
 }
+
 .cartaz {
     width: 50%;
     height: 100%;
@@ -95,26 +106,14 @@ main {
 }
 
 .filtro {
-    animation-name: inicializacao_pagina;
-    animation-duration:  1s;
+    animation-name: animacao_filtro_imagem;
+    animation-duration:  5s;
     
     background-color: rgb(0,0,0);
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
     height: 100%;
     width: 100%;
     transition: all 3s;
-}
-
-@keyframes inicializacao_pagina {
-    from {
-        background-color: rgb(0,0,0);
-    }
-
-    to {
-        background-color: rgb(0,0,0);
-        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
-       
-    }
 }
 
 .jogo-nao-encontrado {
@@ -154,11 +153,16 @@ main {
 footer {
     background: rgb(131,0,255);
     padding: 10px 10%;
+    height: 100%;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap:20px;
+    gap: 20px;
     align-items: center;
+
+    animation-name: animacao_navbar;
+    animation-duration: 6s;
 }
 
 footer p {
@@ -166,9 +170,66 @@ footer p {
     color: #fff;
 }
 
+@keyframes animacao_navbar {
+    from {
+        height: 0px;
+        padding: 0px 10%;
+    }
+
+    to {
+        height: 100%;
+        padding: 10px 10%;
+    }
+}
+
+@keyframes animacao_filtro_imagem {
+    from {
+        background-color: rgb(0,0,0);
+    }
+
+    to {
+        background-color: rgb(0,0,0);
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
+       
+    }
+}
+
+@keyframes animacao_card_informacoes {
+    from {
+        color: #000;
+        padding-left: 5%;
+    }
+
+    to {
+        color: #fff;
+        padding-left: 10%;;
+    }
+}
+
 @media screen and (max-width: 800px) {
+    .navbar {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0);
+        width: 70%;
+        z-index: 1;
+        animation: none;
+        top: 20px;
+        left: 10%;
+        padding: 0;
+        height: 0;
+    }
+
+    .navbar img {
+        display: none;
+    }
+
     .card {
+        position: relative;
+        top: -21px;
+        width: 100%;
         flex-direction: column-reverse;
+        z-index: 0;
+        
     }
 
     .cartaz {
@@ -178,23 +239,51 @@ footer p {
 
     .filtro {
         background: rgb(0,0,0);
-        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
-    }
-
-    @keyframes inicializacao_pagina {
-        from {
-            background-color: rgb(0,0,0);
-        }
-    
-        to {
-            background-color: rgb(0,0,0);
-            background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
-           
-        }
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.4) 100%);
     }
 
     .Informacoes {
         width: 100%;
         height: 60%;
+        padding-top: 15px;
+    }
+
+    footer {
+        /* animation: none; */
+        padding: 10px 10%;
+        max-height: 70px;
+    }
+
+    @keyframes animacao_filtro_imagem {
+        from {
+            background-color: rgb(0,0,0);
+        }
+    
+        to {
+            background: rgb(0,0,0);
+            background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.4) 100%);
+        }
+    }
+
+    @keyframes animacao_card_informacoes {
+        from {
+            color: #000;
+            padding-top: 0px;
+        }
+    
+        to {
+            color: #fff;
+            padding-top: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .card {
+        height: 90vh;
+    }
+
+    .Informacoes {
+        gap: 30px;
     }
 }
