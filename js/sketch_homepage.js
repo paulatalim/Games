@@ -58,7 +58,6 @@ function exibirGame (id) {
                 str +=         `</p>
                                 <p><strong>Data de lançamento: </strong>${jogo.released}</p>
                                 <p><strong>Avaliação: </strong>${jogo.rating}</p>
-                                <p>AAAAAAAA</p>
                             </div>
                         </div>
                         <div class="col-6 cartaz" style="background-image: url(${jogo.background_image});"><div class="filtro"></div></div>`
