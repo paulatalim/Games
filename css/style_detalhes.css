@@ -225,7 +225,7 @@ footer p {
 
     .card {
         position: relative;
-        top: -21px;
+        top: -23px;
         width: 100%;
         flex-direction: column-reverse;
         z-index: 0;
@@ -233,6 +233,7 @@ footer p {
     }
 
     .cartaz {
+        background-position-y: top;
         width: 100%;
         height: 40%;
     }
@@ -249,7 +250,6 @@ footer p {
     }
 
     footer {
-        /* animation: none; */
         padding: 10px 10%;
         max-height: 70px;
     }
