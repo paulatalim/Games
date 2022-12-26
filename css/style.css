@@ -392,11 +392,41 @@ footer p {
         border: none;
         width: 100%;
     }
+    
+    /*  DESTAQUES   */
+    .destaques, .lancamentos {
+        position: relative;
+        top:58px;
+    }
+
+    .trailer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .infos {
+        text-align: center;
+    }
+
+    .infos p {
+        display: none;
+    }
 
     /* LANCAMENTOS */
     .lancamentos {
         position: relative;
         top:58px;
+    }
+
+    /* PLATAFOMAS e PUBLISHERS */
+    .plataforma-info, .publisher-info {
+        display: none;
+    }
+
+    .plataforma1, .plataforma2, .plataforma3, .item {
+        margin: 10px auto;
     }
 
     /* SOBRE */
