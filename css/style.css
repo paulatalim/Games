@@ -134,7 +134,7 @@ body {
     gap:15px;
 }
 
- #filtro-genero, #filtro-ordem {
+#filtro-genero, #filtro-ordem {
     background-color: #f9f3ff;
     color: #000;
 }
