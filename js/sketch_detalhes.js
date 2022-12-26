@@ -1,5 +1,5 @@
 onload = () => {
     const urlParams = new URLSearchParams(location.search);
     let idJogo = parseInt(urlParams.get('id'))
-    exibirGame (idJogo)
+    requisicao_games_lancamento_detalhes (idJogo)
 }

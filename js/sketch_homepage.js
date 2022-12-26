@@ -1,6 +1,10 @@
-function filtro(){
-    var filtro = document.getElementById("campo_buscar").value;
-    requisicao_games_lancamentos(filtro.toLowerCase())
+/***************
+ * LANCAMENTOS *
+ ***************/
+
+function barra_de_busca(){
+    var barra_de_busca = document.getElementById("campo_buscar").value;
+    requisicao_games_lancamentos(barra_de_busca.toLowerCase())
 }
 
 function exibir_games_lancamentos(data, filtroBusca) {
@@ -34,7 +38,7 @@ function requisicao_games_lancamentos(filtroBusca){
         .then(data => exibir_games_lancamentos(data, filtroBusca)); 
 }
 
-function exibirGame (id) {
+function requisicao_games_lancamento_detalhes (id) {
     fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
         .then(res => res.json ())
         .then(data => {

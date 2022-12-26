@@ -221,6 +221,11 @@ button i {
 }
 
 /*** PLATAFORMAS ***/
+.plataformas {
+    margin: 0 10%;
+    padding: 15px;
+}
+
 .plataforma1, .plataforma2, .plataforma3 {
     margin: 0 10px;
     display: flex;
@@ -283,11 +288,13 @@ button i {
     width: 100%;
     margin: 0;
     padding-bottom: 15px;
+    padding-right: 10%;
+    padding-left: 10%;
 }
 
 #publisher {
     text-align: left;
-    margin: 15px 10%;
+    margin: 15px 0;
     margin-bottom: 15px;
 }
 
