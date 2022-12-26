@@ -1,33 +1,37 @@
 function filtro(){
     var filtro = document.getElementById("campo_buscar").value;
-    exibirGames(filtro.toLowerCase())
+    requisicao_games_lancamentos(filtro.toLowerCase())
 }
 
-function exibirGames(filtroBusca){
+function exibir_games_lancamentos(data, filtroBusca) {
+    let str = ''
+    console.log("passou aqui");
+    for (let i = 0; i < data.results.length; i++) {
+        let jogo = data.results[i]
+        let title = `${jogo.name}`
+        if(`${jogo.name}`.toLowerCase().startsWith(filtroBusca)){
+            str += `<div class="col-lg-3 col-md-4 col-sm-12 card" style="background-image: url(${jogo.background_image});">
+                        <div class="card-conteudo">
+                            <h5>${jogo.name}</h5>
+                            <div class="info-card">
+                                
+                                    <p>Avaliação: ${jogo.rating}</p>
+                                    <p>Lançamento: ${jogo.released}</p>
+                                
+                                    <div><a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}">Mais Detalhes...</a></div>
+                            </div>
+                        </div>
+                    </div>`
+            }
+    }
+    document.getElementById('pesquisa_cards').innerHTML = str
+    return data;
+}
+
+function requisicao_games_lancamentos(filtroBusca){
     fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
         .then(res => res.json ())
-        .then(data => {
-            let str = ''
-            for (let i = 0; i < data.results.length; i++) {
-                let jogo = data.results[i]
-                let title = `${jogo.name}`
-                if(`${jogo.name}`.toLowerCase().startsWith(filtroBusca)){
-                    str += `<div class="col-lg-3 col-md-4 col-sm-12 card" style="background-image: url(${jogo.background_image});">
-                                <div class="card-conteudo">
-                                    <h5>${jogo.name}</h5>
-                                    <div class="info-card">
-                                        
-                                            <p>Avaliação: ${jogo.rating}</p>
-                                            <p>Lançamento: ${jogo.released}</p>
-                                        
-                                            <div><a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}">Mais Detalhes...</a></div>
-                                    </div>
-                                </div>
-                            </div>`
-                  }
-            }
-            document.getElementById('pesquisa_cards').innerHTML = str
-        })    
+        .then(data => exibir_games_lancamentos(data, filtroBusca)); 
 }
 
 function exibirGame (id) {
@@ -74,5 +78,5 @@ function exibirGame (id) {
 }
 
 onload = () =>{
-    exibirGames('');
+    requisicao_games_lancamentos('');
 }
