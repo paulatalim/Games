@@ -276,6 +276,63 @@ button i {
     top: 3px;
 }
 
+/*** PUBLISHER ***/
+.publisher {
+    background: rgb(131,0,255);
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+#publisher {
+    text-align: left;
+    margin: 15px 10%;
+    margin-bottom: 15px;
+}
+
+.item {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+
+    background-color: rgb(159, 56, 255);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.342);
+    border-radius: 20px;
+}
+
+.publisher-itens {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.publisher1 {
+    margin-left: auto;
+}
+
+.publisher3 {
+    margin-right: auto;
+}
+
+.link-publisher {
+    text-align: right;
+}
+
+.link-publisher a {
+    text-decoration: none;
+    color:#fff;
+    transition: all 0.2s;
+}
+
+.link-publisher a:hover {
+    font-weight: 700;
+}
+
 /*** SOBRE ***/
 .editorial-item {
     display: flex;
