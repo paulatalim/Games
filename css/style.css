@@ -7,6 +7,10 @@ body {
 }
 
 /***  ESTILIZACAO CABECALHO ***/
+.header {
+    border-bottom: 0.5px solid rgb(213, 213, 213);
+}
+
 .navbar {
     background: rgb(131,0,255);
     justify-content: space-between;
@@ -132,7 +136,72 @@ body {
     margin-top: 15px;
 }
 
-#lancamento-maisDetalhe {
+button i {
+    color: #fff;
+    margin-right: 7px;
+}
+
+#button {
+    background-color: rgb(52, 52, 52);
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-top: 20px;
+    border: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.411);
+    outline: none;
+    transition: top 0.2s;
+    position: relative;
+}
+
+#button:hover {
+    background-color: rgb(94, 94, 94);
+}
+
+#button:active {
+    background-color: rgb(77, 77, 77);
+    top: 5px;
+    box-shadow: none;
+}
+
+.carregar-lancamentos, .carregar-plataforma, .carregar-publisher {
+    text-align: right;
+}
+
+/*** PLATAFORMAS ***/
+.plataforma1, .plataforma2, .plataforma3 {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+
+    background-color: rgb(29, 29, 29);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.342);
+    border-radius: 20px;
+}
+
+.plataforma1 {
+    margin-left: auto;
+}
+
+.plataforma3 {
+    margin-right: auto;
+}
+
+.plataforma-info {
+    line-height: 20px;
+}
+
+.card-img {
+    text-align: center;
+}
+
+.card-maisDetalhes {
+    text-align: right;
+}
+
+.card-maisDetalhes, #lancamento-maisDetalhe {
     background-color: rgb(152, 152, 152);
     position: relative;
     left: -15px;

@@ -34,6 +34,12 @@
             </button>
         
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a href="#destaques">Destaques</a></li> <p>|</p>
+                    <li class="nav-item active"><a href="#lancamentos">Lançamentos</a></li> <p>|</p>
+                    <li class="nav-item active"><a href="#plataformas">Plataformas</a></li> <p>|</p>
+                    <li class="nav-item active"><a href="#publisher">Publisher</a></li>
+                </ul>
                 <form class="form-inline my-2 my-lg-0 buscar-itens" role="search">
                     <i id="lupa-buscar" class="fa-solid fa-magnifying-glass" onclick="filtro()"></i>
                     <input class="form-control mr-sm-2" 
@@ -49,14 +55,286 @@
     </header>
 
     <main class="conteiner">
+        <!--Destaques-->
+        <section class="row destaques">
+            <div class="col-12">
+                <h1 id="destaques">Destaques</h1> 
+            </div>
+            <div class="col-12"> 
+                <!-- Carrosel -->
+                <div id="carousel-destaques" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-destaques" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-destaques" data-slide-to="1"></li>
+                        <li data-target="#carousel-destaques" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="trailer">
+                                 <!-- Trailer jogo  -->
+                                <iframe 
+                                    width="100%" 
+                                    src="https://www.youtube.com/embed/FcITAzKW3fY" 
+                                    title="YouTube video player" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+
+                                <!-- Informacoes do jogo -->
+                                <div class="infos">
+                                    <h2>Fall Guys</h2>
+                                    <p>
+                                        <strong>Sobre: </strong>Fall Guys é um jogo party royale gratuito, multiplataforma e multijogador, no qual você e os outros competidores disputam em rodadas com caos absurdo e crescente em pistas de obstáculos até restar um vencedor sortudo!<br>
+
+                                        <strong>Publisher:</strong> Epic Games 
+
+                                        <strong>Lançamento: </strong>Agosto, 2020<br>
+
+                                        <strong>Plataformas:</strong> Nintendo Switch, PlayStation 4, Xbox One, PlayStation 5, Xbox Series X e Series S, Microsoft Windows<br>
+
+                                        <strong>Gênero: </strong>Battle royale<br>
+
+                                        <strong>Avaliação:</strong> <span id="avaliacao">81</span><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="carousel-item">
+                            <div class="trailer">
+                                 <!-- Trailer jogo  -->
+                                <iframe 
+                                    width="100%" 
+                                    src="https://www.youtube.com/embed/ai3o0XtrnM8" 
+                                    title="YouTube video player" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+
+                                 <!-- Informacoes do jogo  -->
+                                <div class="infos">
+                                    <h2>Ratchet & Clank: Rift Apart</h2>
+                                    <p>
+                                        <strong>Sobre: </strong>Pule de dimensão a dimensão com Ratchet e Clank para enfrentar um imperador maligno de outra realidade. Viaje por mundos repletos de ação, e além deles em velocidade alucinante, com visuais incríveis e um arsenal insano. <br>
+
+                                        <strong>Publisher:</strong> Sony Interactive Entertainment  
+                                        
+                                        <strong>Lançamento:</strong> Junho, 2021 <br>
+
+                                        <strong>Plataformas:</strong> PlayStation 5<br>
+
+                                        <strong>Gênero:</strong> Plataforma, Aventura, Ação<br>
+
+                                        <strong>Avaliação:</strong> <span id="avaliacao">80</span><br>
+                                    </p>
+                                </div>
+                            </div>  
+                        </div>
+                    
+                        <div class="carousel-item">
+                            <div class="trailer">
+                                 <!-- Trailer jogo  -->
+                                <iframe 
+                                    width="100%" 
+                                    src="https://www.youtube.com/embed/Q3WMddjkuwM" 
+                                    title="YouTube video player" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+
+                                 <!-- Informacoes do jogo  -->
+                                <div class="infos">
+                                    <h2>Pokémon UNITE</h2>
+                                    <p>
+                                        <strong>Sobre:</strong> Equipes disputam batalhas onlines de 5 contra 5 em tempo real no estilo de arenas de batalhas multiplayer online. Os jogadores devem cooperar com companheiros de equipe para capturar, subir de nível e evoluir seus Pokémon para derrotar o time de seus oponentes.<br>
+
+                                        <strong>Publisher:</strong> The Pokemon Company
+                                        
+                                        <strong>Lançamento:</strong> Julho, 2021<br>
+
+                                        <strong>Plataformas:</strong> Nintendo Switch, Android, iOS<br>
+
+                                        <strong>Gênero:</strong> RPG, Combate, Multiplayer<br>
+
+                                        <strong>Avaliação:</strong><span id="avaliacao"> 90</span><br>
+                                    </p>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel-destaques" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-destaques" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Lançamentos -->
         <section class="row lancamentos">
-            <div class="col-12">
+            <div class="col-5">
                 <h1 id="lancamentos">Jogos</h1>
+            </div>
+
+            <!-- filtros -->
+            <div class="col-3 filtro">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="filtro-ordem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Gênero: TODAS
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="filtro-ordem">
+                        <a class="dropdown-item" href="#">Mais popular</a>
+                        <a class="dropdown-item" href="#">Menos popular</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-3 filtro">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="filtro-genero" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Gênero: TODOS
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="filtro-genero">
+                        <a class="dropdown-item" href="#">Ação</a>
+                        <a class="dropdown-item" href="#">Aventura</a>
+                        <a class="dropdown-item" href="#">Plataforma</a>
+                    </div>
+                </div>
             </div>
 
             <!-- cards -->
             <div class="cards col-12" id="pesquisa_cards"></div>
+
+            <div class="col-12 carregar-lancamentos">
+                <button id="button"><i class="fa-solid fa-plus"></i>Carregar mais lançamentos</button>
+            </div>
+        </section>
+
+        <!-- Plataformas -->
+        <section class="row plataformas">
+            <div class="col-12">
+                <h1 id="plataformas">Plataformas</h1>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-7 col-10 plataforma1">
+                <h3>Play Station 5</h3>
+
+                <div class="card-img">
+                    <img width="70%" src="./img/playStation_logo.png" alt="Logo da playstation 5">
+                </div>
+                <div class="plataforma-info">
+                    <h5>Principais Jogos: </h5>
+                    <ul>
+                        <li>Ratchet & Clank</li>
+                        <li>Marvel's Spider-Man: Miles Morales</li>
+                        <li>Stray</li>
+                    </ul>
+                </div>
+                <div><a id="lancamento-maisDetalhe" href="https://www.playstation.com/pt-br/ps5/?smcid=pdc%3Apt-br%3Agames-playstation-hits%3Aprimary%20nav%3Amsg-hardware%3Aps5?emcid=pa-ha-430500&gclid=CjwKCAjw-L-ZBhB4EiwA76YzOX8QLtrkC6l5du1qAFSXoqYx-kl-GvknOPifM1Rlt8Vdf1FGWPHejhoC2VMQAvD_BwE">Mais detalhes...</a></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-7 col-10 plataforma2">
+                <h3>Epic Games</h3>
+
+                <div class="card-img">
+                    <img width="70%" src="./img/Epic_Games_logo.png" alt="Logo da Epic Games">
+                </div>
+                <div class="plataforma-info">
+                    <h5>Principais Jogos: </h5>
+                    <ul>
+                        <li>Fall Guys</li>
+                        <li>Cyberpunk 2077</li>
+                        <li>Fortnite</li>
+                    </ul>
+                </div>
+                <div><a id="lancamento-maisDetalhe" href="https://store.epicgames.com/pt-BR/">Mais detalhes...</a></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-7 col-10 plataforma3">
+                <h3>Xbox One</h3>
+
+                <div class="card-img">
+                    <img width="70%" src="./img/Xbox_one_logo.png" alt="Logo Xbox_one">
+                </div>
+                <div class="plataforma-info">
+                    <h5>Principais Jogos: </h5>
+
+                    <ul>
+                        <li>Hogwarts Legacy</li>
+                        <li>Sonic Frontiers</li>
+                        <li>Assassin's Creed Odyssey</li>
+                    </ul>
+                </div>
+                <div><a id="lancamento-maisDetalhe" href="https://www.xbox.com/pt-BR">Mais detalhes...</a></div>
+            </div>
+
+            <div class="col-12 carregar-plataforma">
+                <button id="button"><i class="fa-solid fa-plus"></i>Carregar mais Plataformas</button>
+            </div>
+        </section>
+
+         <!-- Publishers -->
+        <section class="row publisher">
+            <div class="col-12">
+                <h1 id="publisher">Publishers</h1>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-7 col-10 item publisher1">
+                <h4>Sony Interactive Entertainment</h4>
+                <div class="card-img">
+                    <img width="70%" src="./img/Sony_Interactive_Entertainment_logo.png" alt="Logo da Sony Interactive Entertainment">
+                </div>
+                <div class="publisher-info">
+                    <h5>Principais Jogos: </h5>
+                    <ul>
+                        <li>God of War II</li>
+                        <li>The Last of Us Part II</li>
+                        <li>Spider-Man</li>
+                    </ul>
+                </div>
+                <div class="link-publisher"><a href="https://www.sie.com/en/index.html">Mais detalhes...</a></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-7 col-10 item publisher2">
+                <h4>Nintendo</h4>
+                <div class="card-img">
+                    <img width="70%" src="./img/Nintendo-Logo.png" alt="Logo da Nintendo">
+                </div>
+                <div class="publisher-info">
+                    <h5>Principais Jogos: </h5>
+                    <ul>
+                        <li>The Legend of Zelda: A Link to the Past</li>
+                        <li>Super Mario World
+                        </li>
+                        <li>Super Metroid</li>
+                    </ul>
+                </div>
+                <div class="link-publisher"><a href="https://www.nintendo.com/pt-br/">Mais detalhes...</a></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-7 col-10 item publisher3">
+                <h4>Microsoft</h4>
+                <div class="card-img">
+                    <img width="70%" src="./img/microsoft-logo.png" alt="logo da Microsoft">
+                </div>
+                <div class="publisher-info">
+                    <h5>Principais Jogos: </h5>
+                    <ul>
+                        <li>Mortal Kombat 11</li>
+                        <li>Forza Horizon 4</li>
+                        <li>Minecraft Dungeons</li>
+                    </ul>
+                </div>
+                
+                <div class="link-publisher"><a href="https://www.microsoft.com/pt-br">Mais detalhes...</a></div>
+            </div>
+
+            <div class="col-12 carregar-publisher">
+                <button id="button"><i class="fa-solid fa-plus"></i>Carregar mais Publisher</button>
+            </div>
         </section>
 
         <!-- Sobre -->
