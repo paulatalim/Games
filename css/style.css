@@ -126,6 +126,36 @@ background: linear-gradient(0deg, rgba(80,0,255,1) 0%, rgba(136,0,255,1) 100%);
     width: 10%;
 }
 
+/* destaque novo**/
+.destaque1 {
+    background-image: url(../img/exemplo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.destaque-filtro-image {
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,1) 100%);
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.destaque1-conteudo {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
+
 /*** LANCAMENTOS ***/
 .lancamentos, .sobre {
     max-width: 1000px;
