@@ -133,10 +133,9 @@ body {
 }
 
 .destaque1 {
-    background-image: url(../img/exemplo.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position-Y: 50 ;
     height: 100vh;
 }
 

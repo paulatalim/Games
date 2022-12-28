@@ -1,39 +1,42 @@
 /**
  * DESTAQUES
  */
-function exibir_games_destaques() {
+function exibir_games_destaques(data) {
     let str = ''
-    // for (let i = 0; i < data.results.length; i++) {
-    //     let jogo = data.results[i]
-    //     let title = `${jogo.name}`
+    
+    //Inclusao de novo slide no corrousel
+    for (let i = 0; i < 3; i++){
+        let jogo = data.results[i]
 
-        //Inclusao de novo slide no corrousel
-        for (let i = 0; i < 3; i++){
-            if (i == 0) {
-                str += `<div class="carousel-item active">`
-            } else {
-                str += `<div class="carousel-item">`
-            }
+        if (i == 0) {
+            str += `<div class="carousel-item active">`
+        } else {
+            str += `<div class="carousel-item">`
+        }
 
-            str += `    <div class="destaque1">
-                            <div class="destaque-filtro-image">
-                                <div class="col-5 destaque1-conteudo">
-                                    <h1>titulo1</h1>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, nam natus
-                                        aliquid corporis incidunt ipsum. Quidem, unde dolor nobis deserunt maiores provident
-                                        explicabo doloremque exercitationem eligendi. Earum saepe illo error explicabo!
-                                        Mollitia optio eius adipisci ratione fugiat fuga magnam aliquid, facilis accusantium
-                                        eveniet illum minus expedita debitis quis exercitationem nemo.</p>
-                                </div>
+        str += `    <div class="destaque1" style="background-image: url(${jogo.background_image});">
+                        <div class="destaque-filtro-image">
+                            <div class="col-5 destaque1-conteudo">
+                                <h1>${jogo.name}</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, nam natus
+                                    aliquid corporis incidunt ipsum. Quidem, unde dolor nobis deserunt maiores provident
+                                    explicabo doloremque exercitationem eligendi. Earum saepe illo error explicabo!
+                                    Mollitia optio eius adipisci ratione fugiat fuga magnam aliquid, facilis accusantium
+                                    eveniet illum minus expedita debitis quis exercitationem nemo.</p>
                             </div>
                         </div>
-                    </div>`
-                
-        }
-        document.getElementById('destaque-slide').innerHTML = str
-        str = ''
-    //}
-    //return data;
+                    </div>
+                </div>`
+    }
+    document.getElementById('destaque-slide').innerHTML = str
+    
+    return data;
+}
+
+function requisicao_games_destaques () {
+    fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
+        .then(res => res.json ())
+        .then(data => exibir_games_destaques(data)); 
 }
 
 /***************
@@ -49,7 +52,6 @@ function exibir_games_lancamentos(data, filtroBusca) {
     let str = ''
     for (let i = 0; i < data.results.length; i++) {
         let jogo = data.results[i]
-        let title = `${jogo.name}`
         if(`${jogo.name}`.toLowerCase().startsWith(filtroBusca)){
             str += `<div class="col-lg-3 col-md-4 col-sm-12 card" style="background-image: url(${jogo.background_image});">
                         <div class="card-conteudo">
@@ -121,6 +123,6 @@ function requisicao_games_lancamento_detalhes (id) {
 }
 
 onload = () =>{
-    exibir_games_destaques();
+    requisicao_games_destaques();
     requisicao_games_lancamentos('');
 }
