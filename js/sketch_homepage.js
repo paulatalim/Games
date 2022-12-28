@@ -22,7 +22,8 @@ function exibir_games_destaques(data) {
                                     aliquid corporis incidunt ipsum. Quidem, unde dolor nobis deserunt maiores provident
                                     explicabo doloremque exercitationem eligendi. Earum saepe illo error explicabo!
                                     Mollitia optio eius adipisci ratione fugiat fuga magnam aliquid, facilis accusantium
-                                    eveniet illum minus expedita debitis quis exercitationem nemo.</p>
+                                    eveniet illum minus expedita debitis quis exercitationem nemo.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -31,12 +32,6 @@ function exibir_games_destaques(data) {
     document.getElementById('destaque-slide').innerHTML = str
     
     return data;
-}
-
-function requisicao_games_destaques () {
-    fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
-        .then(res => res.json ())
-        .then(data => exibir_games_destaques(data)); 
 }
 
 /***************
@@ -61,7 +56,7 @@ function exibir_games_lancamentos(data, filtroBusca) {
                                     <p>Avaliação: ${jogo.rating}</p>
                                     <p>Lançamento: ${jogo.released}</p>
                                 
-                                    <div><a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}">Mais Detalhes...</a></div>
+                                    <div><a href="./detalhes.html?id=${jogo.id}">Mais Detalhes...</a></div>
                             </div>
                         </div>
                     </div>`
@@ -108,6 +103,12 @@ function exibir_detalhes_games_lancamento (data, id) {
                                                         <a href="./index.html">Voltar para Homepage</a>
                                                     </div>`
     }
+}
+
+function requisicao_games_destaques () {
+    fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&ordering=-rating')
+        .then(res => res.json ())
+        .then(data => exibir_games_destaques(data)); 
 }
 
 function requisicao_games_lancamentos(filtroBusca){

@@ -12,7 +12,7 @@ body {
 }
 
 .navbar {
-    background: #8800ff;
+    background: #000;
     justify-content: space-between;
     padding: 10px 10%;
 }
@@ -55,7 +55,7 @@ body {
 }
 
 .buscar-itens input {
-    background-color: #8800ff;
+    background-color: #000;
     color: white;
     width: 85%;
     border: none;
@@ -63,7 +63,7 @@ body {
 }
 
 .buscar-itens input:focus {
-    background-color: #8800ff;
+    background-color: #000;
     color: white;
     width: 85%;
     border: none;
@@ -93,16 +93,7 @@ body {
     z-index: 1;
     color: #fff;
 }
-/* 
-.carousel {
-    padding: 50px;
-    padding-top: 20px;
-    z-index: 0;
-}
 
-.carousel-item {
-    align-items: center;
-} */
 
 .trailer {
     display: flex;
@@ -128,20 +119,20 @@ body {
 
 /* destaque novo**/
 .corrosel2 {
-    background-color: rgb(255, 0, 0);
     margin: 0;
 }
 
 .destaque1 {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-Y: 50 ;
+    background-position-x: left;
+    background-position-y: center;
     height: 100vh;
 }
 
 .destaque-filtro-image {
     background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,1) 100%);
     width: 100%;
     height: 100%;
     
@@ -158,7 +149,6 @@ body {
     justify-content: center;
     gap: 50px;
 }
-
 
 /*** LANCAMENTOS ***/
 .lancamentos, .sobre {
