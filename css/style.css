@@ -12,7 +12,7 @@ body {
 }
 
 .navbar {
-    background: rgb(131,0,255);
+    background: #8800ff;
     justify-content: space-between;
     padding: 10px 10%;
 }
@@ -55,7 +55,7 @@ body {
 }
 
 .buscar-itens input {
-    background-color: rgb(131,0,255);
+    background-color: #8800ff;
     color: white;
     width: 85%;
     border: none;
@@ -63,7 +63,7 @@ body {
 }
 
 .buscar-itens input:focus {
-    background-color: rgb(131,0,255);
+    background-color: #8800ff;
     color: white;
     width: 85%;
     border: none;
@@ -76,8 +76,8 @@ body {
 
 /*** DESTAQUES ***/
 .destaques {
-    background: rgb(131,0,255);
-    background: linear-gradient(180deg, rgba(131,0,255,1) 0%, rgba(120,8,215,1) 30%, rgba(110,15,179,1) 100%);
+    background: rgb(80,0,255);
+background: linear-gradient(0deg, rgba(80,0,255,1) 0%, rgba(136,0,255,1) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -186,6 +186,11 @@ body {
 
 .info-card div {
     margin-top: 15px;
+}
+
+.filtro {
+    display: flex;
+    align-items: center;
 }
 
 button i {
