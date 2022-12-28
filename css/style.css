@@ -152,7 +152,7 @@ body {
     padding: 0 5%;
 }
 
-.destaque1-conteudo {
+.destaque1-conteudo-slide {
     height: 80%;
     display: flex;
     flex-direction: column;
