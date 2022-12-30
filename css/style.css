@@ -255,7 +255,51 @@ button i {
     padding: 15px;
 }
 
-.plataforma1, .plataforma2, .plataforma3 {
+.plataformas .carousel, .plataformas .carousel .carousel-item {
+    height: 55vh;
+}
+
+.plataforma-slide-card {
+    padding: 0 10px;
+}
+
+.plataforma-card-conteudo {
+    background-image: url(../img/exemplo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+
+    height: 50vh;
+    width: 40vh;
+
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.342);
+}
+
+.plataforma-card-titulo {
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%);
+    
+    margin: 0;
+    padding: 0 15px;
+    border-radius: 20px;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    
+}
+
+#plataforma-titulo {
+    position: relative;
+    top: 30%;
+    color: white;
+}
+
+/* .plataforma1, .plataforma2, .plataforma3 {
     margin: 0 10px;
     display: flex;
     flex-direction: column;
@@ -277,11 +321,11 @@ button i {
 
 .plataforma-info {
     line-height: 20px;
-}
+} */
 
-.card-img {
+/* .card-img {
     text-align: center;
-}
+} */
 
 .card-maisDetalhes {
     text-align: right;
