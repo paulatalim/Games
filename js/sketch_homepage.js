@@ -56,7 +56,7 @@ function exibir_games_lancamentos(data, filtroBusca) {
                                     <p>Avaliação: ${jogo.rating}</p>
                                     <p>Lançamento: ${jogo.released}</p>
                                 
-                                    <div><a href="./detalhes.html?id=${jogo.id}">Mais Detalhes...</a></div>
+                                    <div><a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}">Mais Detalhes...</a></div>
                             </div>
                         </div>
                     </div>`

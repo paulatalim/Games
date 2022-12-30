@@ -2,6 +2,10 @@ body {
     background-color: red;
 }
 
+.carousel, .carousel-item {
+    height: 55vh;
+}
+
 .card {
     background-image: url(./exemplo.png);
     background-size: cover;
