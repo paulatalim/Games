@@ -245,13 +245,39 @@ button i {
     box-shadow: none;
 }
 
+#lancamento-maisDetalhe {
+    background-color: rgb(152, 152, 152);
+    position: relative;
+    left: -15px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-align: left;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+#lancamento-maisDetalhe:hover {
+    font-weight: 700;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.342);
+}
+
+#lancamento-maisDetalhe:active {
+    font-weight: 700;
+    box-shadow: none;
+    top: 3px;
+}
+
 .carregar-lancamentos, .carregar-plataforma, .carregar-publisher {
     text-align: right;
 }
 
 /*** PLATAFORMAS ***/
 .plataformas {
-    margin: 0 10%;
+    background-color: red;
+    width:100%;
+    height: 100vh;
+    margin: 0;
     padding: 15px;
 }
 
@@ -299,59 +325,8 @@ button i {
     color: white;
 }
 
-/* .plataforma1, .plataforma2, .plataforma3 {
-    margin: 0 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-
-    background-color: rgb(29, 29, 29);
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.342);
-    border-radius: 20px;
-}
-
-.plataforma1 {
-    margin-left: auto;
-}
-
-.plataforma3 {
-    margin-right: auto;
-}
-
-.plataforma-info {
-    line-height: 20px;
-} */
-
-/* .card-img {
-    text-align: center;
-} */
-
 .card-maisDetalhes {
     text-align: right;
-}
-
-.card-maisDetalhes, #lancamento-maisDetalhe {
-    background-color: rgb(152, 152, 152);
-    position: relative;
-    left: -15px;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-align: left;
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.2s;
-}
-
-#lancamento-maisDetalhe:hover {
-    font-weight: 700;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.342);
-}
-
-#lancamento-maisDetalhe:active {
-    font-weight: 700;
-    box-shadow: none;
-    top: 3px;
 }
 
 /*** PUBLISHER ***/
