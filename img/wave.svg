@@ -1,0 +1,103 @@
+<svg width="100%" 
+    height="100%" 
+    id="svg" 
+    viewBox="0 0 1440 400" 
+    xmlns="http://www.w3.org/2000/svg" 
+    class="transition duration-300 ease-in-out delay-150">
+    <style>
+        .path-0{
+            animation:pathAnim-0 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes pathAnim-0{
+            0%{
+                d: path("M 0,400 C 0,400 0,133 0,133 C 265,146 530,159 770,159 C 1010,159 1225,146 1440,133 C 1440,133 1440,400 1440,400 Z");
+            }
+            25%{
+                d: path("M 0,400 C 0,400 0,133 0,133 C 268,129 536,125 776,125 C 1016,125 1228,129 1440,133 C 1440,133 1440,400 1440,400 Z");
+            }
+            50%{
+                d: path("M 0,400 C 0,400 0,133 0,133 C 252,108 504,83 744,83 C 984,83 1212,108 1440,133 C 1440,133 1440,400 1440,400 Z");
+            }
+            75%{
+                d: path("M 0,400 C 0,400 0,133 0,133 C 240.5,141 481,149 721,149 C 961,149 1200.5,141 1440,133 C 1440,133 1440,400 1440,400 Z");
+            }
+            100%{
+                d: path("M 0,400 C 0,400 0,133 0,133 C 265,146 530,159 770,159 C 1010,159 1225,146 1440,133 C 1440,133 1440,400 1440,400 Z");
+            }
+        }
+    </style>
+    <defs>
+        <linearGradient 
+            id="gradient" 
+            x1="0%" 
+            y1="50%" 
+            x2="100%" 
+            y2="50%">
+            
+            <stop 
+                offset="5%" 
+                stop-color="#002bdc">
+            </stop>
+            <stop 
+                offset="95%" 
+                stop-color="#32ded4">
+            </stop>
+            
+        </linearGradient>
+    </defs>
+    <path d="M 0,400 C 0,400 0,133 0,133 C 265,146 530,159 770,159 C 1010,159 1225,146 1440,133 C 1440,133 1440,400 1440,400 Z" 
+        stroke="none" 
+        stroke-width="0" 
+        fill="url(#gradient)" 
+        fill-opacity="0.53" 
+        class="transition-all duration-300 ease-in-out delay-150 path-0">
+    </path>
+    <style>
+        .path-1{
+            animation:pathAnim-1 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes pathAnim-1{
+            0%{
+                d: path("M 0,400 C 0,400 0,266 0,266 C 295,243 590,220 830,220 C 1070,220 1255,243 1440,266 C 1440,266 1440,400 1440,400 Z");
+            }
+            25%{
+                d: path("M 0,400 C 0,400 0,266 0,266 C 265.5,257 531,248 771,248 C 1011,248 1225.5,257 1440,266 C 1440,266 1440,400 1440,400 Z");
+            }
+            50%{
+                d: path("M 0,400 C 0,400 0,266 0,266 C 243.5,289 487,312 727,312 C 967,312 1203.5,289 1440,266 C 1440,266 1440,400 1440,400 Z");
+            }
+            75%{
+                d: path("M 0,400 C 0,400 0,266 0,266 C 269.5,258 539,250 779,250 C 1019,250 1229.5,258 1440,266 C 1440,266 1440,400 1440,400 Z");
+            }
+            100%{
+                d: path("M 0,400 C 0,400 0,266 0,266 C 295,243 590,220 830,220 C 1070,220 1255,243 1440,266 C 1440,266 1440,400 1440,400 Z");
+            }
+        }
+    </style>
+    <defs>
+        <linearGradient 
+            id="gradient" 
+            x1="0%" 
+            y1="50%" 
+            x2="100%" 
+            y2="50%">
+            
+            <stop offset="5%" stop-color="#002bdc"></stop>
+            
+            <stop offset="95%" stop-color="#32ded4"></stop>
+        </linearGradient>
+    </defs>
+    
+    <path 
+        d="M 0,400 C 0,400 0,266 0,266 C 295,243 590,220 830,220 C 1070,220 1255,243 1440,266 C 1440,266 1440,400 1440,400 Z" 
+        stroke="none" 
+        stroke-width="0" 
+        fill="url(#gradient)" 
+        fill-opacity="1" 
+        class="transition-all duration-300 ease-in-out delay-150 path-1">
+    </path>
+</svg>

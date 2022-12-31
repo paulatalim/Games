@@ -120,14 +120,19 @@ body {
 /* destaque novo**/
 .corrosel2 {
     margin: 0;
+    width: 100%;
 }
 
+.corrosel2 .carousel {
+    width:100%;
+}
 .destaque1 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: left;
     background-position-y: center;
     height: 100vh;
+    width: 100%;
 }
 
 .destaque-filtro-image {
@@ -148,6 +153,10 @@ body {
     flex-direction: column;
     justify-content: center;
     gap: 50px;
+}
+
+#destaque-conteudo-detalhamento {
+    font-size: 15pt;
 }
 
 /*** LANCAMENTOS ***/
@@ -278,7 +287,7 @@ button i {
     width:100%;
     height: 100vh;
     margin: 0;
-    padding: 15px;
+    padding: 15px 10%;
 }
 
 .plataformas .carousel, .plataformas .carousel .carousel-item {
@@ -290,11 +299,10 @@ button i {
 }
 
 .plataforma-card-conteudo {
-    background-image: url(../img/exemplo.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
-    background-position-y: bottom;
+    background-position-y: center;
 
     height: 50vh;
     width: 40vh;
@@ -310,13 +318,12 @@ button i {
     background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%);
     
     margin: 0;
-    padding: 0 15px;
+    padding: 0 25px;
     border-radius: 20px;
     height: 100%;
     
     display: flex;
     align-items: center;
-    
 }
 
 #plataforma-titulo {

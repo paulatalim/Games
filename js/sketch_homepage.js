@@ -1,6 +1,6 @@
-/**
- * DESTAQUES
- */
+/*************
+ * DESTAQUES *
+ *************/
 function exibir_games_destaques(data) {
     let str = ''
     
@@ -18,12 +18,11 @@ function exibir_games_destaques(data) {
                         <div class="destaque-filtro-image">
                             <div class="col-5 destaque1-conteudo">
                                 <h1>${jogo.name}</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, nam natus
-                                    aliquid corporis incidunt ipsum. Quidem, unde dolor nobis deserunt maiores provident
-                                    explicabo doloremque exercitationem eligendi. Earum saepe illo error explicabo!
-                                    Mollitia optio eius adipisci ratione fugiat fuga magnam aliquid, facilis accusantium
-                                    eveniet illum minus expedita debitis quis exercitationem nemo.
-                                </p>
+                                <!--<p id="destaque-conteudo-detalhamento">
+                                    <strong>Lançamento:</strong> ${jogo.released}<br>
+                                    <strong>Plataformas:</strong> <br>
+                                    <strong>Avaliação:</strong> ${jogo.rating} <br>
+                                </p>-->
                             </div>
                         </div>
                     </div>
@@ -72,7 +71,7 @@ function exibir_detalhes_games_lancamento (data, id) {
     
     if (i != -1) {
         let jogo = data.results[i]
-        let str = `<div class="Informacoes">
+        str = `<div class="Informacoes">
                         <h1>${jogo.name}</h1>
                         <div class="especificacoes">
                             <p><strong>Plataformas disponíveis:</strong> ${jogo.platforms[0].platform.name}`
@@ -105,6 +104,48 @@ function exibir_detalhes_games_lancamento (data, id) {
     }
 }
 
+/***************
+ * PLATAFORMAS *
+ ***************/
+function exibir_plataformas (data) {
+    let str = ''
+    let index = 0
+
+    //Inclusao de novo slide no corrousel
+    for (let i = 0; i < 4; i++){
+        str += `<div class="carousel-item row no-gutters`
+
+        if (i == 0) {
+            str += ` active">`
+        } else {
+            str += `">`
+        }
+
+        for (let j = 0; j < 4; j++) {
+            let jogo = data.results[index]
+
+            str += `<div class="col-3 float-left plataforma-slide-card">
+                        <div class="plataforma-card-conteudo" style="background-image: url(${jogo.image_background});">
+                            <div class="plataforma-card-titulo">
+                                <h2 id="plataforma-titulo">${jogo.name}</h2>
+                            </div>
+                        </div>
+                    </div>`
+            
+            index++;
+        }
+
+        str += `</div>`
+    }
+    
+    document.getElementById('plataforma-cards').innerHTML = str
+    return data;
+}
+
+/***************
+ * REQUISIÇÕES *
+ ***************/
+
 function requisicao_games_destaques () {
     fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&ordering=-rating')
         .then(res => res.json ())
@@ -117,6 +158,12 @@ function requisicao_games_lancamentos(filtroBusca){
         .then(data => exibir_games_lancamentos(data, filtroBusca)); 
 }
 
+function requisicao_plataformas(){
+    fetch ('https://api.rawg.io/api/platforms?key=0ae278d26fd24463b3d3c454be18cb17')
+        .then(res => res.json ())
+        .then(data => exibir_plataformas(data)); 
+}
+
 function requisicao_games_lancamento_detalhes (id) {
     fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
         .then(res => res.json ())
@@ -126,4 +173,5 @@ function requisicao_games_lancamento_detalhes (id) {
 onload = () =>{
     requisicao_games_destaques();
     requisicao_games_lancamentos('');
+    requisicao_plataformas();
 }
