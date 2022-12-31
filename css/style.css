@@ -235,29 +235,6 @@ button i {
     margin-right: 7px;
 }
 
-#button {
-    background-color: rgb(52, 52, 52);
-    color: #fff;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin-top: 20px;
-    border: none;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.411);
-    outline: none;
-    transition: top 0.2s;
-    position: relative;
-}
-
-#button:hover {
-    background-color: rgb(94, 94, 94);
-}
-
-#button:active {
-    background-color: rgb(77, 77, 77);
-    top: 5px;
-    box-shadow: none;
-}
-
 #lancamento-maisDetalhe {
     background-color: rgb(152, 152, 152);
     position: relative;
@@ -281,7 +258,7 @@ button i {
     top: 3px;
 }
 
-.carregar-lancamentos, .carregar-plataforma, .carregar-publisher {
+.carregar-plataforma, .carregar-publisher {
     text-align: right;
 }
 

@@ -17,6 +17,31 @@
 
     <button onclick="lermais()" id="ler-mais">Ler mais</button>
 
+     <!-- input tag -->
+     <input id="searchbar" onkeyup="search_animal()" type="text"
+     name="search" placeholder="Search animals..">
+   
+ <!-- ordered list -->
+ <ol id='list'>
+     <li class="animals">Cat</li>
+     <li class="animals">Dog</li>
+     <li class="animals">Elephant</li>
+     <li class="animals">Fish</li>
+     <li class="animals">Gorilla</li>
+     <li class="animals">Monkey</li>
+     <li class="animals">Turtle</li>
+     <li class="animals">Whale</li>
+     <li class="animals">Aligator</li>
+     <li class="animals">Donkey</li>
+     <li class="animals">Horse</li>
+ </ol>
+   
+ <form class="form-inline my-2 my-lg-0 buscar-itens" role="search">
+    <i id="lupa-buscar" class="fa-solid fa-magnifying-glass" onclick="filtro()"></i>
+    <input class="form-control mr-sm-2" type="search" name="Busca" placeholder="Pesquisar games"
+        aria-label="Search" id="campo_buscar" oninput="filtro()">
+</form>
+
     <script type="text/javascript" src="./script.js"></script>
 </body>
 </html>
