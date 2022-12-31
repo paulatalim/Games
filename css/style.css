@@ -171,8 +171,12 @@ body {
     gap:15px;
 }
 
-#pesquisa_card {
+#pesquisa_card, #mostrar_mais_cards {
     padding: auto;
+}
+
+#mostrar_mais_cards {
+    display: none;
 }
 
 .cards {

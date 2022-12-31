@@ -42,26 +42,76 @@ function barra_de_busca(){
     requisicao_games_lancamentos(barra_de_busca.toLowerCase())
 }
 
-function exibir_games_lancamentos(data, filtroBusca) {
-    let str = ''
-    for (let i = 0; i < data.results.length; i++) {
-        let jogo = data.results[i]
-        if(`${jogo.name}`.toLowerCase().startsWith(filtroBusca)){
-            str += `<div class="col-lg-3 col-md-4 col-sm-12 card" style="background-image: url(${jogo.background_image});">
-                        <div class="card-conteudo">
-                            <h5>${jogo.name}</h5>
-                            <div class="info-card">
-                                
-                                    <p>Avaliação: ${jogo.rating}</p>
-                                    <p>Lançamento: ${jogo.released}</p>
-                                
-                                    <div><a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}">Mais Detalhes...</a></div>
-                            </div>
-                        </div>
-                    </div>`
-            }
+function exibir_card_game_lancamento (jogo) {
+    let str = '';
+
+    str = `<div class="col-lg-3 col-md-4 col-sm-12 card" style="background-image: url(${jogo.background_image});">
+                <div class="card-conteudo">
+                    <h5>${jogo.name}</h5>
+                    <div class="info-card">
+                        
+                            <p>Avaliação: ${jogo.rating}</p>
+                            <p>Lançamento: ${jogo.released}</p>
+                        
+                            <div><a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}">Mais Detalhes...</a></div>
+                    </div>
+                </div>
+            </div>`
+
+    return str
+}
+
+function exibir_todos_lancamentos (data) {
+    let str = '';
+
+    //Exibe 6 cards
+    for (let i = 0; i < 6; i++) {
+        let jogo = data.results[i];
+        str += exibir_card_game_lancamento(jogo);
     }
-    document.getElementById('pesquisa_cards').innerHTML = str
+
+    document.getElementById('pesquisa_cards').innerHTML = str;
+
+    str = '';
+
+    for (let i = 6; i < data.results.length; i++) {
+        let jogo = data.results[i];
+        str += exibir_card_game_lancamento(jogo);
+    }
+
+    document.getElementById('mostrar_mais_cards').innerHTML = str;
+
+    return data;
+}
+
+function ver_mais_lancamentos() {
+    let cards_escondidos = document.getElementById("mostrar_mais_cards");
+    let button = document.getElementById("lancamentos-ver-mais");
+
+    if (cards_escondidos.style.display === "none") {
+        cards_escondidos.style.display = "flex";
+        button.innerHTML = "Ler menos"
+    } else {
+        cards_escondidos.style.display = "none";
+        button.innerHTML = "Ler mais";
+    }
+}
+
+function exibir_games_lancamentos(data, filtroBusca) {
+    let str = '';
+    if (filtroBusca == '') {
+        exibir_todos_lancamentos(data);
+    } else {
+        //Pesquisa dos jogos
+        for (let i = 0; i < data.results.length; i++) {
+            let jogo = data.results[i]
+            if(`${jogo.name}`.toLowerCase().startsWith(filtroBusca)){
+                str += exibir_card_game_lancamento (jogo)
+            }
+        }
+        document.getElementById('pesquisa_cards').innerHTML = str
+    }
+
     return data;
 }
 

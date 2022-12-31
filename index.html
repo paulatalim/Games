@@ -48,11 +48,6 @@
                     <p>|</p>
                     <li class="nav-item active"><a href="#publisher">Publisher</a></li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0 buscar-itens" role="search">
-                    <i id="lupa-buscar" class="fa-solid fa-magnifying-glass" onclick="filtro()"></i>
-                    <input class="form-control mr-sm-2" type="search" name="Busca" placeholder="Pesquisar games"
-                        aria-label="Search" id="campo_buscar" oninput="filtro()">
-                </form>
             </div>
         </nav>
     </header>
@@ -205,12 +200,12 @@
 
         <!-- Lançamentos -->
         <section class="row lancamentos">
-            <div class="col-5">
+            <div class="col-3">
                 <h1 id="lancamentos">Jogos</h1>
             </div>
 
             <!-- filtros -->
-            <div class="col-3 filtro">
+            <div class="col-2 filtro">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="filtro-ordem"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -223,7 +218,7 @@
                 </div>
             </div>
 
-            <div class="col-3 filtro">
+            <div class="col-2 filtro">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="filtro-genero"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -236,9 +231,20 @@
                     </div>
                 </div>
             </div>
+            <div class="col-4">
+                <form class="form-inline my-2 my-lg-0 buscar-itens" role="search">
+                    <i id="lupa-buscar" class="fa-solid fa-magnifying-glass" onclick="filtro()"></i>
+                    <input class="form-control mr-sm-2" type="search" name="Busca" placeholder="Pesquisar games"
+                        aria-label="Search" id="campo_buscar" oninput="filtro()">
+                </form>
+            </div>
 
             <!-- cards -->
             <div class="cards col-12" id="pesquisa_cards"></div>
+
+            <div class="cards col-12" id="mostrar_mais_cards"></div>
+
+            <button onclick="ver_mais_lancamentos()" id="lancamentos-ver-mais">Ler mais</button>
 
             <div class="col-12 carregar-lancamentos">
                 <button id="button"><i class="fa-solid fa-plus"></i>Carregar mais lançamentos</button>

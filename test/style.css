@@ -120,4 +120,8 @@ html, body {
       50% {transform: translateX(-25%);}
       100% {transform: translateX(-50%);}
   }
-  
+
+/* Pagina lancamentos */
+#escondido {
+    display: none;
+}
