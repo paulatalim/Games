@@ -56,6 +56,14 @@ function exibir_card_game_lancamento (jogo) {
     return str
 }
 
+function exibir_titulo_filtro_genero() {
+    document.getElementById("filtro-genero").innerHTML ="Genero";
+}
+
+function exibir_titulo_filtro_ordem() {
+    document.getElementById("filtro-ordem").innerHTML = "Ordem";
+}
+
 function exibir_todos_lancamentos (data) {
     let str = '';
 
@@ -94,6 +102,9 @@ function ver_mais_lancamentos() {
 
 function barra_de_busca(){
     let barra_de_busca = document.getElementById("campo_buscar").value;
+
+    exibir_titulo_filtro_genero();
+    exibir_titulo_filtro_ordem();
     requisicao_games_lancamentos(barra_de_busca.toLowerCase())
 }
 
@@ -126,10 +137,43 @@ function filtrar_genero(genero, nome_genero) {
         }); 
 }
 
-function exibir_titulo_filtro() {
-    let btn_titulo_filtro = document.getElementById("filtro-genero");
-    btn_titulo_filtro.innerHTML ="Genero";
+function exibir_games_filtro_ordem (data) {
+    let str = '';
+
+    for (let i = 0; i < data.results.length; i++) {
+        str += exibir_card_game_lancamento (data.results[i]);
+    }
+
+    document.getElementById('pesquisa_cards').innerHTML = str
+
+    return data;
 }
+
+function requisicao_filtro_ordem (type, ordem, nome_ordem) {
+    let button_filtro = document.getElementById("filtro-ordem");
+    let button_ver_mais = document.getElementById("lancamentos-ver-mais");
+    let cards_escondidos = document.getElementById("mostrar_mais_cards");
+    let caminho = 'https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&'
+
+    button_filtro.innerHTML = nome_ordem;
+    cards_escondidos.style.display = "none";
+    button_ver_mais.style.display = "none";
+
+    switch (type) {
+        case 'rating':
+            caminho += `ordering=${ordem}`;
+            break;
+        case 'data':
+            caminho += `dates=2019-12-01,2022-12-19`;
+            break;
+    }
+
+    fetch (caminho)
+        .then(res => res.json ())
+        .then(data => exibir_games_filtro_ordem(data));
+    
+}
+
 function exibir_games_lancamentos(data, filtroBusca) {
     let str = '';
     let button_ver_mais = document.getElementById("lancamentos-ver-mais");
@@ -162,6 +206,8 @@ function exibir_resultado_pesquisa (data) {
     let button_ver_mais = document.getElementById("lancamentos-ver-mais");
     let cards_escondidos = document.getElementById("mostrar_mais_cards");
 
+    exibir_titulo_filtro_genero();
+    exibir_games_filtro_ordem();
     cards_escondidos.style.display = "none";
     button_ver_mais.style.display = "none";
 
