@@ -92,15 +92,44 @@ function ver_mais_lancamentos() {
     }
 }
 
-
-
 function barra_de_busca(){
     let barra_de_busca = document.getElementById("campo_buscar").value;
     requisicao_games_lancamentos(barra_de_busca.toLowerCase())
 }
 
+function filtrar_genero(genero, nome_genero) {
+    let button_filtro = document.getElementById("filtro-genero");
+    let button_ver_mais = document.getElementById("lancamentos-ver-mais");
+    let cards_escondidos = document.getElementById("mostrar_mais_cards");
 
+    button_filtro.innerHTML = nome_genero
 
+    fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
+        .then(res => res.json ())
+        .then(data => {
+            let str = '';
+            cards_escondidos.style.display = "none";
+            button_ver_mais.style.display = "none";
+
+            for (let i = 0; i < data.results.length; i++) {
+                let jogo = data.results[i]
+
+                for (let j = 0; j < jogo.genres.length; j++) {
+                    if(`${jogo.genres[j].name}`.toLowerCase().startsWith(genero.toLowerCase())){
+                        str += exibir_card_game_lancamento (jogo)
+                        break;
+                    }
+                }
+                
+            }
+            document.getElementById('pesquisa_cards').innerHTML = str
+        }); 
+}
+
+function exibir_titulo_filtro() {
+    let btn_titulo_filtro = document.getElementById("filtro-genero");
+    btn_titulo_filtro.innerHTML ="Genero";
+}
 function exibir_games_lancamentos(data, filtroBusca) {
     let str = '';
     let button_ver_mais = document.getElementById("lancamentos-ver-mais");
@@ -130,6 +159,11 @@ function exibir_games_lancamentos(data, filtroBusca) {
 
 function exibir_resultado_pesquisa (data) {
     let str = ''
+    let button_ver_mais = document.getElementById("lancamentos-ver-mais");
+    let cards_escondidos = document.getElementById("mostrar_mais_cards");
+
+    cards_escondidos.style.display = "none";
+    button_ver_mais.style.display = "none";
 
     for (let i = 0; i < data.results.length; i++) {
         let jogo = data.results[i]

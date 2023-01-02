@@ -210,7 +210,7 @@
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="filtro-ordem"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Gênero: TODAS
+                        Ordem
                     </button>
                     <div class="dropdown-menu" aria-labelledby="filtro-ordem">
                         <a class="dropdown-item" href="#">Mais popular</a>
@@ -223,14 +223,21 @@
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="filtro-genero"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Gênero: TODOS
+                        Gênero
                     </button>
                     <div class="dropdown-menu" aria-labelledby="filtro-genero">
-                        <a class="dropdown-item" href="#">Ação</a>
-                        <a class="dropdown-item" href="#">Aventura</a>
-                        <a class="dropdown-item" href="#">Plataforma</a>
+                        <button class="dropdown-item" onclick="requisicao_games_lancamentos(''), exibir_titulo_filtro()">Nenhum</button>
+                        <button class="dropdown-item" onclick="filtrar_genero('Action', 'Ação')">Ação</button>
+                        <button class="dropdown-item" onclick="filtrar_genero('Adventure', 'Aventura')">Aventura</button>
+                        <button class="dropdown-item" onclick="filtrar_genero('platformer', 'Platformer')">Platformer</button>
+                        <button class="dropdown-item" onclick="filtrar_genero('indie', 'Indi')">Indi</button>
+                        <button class="dropdown-item" onclick="filtrar_genero('RPG', )">RPG</button>
+                        <button class="dropdown-item" onclick="filtrar_genero('Puzzle', 'Puzzle')">Puzzle</button>
+                        <button class="dropdown-item" onclick="filtrar_genero('Shooter', 'Shooter')">Shooter</button>
                     </div>
                 </div>
+
+                
             </div>
             <div class="col-4">
                 <button id="destaques-btn-pesquisar" onclick="requisicao_games_lancamento_pesquisa()"><i id="lupa-buscar" class="fa-solid fa-magnifying-glass"></i></button>
