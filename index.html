@@ -28,6 +28,7 @@
 
 <body>
     <a href="./test/index.html">Pagina teste</a>
+    <a href="./inspiracoes/Porão do Urso/index.html">Inspiracao la</a>
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="#">
@@ -232,11 +233,15 @@
                 </div>
             </div>
             <div class="col-4">
-                <form class="form-inline my-2 my-lg-0 buscar-itens" role="search">
-                    <i id="lupa-buscar" class="fa-solid fa-magnifying-glass" onclick="barra_de_busca()"></i>
-                    <input class="form-control mr-sm-2" type="search" name="Busca" placeholder="Pesquisar games"
-                        aria-label="Search" id="campo_buscar" oninput="barra_de_busca()">
-                </form>
+                <button id="destaques-btn-pesquisar" onclick="requisicao_games_lancamento_pesquisa()"><i id="lupa-buscar" class="fa-solid fa-magnifying-glass"></i></button>
+                <input 
+                    class="form-control mr-sm-2" 
+                    type="search" 
+                    name="Busca" 
+                    placeholder="Pesquisar games"
+                    aria-label="Search" 
+                    id="campo_buscar" 
+                    oninput="barra_de_busca()">
             </div>
 
             <!-- cards -->
@@ -336,8 +341,7 @@
             <div class="col-lg-3 col-md-3 col-sm-7 col-10 item publisher1">
                 <h4>Sony Interactive Entertainment</h4>
                 <div class="card-img">
-                    <img width="70%" src="./img/Sony_Interactive_Entertainment_logo.png"
-                        alt="Logo da Sony Interactive Entertainment">
+                
                 </div>
                 <div class="publisher-info">
                     <h5>Principais Jogos: </h5>
@@ -352,7 +356,7 @@
             <div class="col-lg-3 col-md-3 col-sm-7 col-10 item publisher2">
                 <h4>Nintendo</h4>
                 <div class="card-img">
-                    <img width="70%" src="./img/Nintendo-Logo.png" alt="Logo da Nintendo">
+                    
                 </div>
                 <div class="publisher-info">
                     <h5>Principais Jogos: </h5>
@@ -368,7 +372,7 @@
             <div class="col-lg-3 col-md-3 col-sm-7 col-10 item publisher3">
                 <h4>Microsoft</h4>
                 <div class="card-img">
-                    <img width="70%" src="./img/microsoft-logo.png" alt="logo da Microsoft">
+                    
                 </div>
                 <div class="publisher-info">
                     <h5>Principais Jogos: </h5>

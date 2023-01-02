@@ -92,10 +92,14 @@ function ver_mais_lancamentos() {
     }
 }
 
+
+
 function barra_de_busca(){
-    var barra_de_busca = document.getElementById("campo_buscar").value;
+    let barra_de_busca = document.getElementById("campo_buscar").value;
     requisicao_games_lancamentos(barra_de_busca.toLowerCase())
 }
+
+
 
 function exibir_games_lancamentos(data, filtroBusca) {
     let str = '';
@@ -120,6 +124,18 @@ function exibir_games_lancamentos(data, filtroBusca) {
         }
         document.getElementById('pesquisa_cards').innerHTML = str
     }
+
+    return data;
+}
+
+function exibir_resultado_pesquisa (data) {
+    let str = ''
+
+    for (let i = 0; i < data.results.length; i++) {
+        let jogo = data.results[i]
+        str += exibir_card_game_lancamento (jogo)
+    }
+    document.getElementById('pesquisa_cards').innerHTML = str
 
     return data;
 }
@@ -227,6 +243,16 @@ function requisicao_games_lancamento_detalhes (id) {
     fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
         .then(res => res.json ())
         .then(data => exibir_detalhes_games_lancamento(data, id))
+}
+
+function requisicao_games_lancamento_pesquisa () {
+    let barra_de_busca = document.getElementById("campo_buscar").value;
+
+    console.log("aaa")
+
+    fetch(`https://api.rawg.io/api/games?search=${barra_de_busca}&key=0ae278d26fd24463b3d3c454be18cb17`)
+        .then(res => res.json())
+        .then(data => exibir_resultado_pesquisa(data))
 }
 
 onload = () => {
