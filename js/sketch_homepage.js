@@ -37,7 +37,7 @@ function exibir_games_destaques(data) {
  * LANCAMENTOS *
  ***************/
 
-function exibir_card_game_lancamento (jogo) {
+function exibir_card_game_lancamento (jogo, id, complemento) {
     let str = '';
 
     str = `<div class="col-lg-3 col-md-4 col-sm-12 card" style="background-image: url(${jogo.background_image});">
@@ -48,7 +48,7 @@ function exibir_card_game_lancamento (jogo) {
                             <p>Avaliação: ${jogo.rating}</p>
                             <p>Lançamento: ${jogo.released}</p>
                         
-                            <div><a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}">Mais Detalhes...</a></div>
+                            <div><a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}&num=${id}&adicional=${complemento}">Mais Detalhes...</a></div>
                     </div>
                 </div>
             </div>`
@@ -70,7 +70,7 @@ function exibir_todos_lancamentos (data) {
     //Exibe 6 cards
     for (let i = 0; i < 6; i++) {
         let jogo = data.results[i];
-        str += exibir_card_game_lancamento(jogo);
+        str += exibir_card_game_lancamento(jogo, 0, '');
     }
 
     document.getElementById('pesquisa_cards').innerHTML = str;
@@ -79,7 +79,7 @@ function exibir_todos_lancamentos (data) {
 
     for (let i = 6; i < data.results.length; i++) {
         let jogo = data.results[i];
-        str += exibir_card_game_lancamento(jogo);
+        str += exibir_card_game_lancamento(jogo, 0, '');
     }
 
     document.getElementById('mostrar_mais_cards').innerHTML = str;
@@ -127,7 +127,7 @@ function filtrar_genero(genero, nome_genero) {
 
                 for (let j = 0; j < jogo.genres.length; j++) {
                     if(`${jogo.genres[j].name}`.toLowerCase().startsWith(genero.toLowerCase())){
-                        str += exibir_card_game_lancamento (jogo)
+                        str += exibir_card_game_lancamento (jogo, 0, '')
                         break;
                     }
                 }
@@ -137,11 +137,11 @@ function filtrar_genero(genero, nome_genero) {
         }); 
 }
 
-function exibir_games_filtro_ordem (data) {
+function exibir_games_filtro_ordem (data, id, complemento) {
     let str = '';
 
     for (let i = 0; i < data.results.length; i++) {
-        str += exibir_card_game_lancamento (data.results[i]);
+        str += exibir_card_game_lancamento (data.results[i], id, complemento);
     }
 
     document.getElementById('pesquisa_cards').innerHTML = str
@@ -167,7 +167,7 @@ function exibir_games_lancamentos(data, filtroBusca) {
         for (let i = 0; i < data.results.length; i++) {
             let jogo = data.results[i]
             if(`${jogo.name}`.toLowerCase().startsWith(filtroBusca)){
-                str += exibir_card_game_lancamento (jogo)
+                str += exibir_card_game_lancamento (jogo, 0, '')
             }
         }
         document.getElementById('pesquisa_cards').innerHTML = str
@@ -176,7 +176,7 @@ function exibir_games_lancamentos(data, filtroBusca) {
     return data;
 }
 
-function exibir_resultado_pesquisa (data) {
+function exibir_resultado_pesquisa (data, pesquisa) {
     let str = ''
     let button_ver_mais = document.getElementById("lancamentos-ver-mais");
     let cards_escondidos = document.getElementById("mostrar_mais_cards");
@@ -188,7 +188,7 @@ function exibir_resultado_pesquisa (data) {
 
     for (let i = 0; i < data.results.length; i++) {
         let jogo = data.results[i]
-        str += exibir_card_game_lancamento (jogo)
+        str += exibir_card_game_lancamento (jogo, 1, pesquisa)
     }
 
     document.getElementById('pesquisa_cards').innerHTML = str
@@ -273,9 +273,9 @@ function exibir_plataformas (data) {
     return data;
 }
 
-/**
- * PUBLISHER 
- */
+/*************
+ * PUBLISHER *
+ *************/
 
 function exibir_publisher () {
     fetch ('https://api.rawg.io/api/publishers?key=0ae278d26fd24463b3d3c454be18cb17')
@@ -333,7 +333,6 @@ function exibir_publisher () {
 /***************
  * REQUISIÇÕES *
  ***************/
-
 function requisicao_games_destaques () {
     fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&ordering=-rating')
         .then(res => res.json ())
@@ -352,45 +351,68 @@ function requisicao_plataformas(){
         .then(data => exibir_plataformas(data)); 
 }
 
-function requisicao_games_lancamento_detalhes (id) {
-    fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
-        .then(res => res.json ())
-        .then(data => exibir_detalhes_games_lancamento(data, id))
-}
-
 function requisicao_games_lancamento_pesquisa () {
     let barra_de_busca = document.getElementById("campo_buscar").value;
 
-    console.log("aaa")
-
     fetch(`https://api.rawg.io/api/games?search=${barra_de_busca}&key=0ae278d26fd24463b3d3c454be18cb17`)
         .then(res => res.json())
-        .then(data => exibir_resultado_pesquisa(data))
+        .then(data => exibir_resultado_pesquisa(data, barra_de_busca))
 }
 
 function requisicao_filtro_ordem (type, ordem, nome_ordem) {
     let button_filtro = document.getElementById("filtro-ordem");
     let button_ver_mais = document.getElementById("lancamentos-ver-mais");
     let cards_escondidos = document.getElementById("mostrar_mais_cards");
+    let id = 0;
+    let complemento = ``;
     let caminho = 'https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&'
-
+    
     button_filtro.innerHTML = nome_ordem;
     cards_escondidos.style.display = "none";
     button_ver_mais.style.display = "none";
 
     switch (type) {
         case 'rating':
+            id = 2;
+            complemento = ordem;
             caminho += `ordering=${ordem}`;
             break;
         case 'data':
+            id = 3;
             caminho += `dates=2020-12-01,2021-12-19`;
             break;
     }
-
+    
     fetch (caminho)
         .then(res => res.json ())
-        .then(data => exibir_games_filtro_ordem(data));
-    
+        .then(data => exibir_games_filtro_ordem(data, id, complemento));   
+}
+
+function requisicao_games_lancamento_detalhes (id, url_num, complemento) {
+    let url = '';
+
+    switch (url_num) {
+        case 0:
+            //url normal
+            url = 'https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17';
+            break;
+        case 1:
+            //url com pesquisa
+            url = `https://api.rawg.io/api/games?search=${complemento}&key=0ae278d26fd24463b3d3c454be18cb17`;
+            break;
+        case 2:
+            //url com filtro rating
+            url = `https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&ordering=${complemento}`;
+            break;
+        case 3:
+            //url com filtro lancamento
+            url = 'https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&dates=2020-12-01,2021-12-19';
+            break;
+    }
+    console.log(url)
+    fetch (url)
+        .then(res => res.json ())
+        .then(data => exibir_detalhes_games_lancamento(data, id))
 }
 
 onload = () => {
