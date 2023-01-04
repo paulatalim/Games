@@ -149,31 +149,6 @@ function exibir_games_filtro_ordem (data) {
     return data;
 }
 
-function requisicao_filtro_ordem (type, ordem, nome_ordem) {
-    let button_filtro = document.getElementById("filtro-ordem");
-    let button_ver_mais = document.getElementById("lancamentos-ver-mais");
-    let cards_escondidos = document.getElementById("mostrar_mais_cards");
-    let caminho = 'https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&'
-
-    button_filtro.innerHTML = nome_ordem;
-    cards_escondidos.style.display = "none";
-    button_ver_mais.style.display = "none";
-
-    switch (type) {
-        case 'rating':
-            caminho += `ordering=${ordem}`;
-            break;
-        case 'data':
-            caminho += `dates=2019-12-01,2022-12-19`;
-            break;
-    }
-
-    fetch (caminho)
-        .then(res => res.json ())
-        .then(data => exibir_games_filtro_ordem(data));
-    
-}
-
 function exibir_games_lancamentos(data, filtroBusca) {
     let str = '';
     let button_ver_mais = document.getElementById("lancamentos-ver-mais");
@@ -207,7 +182,7 @@ function exibir_resultado_pesquisa (data) {
     let cards_escondidos = document.getElementById("mostrar_mais_cards");
 
     exibir_titulo_filtro_genero();
-    exibir_games_filtro_ordem();
+    exibir_titulo_filtro_ordem();
     cards_escondidos.style.display = "none";
     button_ver_mais.style.display = "none";
 
@@ -215,6 +190,7 @@ function exibir_resultado_pesquisa (data) {
         let jogo = data.results[i]
         str += exibir_card_game_lancamento (jogo)
     }
+
     document.getElementById('pesquisa_cards').innerHTML = str
 
     return data;
@@ -333,6 +309,31 @@ function requisicao_games_lancamento_pesquisa () {
     fetch(`https://api.rawg.io/api/games?search=${barra_de_busca}&key=0ae278d26fd24463b3d3c454be18cb17`)
         .then(res => res.json())
         .then(data => exibir_resultado_pesquisa(data))
+}
+
+function requisicao_filtro_ordem (type, ordem, nome_ordem) {
+    let button_filtro = document.getElementById("filtro-ordem");
+    let button_ver_mais = document.getElementById("lancamentos-ver-mais");
+    let cards_escondidos = document.getElementById("mostrar_mais_cards");
+    let caminho = 'https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&'
+
+    button_filtro.innerHTML = nome_ordem;
+    cards_escondidos.style.display = "none";
+    button_ver_mais.style.display = "none";
+
+    switch (type) {
+        case 'rating':
+            caminho += `ordering=${ordem}`;
+            break;
+        case 'data':
+            caminho += `dates=2020-12-01,2021-12-19`;
+            break;
+    }
+
+    fetch (caminho)
+        .then(res => res.json ())
+        .then(data => exibir_games_filtro_ordem(data));
+    
 }
 
 onload = () => {

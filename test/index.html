@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <script src="../js/jquery-3.6.1.min.js"></script>
     <script src="./script.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -17,133 +19,365 @@
     <a href="../index.html">Voltar</a>
     <a href="./pagina-lancamento.html">teste lancamento</a>
 
-    <input  
-        type="search" 
-        name="Busca" 
-        placeholder="Pesquisar games"
-        aria-label="Search" 
-        id="campo_buscar"
-        onclick="console.log(value)">
-        
-    <button id="btn-pesquisar">Pesquisar</button>
+    <div class="container">
+        <div class="row blog">
+<h1>
+<div class="animated fadeInLeft">NOS EXPERTS</div><div class="animated fadeInRight">SCIENTIFIQUES</div>
+</h1>
+            <div class="col-md-12">
+                <div id="blogCarousel" class="carousel slide" data-ride="carousel">
 
-    <!-- <div class="ocean">
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-      </div> -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#blogCarousel" data-slide-to="1"></li>
+                    </ol>
 
-    <!-- <div class="waveWrapper waveAnimation">
-        <div class="waveWrapperInner bgTop">
-            <div class="wave waveTop"
-                style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
-        </div>
-        <div class="waveWrapperInner bgMiddle">
-            <div class="wave waveMiddle"
-                style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
-        </div>
-        <div class="waveWrapperInner bgBottom">
-            <div class="wave waveBottom"
-                style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
-        </div>
-    </div> -->
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
 
-    <!-- <div class="box">
-        <!-- <div class="onda"></div>
-    <div class="onda"></div>
-    <div class="onda"></div>
-    <div class="onda"></div>
-    <div class="onda"></div> -->
-    </div> -->
+                        <div class="carousel-item active">
+                            <div class="row">
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="our-team">
+      <div class="pic">
+        <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+      </div>
+      <div class="team-content">
+        <h3 class="title">Dana ROBINSON</h3>
+        <span class="post">Marketing Consultant</span>
+      </div>
+      <ul class="social"> 
+        <li>
+          <a href="#" class="fa fa-envelope"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-    <!-- <div class="container">
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="our-team">
+      <div class="pic">
+        <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+      </div>
+      <div class="team-content">
+        <h3 class="title">Dr. Bernard COVA</h3>
+        <span class="post">Marketing - Auteur</span>
+      </div>
+      <ul class="social">
+        <li>
+          <a href="#" class="fa fa-envelope"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="our-team">
+      <div class="pic">
+        <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+      </div>
+      <div class="team-content">
+        <h3 class="title">Dr. Francis Guilbert</h3>
+        <span class="post">Docteur - Chercheur</span>
+      </div>
+      <ul class="social">
+        <li>
+          <a href="#" class="fa fa-envelope"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-        <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-            <div class="carousel-inner w-100" role="listbox">
-                <div class="carousel-item row no-gutters active">
-                    <div class="col-3 float-left plataforma-slide-card">
-                        <div class="plataforma-card-conteudo">
-                            <div class="plataforma-card-titulo">
-                                <h1 id="plataforma-titulo">Titulo</h1>
-                            </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="our-team">
+      <div class="pic">
+        <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+      </div>
+      <div class="team-content">
+        <h3 class="title">Dr. Georges WANET</h3>
+        <span class="post">Docteur</span>
+      </div>
+      <ul class="social">
+        <li>
+          <a href="#" class="fa fa-envelope"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+                            <!--.row-->
                         </div>
+                        <!--.item-->
+
+                        <div class="carousel-item">
+                                                      <div class="row">
+ <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="our-team">
+      <div class="pic">
+        <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+      </div>
+      <div class="team-content">
+        <h3 class="title">Ted SICHELMAN</h3>
+        <span class="post">Law expert</span>
+      </div>
+      <ul class="social"> 
+        <li>
+          <a href="#" class="fa fa-envelope"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="our-team">
+      <div class="pic">
+        <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+      </div>
+      <div class="team-content">
+        <h3 class="title">Dr. Noël ALBERT</h3>
+        <span class="post">Marketing Consultant</span>
+      </div>
+      <ul class="social">
+        <li>
+          <a href="#" class="fa fa-envelope"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="our-team">
+      <div class="pic">
+        <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+      </div>
+      <div class="team-content">
+        <h3 class="title">Dr. Saverio TOMASELLA</h3>
+        <span class="post">Auteur et Chercheur - Brand Psychoanalysis</span>
+      </div>
+      <ul class="social">
+        <li>
+          <a href="#" class="fa fa-envelope"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="our-team">
+      <div class="pic">
+        <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+      </div>
+      <div class="team-content">
+        <h3 class="title">Ray BENEDICKTUS</h3>
+        <span class="post">Experienced Marketing Consultant</span>
+      </div>
+      <ul class="social">
+        <li>
+          <a href="#" class="fa fa-envelope"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
                     </div>
-                    <div class="col-3 float-left plataforma-slide-card">
-                        <div class="plataforma-card-conteudo">
-                            <div class="plataforma-card-titulo">
-                                <h1 id="plataforma-titulo">Titulo</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 float-left plataforma-slide-card">
-                        <div class="plataforma-card-conteudo">
-                            <div class="plataforma-card-titulo">
-                                <h1 id="plataforma-titulo">Titulo</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 float-left plataforma-slide-card">
-                        <div class="plataforma-card-conteudo">
-                            <div class="plataforma-card-titulo">
-                                <h1 id="plataforma-titulo">Titulo</h1>
-                            </div>
-                        </div>
+                    <!--.carousel-inner-->
+                </div>
+                <!--.Carousel-->
+
+            </div>
+        </div>
+</div>
+<div class="container">
+    <section class="row modelo-de-card">
+        <div class="col-3 publisher-cards">
+            <div class="publisher-card">
+                <div class="publisher-card-banner">
+                    <div class="publisher-card-banner-filtro">
+                        <h1>Titulo</h1>
                     </div>
                 </div>
-                <div class="carousel-item row no-gutters">
-                    <div class="col-3 float-left plataforma-slide-card">
-                        <div class="plataforma-card-conteudo">
-                            <div class="plataforma-card-titulo">
-                                <h1 id="plataforma-titulo">Titulo</h1>
-                            </div>
-                        </div>
+                
+                <div class="publisher-card-conteudo"> 
+                    <h3>jogos:</h3>
+                    
+                        <ul id="publisher-card-conteudo-topicos">
+                            <li>Topicos</li>
+                            <li>Topicos</li>
+                            <li>Topicos</li>
+                        </ul>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-3 publisher-cards">
+            <div class="publisher-card">
+                <div class="publisher-card-banner">
+                    <div class="publisher-card-banner-filtro">
+                        <h1>Titulo</h1>
                     </div>
-                    <div class="col-3 float-left plataforma-slide-card">
-                        <div class="plataforma-card-conteudo">
-                            <div class="plataforma-card-titulo">
-                                <h1 id="plataforma-titulo">Titulo</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 float-left plataforma-slide-card">
-                        <div class="plataforma-card-conteudo">
-                            <div class="plataforma-card-titulo">
-                                <h1 id="plataforma-titulo">Titulo</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 float-left plataforma-slide-card">
-                        <div class="plataforma-card-conteudo">
-                            <div class="plataforma-card-titulo">
-                                <h1 id="plataforma-titulo">Titulo</h1>
+                </div>
+                
+                <div class="publisher-card-conteudo"> 
+                    <h3>jogos:</h3>
+                    
+                        <ul id="publisher-card-conteudo-topicos">
+                            <li>Topicos</li>
+                            <li>Topicos</li>
+                            <li>Topicos</li>
+                        </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <div id="main_area">
+        <!-- Slider 
+        <div class="row">
+            <div class="col-sm-6" id="slider-thumbs">
+                <!-- Bottom switcher of slider 
+                <ul class="hide-bullets">
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-0">
+                            <img src="http://placehold.it/150x150&text=zero">
+                        </a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-1"><img src="http://placehold.it/150x150&text=1"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-2"><img src="http://placehold.it/150x150&text=2"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-3"><img src="http://placehold.it/150x150&text=3"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-4"><img src="http://placehold.it/150x150&text=4"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-5"><img src="http://placehold.it/150x150&text=5"></a>
+                    </li>
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-6"><img src="http://placehold.it/150x150&text=6"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-7"><img src="http://placehold.it/150x150&text=7"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-8"><img src="http://placehold.it/150x150&text=8"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-9"><img src="http://placehold.it/150x150&text=9"></a>
+                    </li>
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-10"><img src="http://placehold.it/150x150&text=10"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-11"><img src="http://placehold.it/150x150&text=11"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-12"><img src="http://placehold.it/150x150&text=12"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-13"><img src="http://placehold.it/150x150&text=13"></a>
+                    </li>
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-14"><img src="http://placehold.it/150x150&text=14"></a>
+                    </li>
+
+                    <li class="col-sm-3">
+                        <a class="thumbnail" id="carousel-selector-15"><img src="http://placehold.it/150x150&text=15"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <div class="col-xs-12" id="slider">
+                    <!-- Top part of the slider 
+                    <div class="row">
+                        <div class="col-sm-12" id="carousel-bounding-box">
+                            <div class="carousel slide" id="myCarousel">
+                                <!-- Carousel items 
+                                <div class="carousel-inner">
+                                    <div class="active item" data-slide-number="0">
+                                        <img src="http://placehold.it/470x480&text=zero"></div>
+
+                                    <div class="item" data-slide-number="1">
+                                        <img src="http://placehold.it/470x480&text=1"></div>
+
+                                    <div class="item" data-slide-number="2">
+                                        <img src="http://placehold.it/470x480&text=2"></div>
+
+                                    <div class="item" data-slide-number="3">
+                                        <img src="http://placehold.it/470x480&text=3"></div>
+
+                                    <div class="item" data-slide-number="4">
+                                        <img src="http://placehold.it/470x480&text=4"></div>
+
+                                    <div class="item" data-slide-number="5">
+                                        <img src="http://placehold.it/470x480&text=5"></div>
+                                    
+                                    <div class="item" data-slide-number="6">
+                                        <img src="http://placehold.it/470x480&text=6"></div>
+                                    
+                                    <div class="item" data-slide-number="7">
+                                        <img src="http://placehold.it/470x480&text=7"></div>
+                                    
+                                    <div class="item" data-slide-number="8">
+                                        <img src="http://placehold.it/470x480&text=8"></div>
+                                    
+                                    <div class="item" data-slide-number="9">
+                                        <img src="http://placehold.it/470x480&text=9"></div>
+                                    
+                                    <div class="item" data-slide-number="10">
+                                        <img src="http://placehold.it/470x480&text=10"></div>
+                                    
+                                    <div class="item" data-slide-number="11">
+                                        <img src="http://placehold.it/470x480&text=11"></div>
+                                    
+                                    <div class="item" data-slide-number="12">
+                                        <img src="http://placehold.it/470x480&text=12"></div>
+
+                                    <div class="item" data-slide-number="13">
+                                        <img src="http://placehold.it/470x480&text=13"></div>
+
+                                    <div class="item" data-slide-number="14">
+                                        <img src="http://placehold.it/470x480&text=14"></div>
+
+                                    <div class="item" data-slide-number="15">
+                                        <img src="http://placehold.it/470x480&text=15"></div>
+                                </div>
+                                <!-- Carousel nav 
+                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+            <!--/Slider
         </div>
 
     </div>
+</div> -->
 
-
-    <section class="plataforma-card-conteudo-plataforma">
-        <div class="col-3 card-slide">
-            <div class="plataforma-card-conteudo">
-                <div class="plataforma-card-titulo">
-                    <h1 id="plataforma-titulo">Titulo</h1>
-                </div>
-            </div>
-
-        </div>
-    </section> -->
+    
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
