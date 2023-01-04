@@ -3,7 +3,6 @@ body {
     padding: 0px;
     background-color: rgb(33, 33, 33);
     color: #fff;
-    /* background-color: #f9f3ff; */
 }
 
 /***  ESTILIZACAO CABECALHO ***/
@@ -75,55 +74,12 @@ body {
 }
 
 /*** DESTAQUES ***/
-.destaques {
-    background: rgb(80,0,255);
-    background: linear-gradient(0deg, rgba(80,0,255,1) 0%, rgba(136,0,255,1) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin:0;
-}
-
-#destaques {
-    margin: 20px;
-    margin-top: 30px;
-    text-align: center;
-    font-size: 24pt;
-    z-index: 1;
-    color: #fff;
-}
-
-
-.trailer {
-    display: flex;
-    flex-direction: row;
-    align-items: top;
-    justify-content: center;
-    gap: 30px;
-}
-
-.infos {
-    width: 80%;
-    color: #fff;
-}
-
-#avaliacao {
-    color: red;
-    font-weight: 700;
-}
-
-.carousel-control-next, .carousel-control-prev {
-    width: 10%;
-}
-
-/* destaque novo**/
-.corrosel2 {
+.destaque {
     margin: 0;
     width: 100%;
 }
 
-.corrosel2 .carousel {
+.destaque .carousel {
     width:100%;
 }
 .destaque1 {
@@ -160,13 +116,13 @@ body {
 }
 
 /*** LANCAMENTOS ***/
-.lancamentos, .sobre {
+.jogos, .sobre {
     max-width: 1000px;
     margin: 0 auto;
     padding: 15px;
 }
 
-.lancamentos {
+.jogos {
     padding: 30px;
     gap:15px;
 }
@@ -230,11 +186,6 @@ body {
     align-items: center;
 }
 
-button i {
-    color: #fff;
-    margin-right: 7px;
-}
-
 #lancamento-maisDetalhe {
     background-color: rgb(152, 152, 152);
     position: relative;
@@ -256,10 +207,6 @@ button i {
     font-weight: 700;
     box-shadow: none;
     top: 3px;
-}
-
-.carregar-plataforma, .carregar-publisher {
-    text-align: right;
 }
 
 /*** PLATAFORMAS ***/
@@ -314,10 +261,6 @@ button i {
     color: white;
 }
 
-.card-maisDetalhes {
-    text-align: right;
-}
-
 /*** PUBLISHER ***/
 .publisher {
     background: rgb(124,0,247);
@@ -355,7 +298,6 @@ button i {
 }
 
 .publisher-card-banner {
-    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -457,39 +399,15 @@ footer p {
     }
     
     /*  DESTAQUES   */
-    .destaques, .lancamentos {
+    .destaques, .jogos {
         position: relative;
         top:58px;
     }
 
-    .trailer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .infos {
-        text-align: center;
-    }
-
-    .infos p {
-        display: none;
-    }
-
-    /* LANCAMENTOS */
-    .lancamentos {
+    /* JOGOS */
+    .jogos {
         position: relative;
         top:58px;
-    }
-
-    /* PLATAFOMAS e PUBLISHERS */
-    .plataforma-info, .publisher-info {
-        display: none;
-    }
-
-    .plataforma1, .plataforma2, .plataforma3, .item {
-        margin: 10px auto;
     }
 
     /* SOBRE */
