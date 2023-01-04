@@ -273,6 +273,63 @@ function exibir_plataformas (data) {
     return data;
 }
 
+/**
+ * PUBLISHER 
+ */
+
+function exibir_publisher () {
+    fetch ('https://api.rawg.io/api/publishers?key=0ae278d26fd24463b3d3c454be18cb17')
+        .then(res => res.json ())
+        .then(data => {
+            let str = ''
+            let index = 0
+
+            //Inclusao de novo slide no corrousel
+            for (let i = 0; i < 3; i++){
+                str += `<div class="carousel-item row no-gutters`
+
+                if (i == 0) {
+                    str += ` active">`
+                } else {
+                    str += `">`
+                }
+
+                for (let j = 0; j < 4; j++) {
+                    let jogo = data.results[index]
+                    if (index < 10) {
+                        str += `<div class="col-3 float-left publisher-slide">
+                                    <div class="publisher-slide">
+                                        <div class="publisher-card">
+                                            <div class="publisher-card-banner" style="background-image: url(${jogo.image_background});">
+                                                <div class="publisher-card-banner-filtro">
+                                                    <h2>${jogo.name}</h2>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="publisher-card-conteudo"> 
+                                                <h4>Jogos:</h3>
+                                                
+                                                <ul id="publisher-card-conteudo-topicos">`
+
+                                                for (let k = 0; k < jogo.games.length; k++) {
+                                                    str+=`<li>${jogo.games[k].name}</li>`
+                                                }
+                                                    
+                                                str += `</ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`
+                    }
+                    index++;
+                }
+
+                str += `</div>`
+            }
+            
+            document.getElementById('publisher-carousel-cards').innerHTML = str
+        }); 
+}
 /***************
  * REQUISIÇÕES *
  ***************/
@@ -340,4 +397,5 @@ onload = () => {
     requisicao_games_destaques();
     requisicao_games_lancamentos('');
     requisicao_plataformas();
+    exibir_publisher();
 }

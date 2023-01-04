@@ -322,14 +322,22 @@ button i {
     background: rgb(131,0,255);
     color: #fff;
     width: 100%;
-    height: 100vh;
+    height: 110vh;
     margin: 0;
     padding: 15px 10%;
 }
 
+.publisher-title, #publisher {
+    height: auto;
+}
+
+.publisher .carousel, .publisher .carousel .carousel-item {
+    height: 95vh;
+}
+
 .publisher-slide {
     border: none;
-    height: 80vh;
+    height: 90vh;
     padding: 20px 10px;
 }
 
@@ -353,7 +361,7 @@ button i {
     padding: 0;
     border: none;
     border-radius: 20px;
-    height: 60%;
+    height: 35%;
 }
 
 .publisher-card-banner-filtro {
@@ -371,11 +379,19 @@ button i {
     color: #fff;
 }
 
+.publisher-card-banner-filtro h2 {
+    font-size: 20pt;
+}
+
 .publisher-card-conteudo {
     background-color: #000;
     color: #fff;
     border-radius: 20px;
     padding: 20px;
+}
+
+#publisher-card-conteudo-topicos {
+    padding-left: 20px;
 }
 
 /* #publisher {
