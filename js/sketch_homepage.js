@@ -81,9 +81,9 @@ function exibir_todos_lancamentos (data) {
         let jogo = data.results[i];
         str += exibir_card_game_lancamento(jogo, 0, '');
     }
-
+    
     document.getElementById('mostrar_mais_cards').innerHTML = str;
-
+    
     return data;
 }
 
@@ -91,7 +91,7 @@ function ver_mais_lancamentos() {
     let cards_escondidos = document.getElementById("mostrar_mais_cards");
     let button = document.getElementById("lancamentos-ver-mais");
 
-    if (cards_escondidos.style.display === "none") {
+    if (cards_escondidos.style.display == "none" || cards_escondidos.style.display == "") {
         cards_escondidos.style.display = "flex";
         button.style.rotate = "180deg";
     } else {
