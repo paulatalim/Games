@@ -79,7 +79,7 @@
 
         <!-- Lançamentos -->
         <section class="row jogos">
-            <div class="col-3">
+            <div class="col-3 jogos-titulo">
                 <h1 id="jogos">Jogos</h1>
             </div>
 
@@ -90,11 +90,11 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Ordem
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="filtro-ordem">
-                        <button class="dropdown-item" onclick="requisicao_games_lancamentos(''), exibir_titulo_filtro_ordem()">Nenhum</button>
-                        <button class="dropdown-item" onclick="requisicao_filtro_ordem('rating', '-rating', 'Mais popular')">Mais popular</button>
-                        <button class="dropdown-item" onclick="requisicao_filtro_ordem('rating', 'rating', 'Menos popular')">Menos popular</button>
-                        <button class="dropdown-item" onclick="requisicao_filtro_ordem('data', '', 'Lançamentos')">Lançamentos</button>
+                    <div class="dropdown-menu opcoes-filtro" aria-labelledby="filtro-ordem">
+                        <button class="dropdown-item item-filtro" onclick="requisicao_games_lancamentos(''), exibir_titulo_filtro_ordem()">Nenhum</button>
+                        <button class="dropdown-item item-filtro" onclick="requisicao_filtro_ordem('rating', '-rating', 'Mais popular')">Mais popular</button>
+                        <button class="dropdown-item item-filtro" onclick="requisicao_filtro_ordem('rating', 'rating', 'Menos popular')">Menos popular</button>
+                        <button class="dropdown-item item-filtro" onclick="requisicao_filtro_ordem('data', '', 'Lançamentos')">Lançamentos</button>
                     </div>
                 </div>
             </div>
@@ -105,20 +105,19 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Gênero
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="filtro-genero">
-                        <button class="dropdown-item" onclick="requisicao_games_lancamentos(''), exibir_titulo_filtro_genero()">Nenhum</button>
-                        <button class="dropdown-item" onclick="filtrar_genero('Action', 'Ação')">Ação</button>
-                        <button class="dropdown-item" onclick="filtrar_genero('Adventure', 'Aventura')">Aventura</button>
-                        <button class="dropdown-item" onclick="filtrar_genero('platformer', 'Plataforma')">Plataforma</button>
-                        <button class="dropdown-item" onclick="filtrar_genero('indie', 'Indi')">Indi</button>
-                        <button class="dropdown-item" onclick="filtrar_genero('RPG', )">RPG</button>
-                        <button class="dropdown-item" onclick="filtrar_genero('Puzzle', 'Quebra-Cabeça')">Quebra-Cabeça</button>
-                        <button class="dropdown-item" onclick="filtrar_genero('Shooter', 'Shooter')">Shooter</button>
+                    <div class="dropdown-menu opcoes-filtro" aria-labelledby="filtro-genero">
+                        <button class="dropdown-item item-filtro" onclick="requisicao_games_lancamentos(''), exibir_titulo_filtro_genero()">Nenhum</button>
+                        <button class="dropdown-item item-filtro" onclick="filtrar_genero('Action', 'Ação')">Ação</button>
+                        <button class="dropdown-item item-filtro" onclick="filtrar_genero('Adventure', 'Aventura')">Aventura</button>
+                        <button class="dropdown-item item-filtro" onclick="filtrar_genero('platformer', 'Plataforma')">Plataforma</button>
+                        <button class="dropdown-item item-filtro" onclick="filtrar_genero('indie', 'Indi')">Indi</button>
+                        <button class="dropdown-item item-filtro" onclick="filtrar_genero('RPG', )">RPG</button>
+                        <button class="dropdown-item item-filtro" onclick="filtrar_genero('Puzzle', 'Quebra-Cabeça')">Quebra-Cabeça</button>
+                        <button class="dropdown-item item-filtro" onclick="filtrar_genero('Shooter', 'Shooter')">Shooter</button>
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <button id="destaques-btn-pesquisar" onclick="requisicao_games_lancamento_pesquisa()"><i id="lupa-buscar" class="fa-solid fa-magnifying-glass"></i></button>
+            <div class="col-4 jogos-pesquisar">
                 <input 
                     class="form-control mr-sm-2" 
                     type="search" 
@@ -127,6 +126,7 @@
                     aria-label="Search" 
                     id="campo_buscar" 
                     oninput="barra_de_busca()">
+                <button id="jogos-btn-pesquisar" onclick="requisicao_games_lancamento_pesquisa()"><i id="jogos-pesquisar-lupa-icone" class="fa-solid fa-magnifying-glass"></i></button>
             </div>
 
             <!-- cards -->
@@ -134,7 +134,11 @@
 
             <div class="cards col-12" id="mostrar_mais_cards"></div>
 
-            <button onclick="ver_mais_lancamentos()" id="lancamentos-ver-mais">Ler mais</button>
+            <div class="col-12 jogos-ver-mais">
+                <button onclick="ver_mais_lancamentos()" id="lancamentos-ver-mais">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+            </div>
         </section>
 
         <!-- Plataformas -->

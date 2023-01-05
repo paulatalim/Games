@@ -41,38 +41,6 @@ body {
     margin: auto 0;
 }
 
-/* Campo de busca */
-.buscar-itens {
-    border: 1px solid #fff;
-    padding: 5px 15px;
-    border-radius: 10px;
-}
-
-.buscar-itens i {
-    color: #fff;
-    padding: 5px;
-}
-
-.buscar-itens input {
-    background-color: #000;
-    color: white;
-    width: 85%;
-    border: none;
-    outline: none;
-}
-
-.buscar-itens input:focus {
-    background-color: #000;
-    color: white;
-    width: 85%;
-    border: none;
-    outline: none;
-}
-
-.buscar-itens input::placeholder {
-    color: #fff;
-}
-
 /*** DESTAQUES ***/
 .destaque {
     margin: 0;
@@ -82,6 +50,7 @@ body {
 .destaque .carousel {
     width:100%;
 }
+
 .destaque1 {
     background-repeat: no-repeat;
     background-size: cover;
@@ -115,20 +84,129 @@ body {
     font-size: 15pt;
 }
 
-/*** LANCAMENTOS ***/
+/*** JOGOS ***/
 .jogos, .sobre {
     max-width: 1000px;
     margin: 0 auto;
     padding: 15px;
 }
 
+.jogos-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .jogos {
+    min-height: 100vh;
     padding: 30px;
     gap:15px;
 }
 
+.jogos-pesquisar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0;
+    
+}
+
+#campo_buscar {
+    background: rgb(139,0,204);
+    background: linear-gradient(45deg, rgba(139,0,204,1) 0%, rgba(223,0,255,1) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    width: 89%;
+}
+
+#campo_buscar::placeholder {
+    color:#fff;
+}
+
+#jogos-btn-pesquisar {
+    background: rgb(139,0,204);
+    background: linear-gradient(45deg, rgba(139,0,204,1) 0%, rgba(223,0,255,1) 100%);
+    border: none;
+    border-radius: 50px;
+    padding: 5px;
+    width: 15%;
+    outline: none;
+}
+
+#jogos-btn-pesquisar:hover {
+    background: rgb(223,0,255);
+    cursor: pointer;
+}
+
+#jogos-btn-pesquisar:active {
+    background: rgb(139,0,204);
+    outline: none;
+}
+
+#jogos-pesquisar-lupa-icone {
+    color: #fff;
+}
+
 #pesquisa_card, #mostrar_mais_cards {
     padding: auto;
+}
+
+.filtro {
+    display: flex;
+    align-items: center;
+}
+
+#filtro-ordem, #filtro-genero {
+    background: rgb(139,0,204);
+    background: linear-gradient(45deg, rgba(139,0,204,1) 0%, rgba(223,0,255,1) 100%);
+    border-radius: 20px;
+}
+
+.opcoes-filtro {
+    background: rgb(139,0,204);
+    background: linear-gradient(45deg, rgba(139,0,204,1) 0%, rgba(223,0,255,1) 100%);
+    border:none;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.item-filtro {
+    background-color: none;
+    color:#fff
+}
+
+.item-filtro:hover {
+    background-color: rgb(139,0,204);
+    border:none;
+    color:#fff;
+}
+
+.item-filtro:active {
+    outline: none;
+}
+
+.jogos-ver-mais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#lancamentos-ver-mais {
+    background-color: rgb(33, 33, 33);
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+#lancamentos-ver-mais i {
+    color:#fff;
+    font-size: 20pt;
+}
+
+#lancamentos-ver-mais:active {
+    outline: none;
 }
 
 #mostrar_mais_cards {
@@ -179,11 +257,6 @@ body {
 
 .info-card div {
     margin-top: 15px;
-}
-
-.filtro {
-    display: flex;
-    align-items: center;
 }
 
 #lancamento-maisDetalhe {
