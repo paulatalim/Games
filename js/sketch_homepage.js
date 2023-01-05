@@ -93,10 +93,10 @@ function ver_mais_lancamentos() {
 
     if (cards_escondidos.style.display === "none") {
         cards_escondidos.style.display = "flex";
-        button.innerHTML = "Ler menos"
+        button.style.rotate = "180deg";
     } else {
         cards_escondidos.style.display = "none";
-        button.innerHTML = "Ler mais";
+        button.style.rotate = "0deg"
     }
 }
 

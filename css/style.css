@@ -205,6 +205,14 @@ body {
     font-size: 20pt;
 }
 
+#lancamentos-ver-mais i:hover {
+    color: rgb(205, 205, 205);
+}
+
+#lancamentos-ver-mais i:active {
+    color: rgb(163, 163, 163);
+}
+
 #lancamentos-ver-mais:active {
     outline: none;
 }
