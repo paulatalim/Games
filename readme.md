@@ -1,5 +1,9 @@
 # Portal Games
 
+## Proxímos passos
+- Impor responsividade no site
+- Implantar mais dinamismo e animações no site
+
 ## Implantação do site
 Segue o link do site, publicado atraves do GitHub pages
 
