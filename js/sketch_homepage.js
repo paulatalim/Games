@@ -40,15 +40,17 @@ function exibir_games_destaques(data) {
 function exibir_card_game_lancamento (jogo, id, complemento) {
     let str = '';
 
-    str = `<div class="col-lg-3 col-md-4 col-sm-12 card" style="background-image: url(${jogo.background_image});">
-                <div class="card-conteudo">
-                    <h5>${jogo.name}</h5>
-                    <div class="info-card">
-                        
-                            <p>Avaliação: ${jogo.rating}</p>
-                            <p>Lançamento: ${jogo.released}</p>
-                        
-                            <div><a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}&num=${id}&adicional=${complemento}">Mais Detalhes...</a></div>
+    str = `<div class="col-lg-3 col-md-4 col-sm-12 area-card">
+                <div class="card" style="background-image: url(${jogo.background_image});">
+                    <div class="card-conteudo">
+                        <h5>${jogo.name}</h5>
+                        <div class="info-card">
+                            
+                                <p>Avaliação: ${jogo.rating}</p>
+                                <p>Lançamento: ${jogo.released}</p>
+                            
+                                <div><a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}&num=${id}&adicional=${complemento}">Mais Detalhes...</a></div>
+                        </div>
                     </div>
                 </div>
             </div>`
@@ -68,7 +70,7 @@ function exibir_todos_lancamentos (data) {
     let str = '';
 
     //Exibe 6 cards
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 8; i++) {
         let jogo = data.results[i];
         str += exibir_card_game_lancamento(jogo, 0, '');
     }

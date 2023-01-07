@@ -233,20 +233,25 @@ body {
     margin: 10px 0;
 }
 
+.area-card {
+    height: 300px;
+    padding: 10px 8px;
+    border: none;
+}
+
 .card {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
 
-    height: 300px;
+    height: 100%;
+    width: 100%;
     color:rgb(255, 255, 255);
     
     padding: 0;
     border-radius: 10px;
     border: none;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.342);
-
-    margin: 10px 5px;
 }
 
 .card-conteudo {
