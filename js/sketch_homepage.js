@@ -14,9 +14,9 @@ function exibir_games_destaques(data) {
             str += `<div class="carousel-item">`
         }
 
-        str += `    <div class="destaque1" style="background-image: url(${jogo.background_image});">
+        str += `    <div class="slide-destaque" style="background-image: url(${jogo.background_image});">
                         <div class="destaque-filtro-image">
-                            <div class="col-5 destaque1-conteudo">
+                            <div class="col-lg-5 col-9 destaque1-conteudo">
                                 <h1>${jogo.name}</h1>
                                 <!--<p id="destaque-conteudo-detalhamento">
                                     <strong>Lançamento:</strong> ${jogo.released}<br>

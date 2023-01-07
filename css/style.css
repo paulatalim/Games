@@ -51,7 +51,7 @@ body {
     width:100%;
 }
 
-.destaque1 {
+.slide-destaque {
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: left;
@@ -489,9 +489,20 @@ footer p {
     }
     
     /*  DESTAQUES   */
-    .destaques, .jogos {
-        position: relative;
-        top:58px;
+    .slide-destaque {
+        background-position-x: center;
+    }
+    .destaque-filtro-image {
+        background: rgb(0,0,0);
+        background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,1) 100%);
+        justify-content: center;
+        align-items: flex-end;
+        text-align: center;
+        padding: 25% 0px;
+    }
+
+    .destaque-filtro-image h1 {
+        font-size: 35pt;
     }
 
     /* JOGOS */
