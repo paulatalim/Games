@@ -96,14 +96,9 @@ function ver_mais_lancamentos() {
         button.style.rotate = "180deg";
     } else {
         cards_escondidos.style.display = "none";
-        button.style.rotate = "0deg"
+        button.style.rotate = "0deg";
     }
 }
-
-//Tooltip do botao ver mais
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-})
 
 function barra_de_busca(){
     let barra_de_busca = document.getElementById("campo_buscar").value;

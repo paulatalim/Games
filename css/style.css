@@ -200,12 +200,16 @@ body {
     cursor: pointer;
 }
 
+#lancamentos-ver-mais:active {
+    outline: none;
+}
+
 #lancamentos-ver-mais i {
     color:#fff;
     font-size: 20pt;
 }
 
-#lancamentos-ver-mais i:hover {
+#lancamentos-ver-mais:hover i,  #lancamentos-ver-mais:hover p {
     color: rgb(205, 205, 205);
 }
 
@@ -213,8 +217,8 @@ body {
     color: rgb(163, 163, 163);
 }
 
-#lancamentos-ver-mais:active {
-    outline: none;
+#lancamentos-ver-mais p {
+    color:#fff;
 }
 
 #mostrar_mais_cards {
