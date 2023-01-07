@@ -204,21 +204,21 @@ body {
     outline: none;
 }
 
-#lancamentos-ver-mais i {
+#jogos-ver-mais-icone {
     color:#fff;
     font-size: 20pt;
+}
+
+#jogos-ver-mais-text {
+    color:#fff;
 }
 
 #lancamentos-ver-mais:hover i,  #lancamentos-ver-mais:hover p {
     color: rgb(205, 205, 205);
 }
 
-#lancamentos-ver-mais i:active {
+#lancamentos-ver-mais:active i, #lancamentos-ver-mais:active p {
     color: rgb(163, 163, 163);
-}
-
-#lancamentos-ver-mais p {
-    color:#fff;
 }
 
 #mostrar_mais_cards {
