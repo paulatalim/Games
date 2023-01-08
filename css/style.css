@@ -314,7 +314,9 @@ body {
 }
 
 .plataforma-slide-card {
+    margin: auto 10px;
     padding: 0 10px;
+    height: 300px;
 }
 
 .plataforma-card-conteudo {
@@ -323,8 +325,8 @@ body {
     background-position-x: center;
     background-position-y: center;
 
-    height: 50vh;
-    width: 40vh;
+    height: 100%;
+    width: 100%;
 
     padding: 0;
     border: none;
@@ -492,6 +494,7 @@ footer p {
     .slide-destaque {
         background-position-x: center;
     }
+
     .destaque-filtro-image {
         background: rgb(0,0,0);
         background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,1) 100%);
@@ -511,6 +514,15 @@ footer p {
         top:58px;
     }
 
+    /*  PLATAFORMA */
+    .plataformas .carousel-item .float-left {
+        margin-top: 10%;
+        margin-left: 5%;
+    }
+    
+    .plataforma-slide-card {
+        height: 200px;
+    }
     /* SOBRE */
     .sobre-info, .editorial-info {
         margin:0 auto;
