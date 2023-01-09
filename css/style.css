@@ -477,6 +477,16 @@ footer p {
     color: #fff;
 }
 
+::-webkit-scrollbar {
+    background-color: rgba(0, 0, 0, 0);
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(223,0,255);
+    border-radius: 10px;
+     
+}
 /*** MEDIA QUERY ***/
 @media screen and (max-width: 990px) {
     /* NAV BAR */
