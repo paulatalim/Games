@@ -594,6 +594,12 @@ footer p {
 }
 
 @media screen and (max-width: 576px) {
+    /* JOGOS */
+    .filtro, .jogos-pesquisar {
+        display: none;
+    }
+    
+    /* PUBLISHER */
     .publisher .carousel, .publisher .carousel .carousel-item {
         height: 70vh;
     }

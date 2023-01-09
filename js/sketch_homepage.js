@@ -309,7 +309,7 @@ function exibir_publisher () {
             let index = 0
 
             //Inclusao de novo slide no corrousel
-            for (let i = 0; i < Math.ceil(data.results.length/3); i++){
+            for (let i = 0; i < Math.ceil(data.results.length/4); i++){
                 str += `<div class="carousel-item row no-gutters`
 
                 if (i == 0) {
