@@ -431,6 +431,10 @@ body {
 }
 
 /*** SOBRE ***/
+.sobre {
+    padding-top: 10%;
+}
+
 .editorial-item {
     display: flex;
     flex-direction: row;
@@ -523,6 +527,43 @@ footer p {
     .plataforma-slide-card {
         height: 200px;
     }
+
+    /* PUBLISHERS */
+    .publisher {
+        height: 100vh !important; 
+    }
+
+    .plataformas-title, .publisher-title {
+        display: flex;
+        align-items: center;
+    }
+
+    .publisher .carousel-item .float-left {
+        margin-top: 5%;
+    }
+
+    .publisher .carousel, .publisher .carousel .carousel-item {
+        height: 55vh;
+    }
+
+    .publisher-slide {
+        height: auto;
+        padding: 20px;
+    }
+
+    .publisher-card {
+        background-color: rgba(0, 0, 0, 0);
+        height: 200px;
+    }
+
+    .publisher-card-banner {
+        height: 100%;
+    }
+
+    .publisher-card-conteudo {
+        display: none;
+    }
+
     /* SOBRE */
     .sobre-info, .editorial-info {
         margin:0 auto;

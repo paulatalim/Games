@@ -260,7 +260,7 @@ function exibir_plataformas (data) {
         for (let j = 0; j < 4; j++) {
             let jogo = data.results[index]
 
-            str += `<div class="col-3 col-md-5 float-left">
+            str += `<div class="col-3 col-md-5 col-lg-3 float-left">
                         <div class="plataforma-slide-card">
                             <div class="plataforma-card-conteudo" style="background-image: url(${jogo.image_background});">
                                 <div class="plataforma-card-titulo">
@@ -304,7 +304,7 @@ function exibir_publisher () {
                 for (let j = 0; j < 4; j++) {
                     let jogo = data.results[index]
                     if (index < 10) {
-                        str += `<div class="col-3 float-left">
+                        str += `<div class="col-3 col-md-6 col-lg-3 float-left">
                                     <div class="publisher-slide">
                                         <div class="publisher-card">
                                             <div class="publisher-card-banner" style="background-image: url(${jogo.image_background});">
