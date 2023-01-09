@@ -67,10 +67,24 @@ function exibir_titulo_filtro_ordem() {
 }
 
 function exibir_todos_lancamentos (data) {
+    let qnt_cards_exibidos = 0;
+    let viewport = window.screen.width;
+
+    console.log (viewport)
+
+    //Deixa o layout responsivo
+    if (viewport >= 992) {
+        qnt_cards_exibidos = 8;
+    } else if (viewport >= 768) {
+        qnt_cards_exibidos = 6;
+    } else {
+        qnt_cards_exibidos = 3;
+    }
+
     let str = '';
 
-    //Exibe 6 cards
-    for (let i = 0; i < 8; i++) {
+    //Exibe cards em destaque
+    for (let i = 0; i < qnt_cards_exibidos; i++) {
         let jogo = data.results[i];
         str += exibir_card_game_lancamento(jogo, 0, '');
     }
@@ -79,7 +93,7 @@ function exibir_todos_lancamentos (data) {
 
     str = '';
 
-    for (let i = 6; i < data.results.length; i++) {
+    for (let i = qnt_cards_exibidos; i < data.results.length; i++) {
         let jogo = data.results[i];
         str += exibir_card_game_lancamento(jogo, 0, '');
     }
@@ -260,7 +274,7 @@ function exibir_plataformas (data) {
         for (let j = 0; j < 4; j++) {
             let jogo = data.results[index]
 
-            str += `<div class="col-3 col-md-5 col-lg-3 float-left">
+            str += `<div class="col-3 col-md-6 col-lg-3 float-left">
                         <div class="plataforma-slide-card">
                             <div class="plataforma-card-conteudo" style="background-image: url(${jogo.image_background});">
                                 <div class="plataforma-card-titulo">

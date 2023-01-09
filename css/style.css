@@ -512,16 +512,9 @@ footer p {
         font-size: 35pt;
     }
 
-    /* JOGOS */
-    .jogos {
-        position: relative;
-        top:58px;
-    }
-
     /*  PLATAFORMA */
     .plataformas .carousel-item .float-left {
         margin-top: 10%;
-        margin-left: 5%;
     }
     
     .plataforma-slide-card {
