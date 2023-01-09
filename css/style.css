@@ -485,25 +485,15 @@ footer p {
 ::-webkit-scrollbar-thumb {
     background-color: rgb(223,0,255);
     border-radius: 10px;
-     
 }
+
 /*** MEDIA QUERY ***/
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 992px) {
     /* NAV BAR */
     .navbar-nav p {
         display: none;
     }
-}
 
-@media screen and (max-width: 800px) {
-    /* HEADER */
-    .header {
-        position: fixed;
-        z-index: 1;
-        border: none;
-        width: 100%;
-    }
-    
     /*  DESTAQUES   */
     .slide-destaque {
         background-position-x: center;
@@ -566,6 +556,16 @@ footer p {
     .publisher-card-conteudo {
         display: none;
     }
+}
+
+@media screen and (max-width: 800px) {
+    /* HEADER */
+    .header {
+        position: fixed;
+        z-index: 1;
+        border: none;
+        width: 100%;
+    }
 
     /* SOBRE */
     .sobre-info, .editorial-info {
@@ -574,5 +574,36 @@ footer p {
 
     .sobre h1 {
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* JOGOS */
+    .area-card {
+        height: 200px;
+    }
+
+    .card {
+        background-position-y: 75%;
+    }
+
+    .plataformas .carousel-item .float-left, .publisher .carousel-item .float-left {
+        margin-top: 25% !important;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .publisher .carousel, .publisher .carousel .carousel-item {
+        height: 70vh;
+    }
+
+    .publisher .carousel-item .float-left {
+        margin-top: 0%;
+    }
+
+    .publisher-card {
+        background-color: rgba(0, 0, 0, 0);
+        height: 150px;
     }
 }

@@ -40,7 +40,7 @@ function exibir_games_destaques(data) {
 function exibir_card_game_lancamento (jogo, id, complemento) {
     let str = '';
 
-    str = `<div class="col-lg-3 col-md-4 col-sm-12 area-card">
+    str = `<div class="col-lg-3 col-md-4 col-sm-6 col-s-12 area-card">
                 <div class="card" style="background-image: url(${jogo.background_image});">
                     <div class="card-conteudo">
                         <h5>${jogo.name}</h5>
@@ -70,12 +70,10 @@ function exibir_todos_lancamentos (data) {
     let qnt_cards_exibidos = 0;
     let viewport = window.screen.width;
 
-    console.log (viewport)
-
     //Deixa o layout responsivo
     if (viewport >= 992) {
         qnt_cards_exibidos = 8;
-    } else if (viewport >= 768) {
+    } else if (viewport >= 576) {
         qnt_cards_exibidos = 6;
     } else {
         qnt_cards_exibidos = 3;
@@ -262,7 +260,7 @@ function exibir_plataformas (data) {
     let index = 0
 
     //Inclusao de novo slide no corrousel
-    for (let i = 0; i < 4; i++){
+    for (let i = 0; i < Math.ceil(data.results.length/4); i++){
         str += `<div class="carousel-item row no-gutters`
 
         if (i == 0) {
@@ -274,7 +272,11 @@ function exibir_plataformas (data) {
         for (let j = 0; j < 4; j++) {
             let jogo = data.results[index]
 
-            str += `<div class="col-3 col-md-6 col-lg-3 float-left">
+            if (index >= data.results.length) {
+                break;
+            }
+
+            str += `<div class="col-6 col-md-6 col-lg-3 float-left">
                         <div class="plataforma-slide-card">
                             <div class="plataforma-card-conteudo" style="background-image: url(${jogo.image_background});">
                                 <div class="plataforma-card-titulo">
@@ -283,6 +285,7 @@ function exibir_plataformas (data) {
                             </div>
                         </div>
                     </div>`
+            
             
             index++;
         }
@@ -306,7 +309,7 @@ function exibir_publisher () {
             let index = 0
 
             //Inclusao de novo slide no corrousel
-            for (let i = 0; i < 3; i++){
+            for (let i = 0; i < Math.ceil(data.results.length/3); i++){
                 str += `<div class="carousel-item row no-gutters`
 
                 if (i == 0) {
@@ -317,8 +320,8 @@ function exibir_publisher () {
 
                 for (let j = 0; j < 4; j++) {
                     let jogo = data.results[index]
-                    if (index < 10) {
-                        str += `<div class="col-3 col-md-6 col-lg-3 float-left">
+                    if (index < data.results.length) {
+                        str += `<div class="col-12 col-md-6 col-lg-3 float-left">
                                     <div class="publisher-slide">
                                         <div class="publisher-card">
                                             <div class="publisher-card-banner" style="background-image: url(${jogo.image_background});">
