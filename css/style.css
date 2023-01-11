@@ -276,6 +276,10 @@ body {
     margin-top: 15px;
 }
 
+#jogo-card-info-lancamento {
+    font-size: small;
+}
+
 #lancamento-maisDetalhe {
     background-color: rgb(152, 152, 152);
     position: relative;

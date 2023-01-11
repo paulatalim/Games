@@ -39,6 +39,7 @@ function exibir_games_destaques(data) {
 
 function exibir_card_game_lancamento (jogo, id, complemento) {
     let str = '';
+    let data = jogo.released.split("-");
 
     str = `<div class="col-lg-3 col-md-4 col-sm-6 col-s-12 area-card">
                 <div class="card" style="background-image: url(${jogo.background_image});">
@@ -47,7 +48,7 @@ function exibir_card_game_lancamento (jogo, id, complemento) {
                         <div class="info-card">
                             
                                 <p>Avaliação: ${jogo.rating}</p>
-                                <p>Lançamento: ${jogo.released}</p>
+                                <p>Lançamento: <span id="jogo-card-info-lancamento">${data[2]}/${data[1]}/${data[0]}</span></p>
                             
                                 <div><a id="lancamento-maisDetalhe" href="./detalhes.html?id=${jogo.id}&num=${id}&adicional=${complemento}">Mais Detalhes...</a></div>
                         </div>
