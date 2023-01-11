@@ -1,8 +1,14 @@
 # Portal Games
 
-## Proxímos passos
-- Impor responsividade no site
-- Implantar mais dinamismo e animações no site
+## Sobre
+Esse repositorio possui um web site, o qual é fruto do trabalho acadêmico da matéria de Desenvolvimento de Interfaces WEB do curso de Engenharia de Computação da PUC Minas. Sendo um site de games que utiliza a [API RAWN.io](https://rawg.io/) como banco de dados dos jogos, plataforma e publishers
+
+## Tecnologias utilizadas
+- HTML
+- CSS
+- Java Script
+- [Bootstrap versão 4](https://getbootstrap.com/)
+- [API RAWN.io](https://rawg.io/) 
 
 ## Implantação do site
 Segue o link do site, publicado atraves do GitHub pages
