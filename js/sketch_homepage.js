@@ -39,18 +39,25 @@ function exibir_games_destaques(data) {
 
 function exibir_card_game_jogo (jogo, id, complemento) {
     let str = '';
-    let data = jogo.released.split("-");
 
+    let data;
+
+    if (jogo.released != null) {
+        data = jogo.released.split("-");
+    }
+    
     str = `<div class="col-lg-3 col-md-4 col-sm-6 col-s-12 area-card">
                 <div class="card" style="background-image: url(${jogo.background_image});">
                     <div class="card-conteudo">
                         <h5>${jogo.name}</h5>
                         <div class="info-card">
                             
-                                <p>Avaliação: ${jogo.rating}</p>
-                                <p>Lançamento: <span id="jogo-card-info-jogo">${data[2]}/${data[1]}/${data[0]}</span></p>
-                            
-                                <div><a id="jogo-maisDetalhe" href="./detalhes.html?id=${jogo.id}&num=${id}&adicional=${complemento}">Mais Detalhes...</a></div>
+                                <p>Avaliação: ${jogo.rating}</p>`
+                                if (jogo.released != null) {
+                                    str += `<p>Lançamento: <span id="jogo-card-info-jogo">${data[2]}/${data[1]}/${data[0]}</span></p>`
+                                }
+
+                        str += `<div><a id="jogo-maisDetalhe" href="./detalhes.html?id=${jogo.id}&num=${id}&adicional=${complemento}">Mais Detalhes...</a></div>
                         </div>
                     </div>
                 </div>
@@ -194,22 +201,37 @@ function exibir_games_jogos(data, filtroBusca) {
     return data;
 }
 
-function exibir_resultado_pesquisa (data, pesquisa) {
+function exibir_resultado_pesquisa (data, pesquisa, origem) {
     let str = ''
     let button_ver_mais = document.getElementById("jogos-ver-mais");
     let cards_escondidos = document.getElementById("mostrar_mais_cards");
+    let mensagem_nenhum_jogo_encontrado = document.querySelector (".jogos-nenhum-encontrado");
+    let sessao_cards = document.getElementById('pesquisa_cards');
+    let repeticao;
 
     exibir_titulo_filtro_genero();
     exibir_titulo_filtro_ordem();
     cards_escondidos.style.display = "none";
     button_ver_mais.style.display = "none";
 
-    for (let i = 0; i < data.results.length; i++) {
-        let jogo = data.results[i]
-        str += exibir_card_game_jogo (jogo, 1, pesquisa)
-    }
+    if (data.results.length == 0) {
+        mensagem_nenhum_jogo_encontrado.style.display = "flex";
+        sessao_cards.style.display = "none";
+    } else {
+        if (origem === 1) {
+            repeticao = 4;
+        } else {
+            repeticao = data.results.length
+        }
 
-    document.getElementById('pesquisa_cards').innerHTML = str
+        for (let i = 0; i < repeticao; i++) {
+            let jogo = data.results[i]
+            str += exibir_card_game_jogo (jogo, 1, pesquisa)
+        }
+
+        sessao_cards.innerHTML = str;
+    }
+    
 
     return data;
 }
@@ -365,9 +387,17 @@ function requisicao_games_destaques () {
 }
 
 function requisicao_games_jogos(filtroBusca){
-    fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
-        .then(res => res.json ())
-        .then(data => exibir_games_jogos(data, filtroBusca)); 
+    if (filtroBusca == '') {
+        fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
+            .then(res => res.json ())
+            .then(data => exibir_games_jogos(data, filtroBusca)); 
+    } else {
+        fetch(`https://api.rawg.io/api/games?search=${filtroBusca}&key=0ae278d26fd24463b3d3c454be18cb17`)
+            .then(res => res.json())
+            .then(data => exibir_resultado_pesquisa(data, filtroBusca, 1))
+            
+    }
+    
 }
 
 function requisicao_plataformas(){
@@ -376,12 +406,12 @@ function requisicao_plataformas(){
         .then(data => exibir_plataformas(data)); 
 }
 
-function requisicao_games_jogo_pesquisa () {
+function requisicao_games_jogo_pesquisa (origem) {
     let barra_de_busca = document.getElementById("campo_buscar").value;
 
     fetch(`https://api.rawg.io/api/games?search=${barra_de_busca}&key=0ae278d26fd24463b3d3c454be18cb17`)
         .then(res => res.json())
-        .then(data => exibir_resultado_pesquisa(data, barra_de_busca))
+        .then(data => exibir_resultado_pesquisa(data, barra_de_busca, origem))
 }
 
 function requisicao_filtro_ordem (type, ordem, nome_ordem) {
@@ -440,9 +470,34 @@ function requisicao_games_jogo_detalhes (id, url_num, complemento) {
         .then(data => exibir_detalhes_games_jogo(data, id))
 }
 
+//Ativa o botao enter
+document.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        requisicao_games_jogo_pesquisa(0)
+    }
+})
+
 onload = () => {
     requisicao_games_destaques();
     requisicao_games_jogos('');
     requisicao_plataformas();
     exibir_publisher();
+
+    function limpar_pesquisa () {
+        document.getElementById('jogos-btn-limpar-pesquisa').style.display = "none";
+        document.getElementById('campo_buscar').value = '';
+        requisicao_games_jogos('');
+    }
+    document.getElementById('jogos-btn-limpar-pesquisa').onclick = limpar_pesquisa();
+
+    document.getElementById('campo_buscar').onfocus = () => {
+        document.getElementById('jogos-btn-limpar-pesquisa').style.display = "inline";
+    };
+
+    document.querySelector('.jogos-nenhum-encontrado-btn').onclick = () => {
+        document.getElementById('pesquisa_cards').style.display = "flex";
+        document.querySelector (".jogos-nenhum-encontrado").style.display = "none";
+        requisicao_games_jogos('');
+        limpar_pesquisa();
+    }
 }
