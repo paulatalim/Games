@@ -201,12 +201,13 @@ function exibir_games_jogos(data, filtroBusca) {
     return data;
 }
 
-function exibir_resultado_pesquisa (data, pesquisa) {
+function exibir_resultado_pesquisa (data, pesquisa, origem) {
     let str = ''
     let button_ver_mais = document.getElementById("jogos-ver-mais");
     let cards_escondidos = document.getElementById("mostrar_mais_cards");
     let mensagem_nenhum_jogo_encontrado = document.querySelector (".jogos-nenhum-encontrado");
     let sessao_cards = document.getElementById('pesquisa_cards');
+    let repeticao;
 
     exibir_titulo_filtro_genero();
     exibir_titulo_filtro_ordem();
@@ -217,13 +218,20 @@ function exibir_resultado_pesquisa (data, pesquisa) {
         mensagem_nenhum_jogo_encontrado.style.display = "flex";
         sessao_cards.style.display = "none";
     } else {
-        for (let i = 0; i < data.results.length; i++) {
+        if (origem === 1) {
+            repeticao = 4;
+        } else {
+            repeticao = data.results.length
+        }
+
+        for (let i = 0; i < repeticao; i++) {
             let jogo = data.results[i]
             str += exibir_card_game_jogo (jogo, 1, pesquisa)
         }
 
         sessao_cards.innerHTML = str;
     }
+    
 
     return data;
 }
@@ -384,10 +392,9 @@ function requisicao_games_jogos(filtroBusca){
             .then(res => res.json ())
             .then(data => exibir_games_jogos(data, filtroBusca)); 
     } else {
-        console.log(filtroBusca)
         fetch(`https://api.rawg.io/api/games?search=${filtroBusca}&key=0ae278d26fd24463b3d3c454be18cb17`)
             .then(res => res.json())
-            .then(data => exibir_resultado_pesquisa(data, filtroBusca))
+            .then(data => exibir_resultado_pesquisa(data, filtroBusca, 1))
             
     }
     
@@ -399,12 +406,12 @@ function requisicao_plataformas(){
         .then(data => exibir_plataformas(data)); 
 }
 
-function requisicao_games_jogo_pesquisa () {
+function requisicao_games_jogo_pesquisa (origem) {
     let barra_de_busca = document.getElementById("campo_buscar").value;
 
     fetch(`https://api.rawg.io/api/games?search=${barra_de_busca}&key=0ae278d26fd24463b3d3c454be18cb17`)
         .then(res => res.json())
-        .then(data => exibir_resultado_pesquisa(data, barra_de_busca))
+        .then(data => exibir_resultado_pesquisa(data, barra_de_busca, origem))
 }
 
 function requisicao_filtro_ordem (type, ordem, nome_ordem) {
@@ -462,6 +469,13 @@ function requisicao_games_jogo_detalhes (id, url_num, complemento) {
         .then(res => res.json ())
         .then(data => exibir_detalhes_games_jogo(data, id))
 }
+
+//Ativa o botao enter
+document.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        requisicao_games_jogo_pesquisa(0)
+    }
+})
 
 onload = () => {
     requisicao_games_destaques();
