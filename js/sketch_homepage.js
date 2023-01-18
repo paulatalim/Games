@@ -469,11 +469,12 @@ onload = () => {
     requisicao_plataformas();
     exibir_publisher();
 
-    document.getElementById('jogos-btn-limpar-pesquisa').onclick = () => {
+    function limpar_pesquisa () {
         document.getElementById('jogos-btn-limpar-pesquisa').style.display = "none";
         document.getElementById('campo_buscar').value = '';
         requisicao_games_jogos('');
-    };
+    }
+    document.getElementById('jogos-btn-limpar-pesquisa').onclick = limpar_pesquisa();
 
     document.getElementById('campo_buscar').onfocus = () => {
         document.getElementById('jogos-btn-limpar-pesquisa').style.display = "inline";
@@ -483,5 +484,6 @@ onload = () => {
         document.getElementById('pesquisa_cards').style.display = "flex";
         document.querySelector (".jogos-nenhum-encontrado").style.display = "none";
         requisicao_games_jogos('');
+        limpar_pesquisa();
     }
 }
