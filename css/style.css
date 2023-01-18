@@ -54,10 +54,26 @@ body {
 .slide-destaque {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-x: left;
-    background-position-y: center;
+    background-position-x: 0%;
+    background-position-y: 50%;
     height: 100vh;
     width: 100%;
+
+    animation-name: animacao_destaques_banner;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes animacao_destaques_banner {
+    from {
+        background-position-y: 0%;
+    }
+
+    to {
+        background-position-y: 100%;
+    }
 }
 
 .destaque-filtro-image {
@@ -83,7 +99,6 @@ body {
 #destaque-conteudo-detalhamento {
     font-size: 15pt;
 }
-
 /*** JOGOS ***/
 .jogos, .sobre {
     max-width: 1000px;
