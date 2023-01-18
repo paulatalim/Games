@@ -39,18 +39,25 @@ function exibir_games_destaques(data) {
 
 function exibir_card_game_jogo (jogo, id, complemento) {
     let str = '';
-    let data = jogo.released.split("-");
 
+    let data;
+
+    if (jogo.released != null) {
+        data = jogo.released.split("-");
+    }
+    
     str = `<div class="col-lg-3 col-md-4 col-sm-6 col-s-12 area-card">
                 <div class="card" style="background-image: url(${jogo.background_image});">
                     <div class="card-conteudo">
                         <h5>${jogo.name}</h5>
                         <div class="info-card">
                             
-                                <p>Avaliação: ${jogo.rating}</p>
-                                <p>Lançamento: <span id="jogo-card-info-jogo">${data[2]}/${data[1]}/${data[0]}</span></p>
-                            
-                                <div><a id="jogo-maisDetalhe" href="./detalhes.html?id=${jogo.id}&num=${id}&adicional=${complemento}">Mais Detalhes...</a></div>
+                                <p>Avaliação: ${jogo.rating}</p>`
+                                if (jogo.released != null) {
+                                    str += `<p>Lançamento: <span id="jogo-card-info-jogo">${data[2]}/${data[1]}/${data[0]}</span></p>`
+                                }
+
+                        str += `<div><a id="jogo-maisDetalhe" href="./detalhes.html?id=${jogo.id}&num=${id}&adicional=${complemento}">Mais Detalhes...</a></div>
                         </div>
                     </div>
                 </div>
@@ -372,9 +379,18 @@ function requisicao_games_destaques () {
 }
 
 function requisicao_games_jogos(filtroBusca){
-    fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
-        .then(res => res.json ())
-        .then(data => exibir_games_jogos(data, filtroBusca)); 
+    if (filtroBusca == '') {
+        fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
+            .then(res => res.json ())
+            .then(data => exibir_games_jogos(data, filtroBusca)); 
+    } else {
+        console.log(filtroBusca)
+        fetch(`https://api.rawg.io/api/games?search=${filtroBusca}&key=0ae278d26fd24463b3d3c454be18cb17`)
+            .then(res => res.json())
+            .then(data => exibir_resultado_pesquisa(data, filtroBusca))
+            
+    }
+    
 }
 
 function requisicao_plataformas(){
