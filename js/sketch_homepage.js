@@ -198,18 +198,25 @@ function exibir_resultado_pesquisa (data, pesquisa) {
     let str = ''
     let button_ver_mais = document.getElementById("jogos-ver-mais");
     let cards_escondidos = document.getElementById("mostrar_mais_cards");
+    let mensagem_nenhum_jogo_encontrado = document.querySelector (".jogos-nenhum-encontrado");
+    let sessao_cards = document.getElementById('pesquisa_cards');
 
     exibir_titulo_filtro_genero();
     exibir_titulo_filtro_ordem();
     cards_escondidos.style.display = "none";
     button_ver_mais.style.display = "none";
 
-    for (let i = 0; i < data.results.length; i++) {
-        let jogo = data.results[i]
-        str += exibir_card_game_jogo (jogo, 1, pesquisa)
-    }
+    if (data.results.length == 0) {
+        mensagem_nenhum_jogo_encontrado.style.display = "flex";
+        sessao_cards.style.display = "none";
+    } else {
+        for (let i = 0; i < data.results.length; i++) {
+            let jogo = data.results[i]
+            str += exibir_card_game_jogo (jogo, 1, pesquisa)
+        }
 
-    document.getElementById('pesquisa_cards').innerHTML = str
+        sessao_cards.innerHTML = str;
+    }
 
     return data;
 }
@@ -455,4 +462,10 @@ onload = () => {
     document.getElementById('campo_buscar').onfocus = () => {
         document.getElementById('jogos-btn-limpar-pesquisa').style.display = "inline";
     };
+
+    document.querySelector('.jogos-nenhum-encontrado-btn').onclick = () => {
+        document.getElementById('pesquisa_cards').style.display = "flex";
+        document.querySelector (".jogos-nenhum-encontrado").style.display = "none";
+        requisicao_games_jogos('');
+    }
 }
