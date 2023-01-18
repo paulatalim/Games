@@ -2,11 +2,12 @@
  * DESTAQUES *
  *************/
 function exibir_games_destaques(data) {
-    let str = ''
-    
+    let str = '';
+
     //Inclusao de novo slide no corrousel
     for (let i = 0; i < 3; i++){
         let jogo = data.results[i]
+        let lancamento = jogo.released.split("-");
 
         if (i == 0) {
             str += `<div class="carousel-item active">`
@@ -16,13 +17,19 @@ function exibir_games_destaques(data) {
 
         str += `    <div class="slide-destaque" style="background-image: url(${jogo.background_image});">
                         <div class="destaque-filtro-image">
-                            <div class="col-lg-5 col-9 destaque1-conteudo">
+                            <div class="col-lg-5 col-9 destaque-conteudo">
                                 <h1>${jogo.name}</h1>
-                                <!--<p id="destaque-conteudo-detalhamento">
-                                    <strong>Lançamento:</strong> ${jogo.released}<br>
-                                    <strong>Plataformas:</strong> <br>
-                                    <strong>Avaliação:</strong> ${jogo.rating} <br>
-                                </p>-->
+                                <p id="destaque-conteudo-detalhamento">
+                                    <strong>Lançamento:</strong> ${lancamento[2]}/${lancamento[1]}/${lancamento[0]}<br>
+                                    <strong>Plataformas:</strong> ${jogo.platforms[0].platform.name}`
+                                
+                                    //Coloca as plataformas
+                                    for (let j = 1; j < jogo.platforms.length; j++) {
+                                        str += `, ${jogo.platforms[j].platform.name}`
+                                    }
+
+                                   str += `<br><strong>Avaliação:</strong> ${jogo.rating}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -33,9 +40,9 @@ function exibir_games_destaques(data) {
     return data;
 }
 
-/***************
- * jogoS *
- ***************/
+/*********
+ * JOGOS *
+ *********/
 
 function exibir_card_game_jogo (jogo, id, complemento) {
     let str = '';

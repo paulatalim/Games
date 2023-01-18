@@ -96,8 +96,14 @@ body {
     gap: 50px;
 }
 
+.destaque-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
 #destaque-conteudo-detalhamento {
-    font-size: 15pt;
+    font-size: 13pt;
 }
 /*** JOGOS ***/
 .jogos, .sobre {
