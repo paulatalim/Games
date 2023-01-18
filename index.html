@@ -86,7 +86,7 @@
                         Ordem
                     </button>
                     <div class="dropdown-menu opcoes-filtro" aria-labelledby="filtro-ordem">
-                        <button class="dropdown-item item-filtro" onclick="requisicao_games_lancamentos(''), exibir_titulo_filtro_ordem()">Nenhum</button>
+                        <button class="dropdown-item item-filtro" onclick="requisicao_games_jogos(''), exibir_titulo_filtro_ordem()">Nenhum</button>
                         <button class="dropdown-item item-filtro" onclick="requisicao_filtro_ordem('rating', '-rating', 'Mais popular')">Mais popular</button>
                         <button class="dropdown-item item-filtro" onclick="requisicao_filtro_ordem('rating', 'rating', 'Menos popular')">Menos popular</button>
                         <button class="dropdown-item item-filtro" onclick="requisicao_filtro_ordem('data', '', 'Lançamentos')">Lançamentos</button>
@@ -101,7 +101,7 @@
                         Gênero
                     </button>
                     <div class="dropdown-menu opcoes-filtro" aria-labelledby="filtro-genero">
-                        <button class="dropdown-item item-filtro" onclick="requisicao_games_lancamentos(''), exibir_titulo_filtro_genero()">Nenhum</button>
+                        <button class="dropdown-item item-filtro" onclick="requisicao_games_jogos(''), exibir_titulo_filtro_genero()">Nenhum</button>
                         <button class="dropdown-item item-filtro" onclick="filtrar_genero('Action', 'Ação')">Ação</button>
                         <button class="dropdown-item item-filtro" onclick="filtrar_genero('Adventure', 'Aventura')">Aventura</button>
                         <button class="dropdown-item item-filtro" onclick="filtrar_genero('platformer', 'Plataforma')">Plataforma</button>
@@ -121,7 +121,8 @@
                     aria-label="Search" 
                     id="campo_buscar" 
                     oninput="barra_de_busca()">
-                <button id="jogos-btn-pesquisar" onclick="requisicao_games_lancamento_pesquisa()"><i id="jogos-pesquisar-lupa-icone" class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="jogos-btn-limpar-pesquisa" onclick="limpar_barra_pesquisa()"><i class="fa-solid fa-xmark"></i></button>
+                <button id="jogos-btn-pesquisar" onclick="requisicao_games_jogo_pesquisa()"><i id="jogos-pesquisar-lupa-icone" class="fa-solid fa-magnifying-glass"></i></button>
             </div>
 
             <!-- cards -->
@@ -131,8 +132,8 @@
 
             <div class="col-12 jogos-ver-mais">
                 <button
-                    id="lancamentos-ver-mais"
-                    onclick="ver_mais_lancamentos()">
+                    id="jogos-ver-mais"
+                    onclick="ver_mais_jogos()">
                     <i class="fa-solid fa-arrow-down" id="jogos-ver-mais-icone"></i>
                     <p id="jogos-ver-mais-text">Ver mais</p>
                 </button>

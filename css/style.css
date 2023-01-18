@@ -135,6 +135,27 @@ body {
     outline: none;
 }
 
+#jogos-btn-limpar-pesquisa {
+    background-color: #0000;
+    border: none;
+    color: white;
+    outline: none;
+
+    position: relative;
+    left: -50px;
+    display: none;
+}
+
+#jogos-btn-limpar-pesquisa:hover {
+    cursor: pointer;
+    
+}
+
+#jogos-btn-limpar-pesquisa:active {
+    outline: none;
+    color: rgb(208, 208, 208);
+}
+
 #jogos-btn-pesquisar:hover {
     background: rgb(223,0,255);
     cursor: pointer;
@@ -193,14 +214,14 @@ body {
     justify-content: center;
 }
 
-#lancamentos-ver-mais {
+#jogos-ver-mais {
     background-color: rgb(33, 33, 33);
     outline: none;
     border: none;
     cursor: pointer;
 }
 
-#lancamentos-ver-mais:active {
+#jogos-ver-mais:active {
     outline: none;
 }
 
@@ -213,11 +234,11 @@ body {
     color:#fff;
 }
 
-#lancamentos-ver-mais:hover i,  #lancamentos-ver-mais:hover p {
+#jogos-ver-mais:hover i,  #jogos-ver-mais:hover p {
     color: rgb(205, 205, 205);
 }
 
-#lancamentos-ver-mais:active i, #lancamentos-ver-mais:active p {
+#jogos-ver-mais:active i, #jogos-ver-mais:active p {
     color: rgb(163, 163, 163);
 }
 
@@ -276,11 +297,11 @@ body {
     margin-top: 15px;
 }
 
-#jogo-card-info-lancamento {
+#jogo-card-info-jogo {
     font-size: small;
 }
 
-#lancamento-maisDetalhe {
+#jogo-maisDetalhe {
     background-color: rgb(152, 152, 152);
     position: relative;
     left: -15px;
@@ -292,12 +313,12 @@ body {
     transition: all 0.2s;
 }
 
-#lancamento-maisDetalhe:hover {
+#jogo-maisDetalhe:hover {
     font-weight: 700;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.342);
 }
 
-#lancamento-maisDetalhe:active {
+#jogo-maisDetalhe:active {
     font-weight: 700;
     box-shadow: none;
     top: 3px;
