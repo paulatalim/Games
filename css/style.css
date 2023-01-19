@@ -51,6 +51,10 @@ body {
     align-items: center;
 }
 
+.jogos .subsessao-carregamento {
+    display: none;
+}
+
 .load {
     width: 80px;
     height: 80px;
@@ -412,6 +416,12 @@ body {
 .jogos-nenhum-encontrado-btn:active {
     background: rgb(139,0,204);
     outline: none;
+}
+
+/*** ONDAS ***/
+.ondas {
+    padding: 0;
+    margin: 0;
 }
 
 /*** PLATAFORMAS ***/

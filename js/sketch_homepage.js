@@ -35,9 +35,10 @@ function exibir_games_destaques(data) {
                     </div>
                 </div>`
     }
-    document.querySelector('.subsessao-carregamento').style.display = "none"
+    document.querySelector('.destaque-carregamento').style.display = "none"
+    document.querySelector('.jogos-carregamento').style.display = "flex"
     document.getElementById('destaque-slide').innerHTML = str
-    
+
     return data;
 }
 
@@ -205,6 +206,9 @@ function exibir_games_jogos(data, filtroBusca) {
         }
         document.getElementById('pesquisa_cards').innerHTML = str
     }
+
+    document.querySelector('.jogos-carregamento').style.display = "none";
+    document.getElementById('pesquisa_cards').style.display = "flex";
 
     return data;
 }
