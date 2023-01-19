@@ -35,6 +35,7 @@ function exibir_games_destaques(data) {
                     </div>
                 </div>`
     }
+    document.querySelector('.subsessao-carregamento').style.display = "none"
     document.getElementById('destaque-slide').innerHTML = str
     
     return data;
