@@ -393,7 +393,6 @@ function exibir_publisher () {
             }
             
             document.querySelector('.publisher-area-slide').innerHTML = str;
-            // document.getElementById('publisher-carousel-cards').innerHTML = str
         }); 
 }
 
