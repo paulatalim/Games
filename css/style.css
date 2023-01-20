@@ -41,6 +41,44 @@ body {
     margin: auto 0;
 }
 
+/*** CARREGAMENTO ***/
+.subsessao-carregamento {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jogos .subsessao-carregamento {
+    display: none;
+}
+
+.load {
+    width: 80px;
+    height: 80px;
+
+    border: 10px solid transparent;
+	border-radius: 50%;
+	border-left: 10px solid rgb(223,0,255);
+
+	animation-name: loading;
+	animation-duration: 1.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 /*** DESTAQUES ***/
 .destaque {
     margin: 0;
@@ -54,10 +92,26 @@ body {
 .slide-destaque {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-x: left;
-    background-position-y: center;
+    background-position-x: 0%;
+    background-position-y: 50%;
     height: 100vh;
     width: 100%;
+
+    animation-name: animacao_destaques_banner;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes animacao_destaques_banner {
+    from {
+        background-position-y: 0%;
+    }
+
+    to {
+        background-position-y: 100%;
+    }
 }
 
 .destaque-filtro-image {
@@ -80,10 +134,15 @@ body {
     gap: 50px;
 }
 
-#destaque-conteudo-detalhamento {
-    font-size: 15pt;
+.destaque-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
+#destaque-conteudo-detalhamento {
+    font-size: 13pt;
+}
 /*** JOGOS ***/
 .jogos, .sobre {
     max-width: 1000px;
@@ -359,6 +418,12 @@ body {
     outline: none;
 }
 
+/*** ONDAS ***/
+.ondas {
+    padding: 0;
+    margin: 0;
+}
+
 /*** PLATAFORMAS ***/
 .plataformas {
     background: rgb(139,0,204);
@@ -369,14 +434,22 @@ body {
     padding: 15px 10%;
 }
 
-.plataformas .carousel, .plataformas .carousel .carousel-item {
-    height: 55vh;
+.plataforma-slide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.plataforma-slide-card {
-    margin: auto 10px;
-    padding: 0 10px;
-    height: 300px;
+.plataforma-area-card {
+    padding: 20px;
+    height: 400px;
+}
+
+.plataforma-card {
+    width: 100%;
+    height: 100%;
 }
 
 .plataforma-card-conteudo {
@@ -411,6 +484,7 @@ body {
     position: relative;
     top: 30%;
     color: white;
+    font-size: 20pt;
 }
 
 /*** PUBLISHER ***/
@@ -419,16 +493,90 @@ body {
     background: linear-gradient(0deg, rgba(124,0,247,1) 0%, rgba(139,0,204,1) 100%);
     color: #fff;
     width: 100%;
-    height: 110vh;
+    height: 100vh;
     margin: 0;
     padding: 15px 10%;
 }
 
-.publisher-title, #publisher {
-    height: auto;
+.publisher-slide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.publisher .carousel, .publisher .carousel .carousel-item {
+.publisher-area-card {
+    border: none;
+    height: 400px;
+    padding: 20px;
+}
+
+.publisher-card {
+    background-color: #000;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.342);
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;  
+}
+
+.publisher-card-banner {
+    background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%), url(./exemplo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 90%;
+
+    color:white;
+    display: flex;
+    align-items:flex-end;
+    justify-content: start;
+    padding: 10px 20px;
+
+    transition: height 3s;
+}
+
+#publisher-card-title {
+    font-size: 16pt;
+}
+
+.publisher-card-conteudo {
+    background-color: #000;
+    color: #fff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius:20px;
+    
+    padding: 0 20px;
+    height: 0px;
+    overflow: hidden;
+    transition: height 3s;
+}
+
+.publisher-card:hover .publisher-card-banner {
+    height: 40%;
+}
+
+.publisher-card:hover .publisher-card-conteudo {
+    padding: 5px 20px;
+    height: 60%;
+}
+
+#publisher-card-conteudo-topicos {
+    padding-left: 20px;
+}
+
+#publisher-carousel .carousel-control-prev, 
+#publisher-carousel .carousel-control-next {
+    width: 5% !important;
+}
+
+/* .publisher .carousel, .publisher .carousel .carousel-item {
     height: 95vh;
 }
 
@@ -488,7 +636,7 @@ body {
 
 #publisher-card-conteudo-topicos {
     padding-left: 20px;
-}
+} */
 
 /*** SOBRE ***/
 .sobre {
@@ -538,7 +686,7 @@ footer p {
 }
 
 ::-webkit-scrollbar {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     width: 10px;
 }
 
@@ -572,49 +720,17 @@ footer p {
         font-size: 35pt;
     }
 
-    /*  PLATAFORMA */
-    .plataformas .carousel-item .float-left {
-        margin-top: 10%;
-    }
-    
-    .plataforma-slide-card {
+    /*  PLATAFORMA */    
+    .plataforma-area-card {
         height: 200px;
     }
 
     /* PUBLISHERS */
     .publisher {
-        height: 100vh !important; 
+        min-height: 960px;
     }
-
-    .plataformas-title, .publisher-title {
-        display: flex;
-        align-items: center;
-    }
-
-    .publisher .carousel-item .float-left {
-        margin-top: 5%;
-    }
-
-    .publisher .carousel, .publisher .carousel .carousel-item {
-        height: 55vh;
-    }
-
-    .publisher-slide {
-        height: auto;
-        padding: 20px;
-    }
-
-    .publisher-card {
-        background-color: rgba(0, 0, 0, 0);
+    .publisher-area-card {
         height: 200px;
-    }
-
-    .publisher-card-banner {
-        height: 100%;
-    }
-
-    .publisher-card-conteudo {
-        display: none;
     }
 }
 
@@ -646,11 +762,6 @@ footer p {
     .card {
         background-position-y: 75%;
     }
-
-    .plataformas .carousel-item .float-left, .publisher .carousel-item .float-left {
-        margin-top: 25% !important;
-    }
-
 }
 
 @media screen and (max-width: 576px) {
@@ -658,18 +769,14 @@ footer p {
     .filtro, .jogos-pesquisar {
         display: none;
     }
+
+    /* PLATAFORMA */
+    .plataformas {
+        height: auto;
+    }
     
     /* PUBLISHER */
-    .publisher .carousel, .publisher .carousel .carousel-item {
-        height: 70vh;
-    }
-
-    .publisher .carousel-item .float-left {
-        margin-top: 0%;
-    }
-
-    .publisher-card {
-        background-color: rgba(0, 0, 0, 0);
-        height: 150px;
+    .publisher {
+        height: auto;
     }
 }

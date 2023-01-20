@@ -24,6 +24,7 @@
 </head>
 
 <body>
+    <!-- <a href="./test/index.html">teste</a> -->
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="#">
@@ -51,6 +52,12 @@
     <main class="conteiner">
         <!-- Destaques -->
         <section class="row destaque" id="destaques">
+            <!-- Carregamento -->
+            <div class="subsessao-carregamento destaque-carregamento">
+                <div class="load"></div>
+            </div>
+            
+
             <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
@@ -74,6 +81,11 @@
 
         <!-- Jogos -->
         <section class="row jogos" id="jogos">
+            <!-- Carregamento -->
+            <div class="subsessao-carregamento jogos-carregamento">
+                <div class="load"></div>
+            </div>
+
             <div class="col-3 jogos-titulo">
                 <h1>Jogos</h1>
             </div>
@@ -145,21 +157,24 @@
             </div>
         </section>
 
+        <!-- Ondas -->
+        <img class="row col-12 ondas" src="./img/waves.svg" alt="Ondas">
+        
         <!-- Plataformas -->
         <section class="row plataformas" id="plataformas">            
             <div class="col-12 plataformas-title">
                 <h1>Plataformas</h1>
             </div>
 
-            <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+            <div id="plataforma-carousel" class="carousel slide col-12" data-ride="carousel">
                 <!-- Cards gerados em js -->
-                <div class="carousel-inner w-100" role="listbox" id="plataforma-cards"></div>
+                <div class="carousel-inner plataforma-area-slide"></div>
 
-                <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#plataforma-carousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#plataforma-carousel" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
@@ -172,15 +187,16 @@
                 <h1>Publishers</h1>
             </div>
 
-            <div id="recipeCarousel-publisher" class="carousel slide w-100" data-ride="carousel">
-                <!-- Codigo gerado em js -->
-                <div class="carousel-inner w-100" role="listbox" id="publisher-carousel-cards"></div>
+            <div id="publisher-carousel" class="carousel slide col-12" data-ride="carousel">
 
-                <a class="carousel-control-prev" href="#recipeCarousel-publisher" role="button" data-slide="prev">
+                <!-- Cards gerados em js -->
+                <div class="carousel-inner publisher-area-slide"></div>
+
+                <a class="carousel-control-prev" href="#publisher-carousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#recipeCarousel-publisher" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#publisher-carousel" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>

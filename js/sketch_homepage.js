@@ -2,11 +2,16 @@
  * DESTAQUES *
  *************/
 function exibir_games_destaques(data) {
-    let str = ''
-    
+    let str = '';
+
+    document.querySelector('.jogos').style.display = "none";
+    document.querySelector('.plataformas').style.display = "none";
+    document.querySelector('.publisher').style.display = "none";
+
     //Inclusao de novo slide no corrousel
     for (let i = 0; i < 3; i++){
         let jogo = data.results[i]
+        let lancamento = jogo.released.split("-");
 
         if (i == 0) {
             str += `<div class="carousel-item active">`
@@ -16,20 +21,32 @@ function exibir_games_destaques(data) {
 
         str += `    <div class="slide-destaque" style="background-image: url(${jogo.background_image});">
                         <div class="destaque-filtro-image">
-                            <div class="col-lg-5 col-9 destaque1-conteudo">
+                            <div class="col-lg-5 col-9 destaque-conteudo">
                                 <h1>${jogo.name}</h1>
-                                <!--<p id="destaque-conteudo-detalhamento">
-                                    <strong>Lançamento:</strong> ${jogo.released}<br>
-                                    <strong>Plataformas:</strong> <br>
-                                    <strong>Avaliação:</strong> ${jogo.rating} <br>
-                                </p>-->
+                                <p id="destaque-conteudo-detalhamento">
+                                    <strong>Lançamento:</strong> ${lancamento[2]}/${lancamento[1]}/${lancamento[0]}<br>
+                                    <strong>Plataformas:</strong> ${jogo.platforms[0].platform.name}`
+                                
+                                    //Coloca as plataformas
+                                    for (let j = 1; j < jogo.platforms.length; j++) {
+                                        str += `, ${jogo.platforms[j].platform.name}`
+                                    }
+
+                                   str += `<br><strong>Avaliação:</strong> ${jogo.rating}
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>`
     }
+    document.querySelector('.destaque-carregamento').style.display = "none"
+    document.querySelector('.jogos-carregamento').style.display = "flex"
+    document.querySelector('.jogos').style.display = "flex";
+    document.querySelector('.plataformas').style.display = "flex";
+    document.querySelector('.publisher').style.display = "flex";
+
     document.getElementById('destaque-slide').innerHTML = str
-    
+
     return data;
 }
 
@@ -198,6 +215,9 @@ function exibir_games_jogos(data, filtroBusca) {
         document.getElementById('pesquisa_cards').innerHTML = str
     }
 
+    document.querySelector('.jogos-carregamento').style.display = "none";
+    document.getElementById('pesquisa_cards').style.display = "flex";
+
     return data;
 }
 
@@ -284,13 +304,15 @@ function exibir_plataformas (data) {
 
     //Inclusao de novo slide no corrousel
     for (let i = 0; i < Math.ceil(data.results.length/4); i++){
-        str += `<div class="carousel-item row no-gutters`
+        str += `<div class="carousel-item`
 
         if (i == 0) {
             str += ` active">`
         } else {
             str += `">`
         }
+
+        str += '<div class="plataforma-slide">'
 
         for (let j = 0; j < 4; j++) {
             let jogo = data.results[index]
@@ -299,8 +321,8 @@ function exibir_plataformas (data) {
                 break;
             }
 
-            str += `<div class="col-6 col-md-6 col-lg-3 float-left">
-                        <div class="plataforma-slide-card">
+            str += `<div class="col-12 col-sm-6 col-md-6 col-lg-3 plataforma-area-card">
+                        <div class="plataforma-card">
                             <div class="plataforma-card-conteudo" style="background-image: url(${jogo.image_background});">
                                 <div class="plataforma-card-titulo">
                                     <h2 id="plataforma-titulo">${jogo.name}</h2>
@@ -308,15 +330,13 @@ function exibir_plataformas (data) {
                             </div>
                         </div>
                     </div>`
-            
-            
             index++;
         }
 
-        str += `</div>`
+        str += `</div></div>`
     }
     
-    document.getElementById('plataforma-cards').innerHTML = str
+    document.querySelector('.plataforma-area-slide').innerHTML = str
     return data;
 }
 
@@ -333,37 +353,35 @@ function exibir_publisher () {
 
             //Inclusao de novo slide no corrousel
             for (let i = 0; i < Math.ceil(data.results.length/4); i++){
-                str += `<div class="carousel-item row no-gutters`
+                str += `<div class="carousel-item`
 
                 if (i == 0) {
-                    str += ` active">`
-                } else {
-                    str += `">`
+                    str += ` active`
                 }
+                
+                str += `"><div class="publisher-slide">`
+                
+
 
                 for (let j = 0; j < 4; j++) {
                     let jogo = data.results[index]
                     if (index < data.results.length) {
-                        str += `<div class="col-12 col-md-6 col-lg-3 float-left">
-                                    <div class="publisher-slide">
-                                        <div class="publisher-card">
-                                            <div class="publisher-card-banner" style="background-image: url(${jogo.image_background});">
-                                                <div class="publisher-card-banner-filtro">
-                                                    <h2>${jogo.name}</h2>
-                                                </div>
-                                            </div>
+                        str += `<div class="col-12 col-sm-6 col-md-6 col-lg-3 publisher-area-card">
+                                    <div class="publisher-card">
+                                        <div class="publisher-card-banner" style="background-image: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%), url(${jogo.image_background});">
+                                            <h2 id="publisher-card-title">${jogo.name}</h2>
+                                        </div>
+                                        
+                                        <div class="publisher-card-conteudo"> 
+                                            <h5>Jogos:</h5>
                                             
-                                            <div class="publisher-card-conteudo"> 
-                                                <h4>Jogos:</h3>
-                                                
-                                                <ul id="publisher-card-conteudo-topicos">`
+                                            <ul id="publisher-card-conteudo-topicos">`
 
-                                                for (let k = 0; k < jogo.games.length; k++) {
-                                                    str+=`<li>${jogo.games[k].name}</li>`
-                                                }
-                                                    
-                                                str += `</ul>
-                                            </div>
+                                            for (let k = 0; k < jogo.games.length && k < 3; k++) {
+                                                str+=`<li>${jogo.games[k].name}</li>`
+                                            }
+                                                
+                                            str += `</ul>
                                         </div>
                                     </div>
                                 </div>`
@@ -371,12 +389,14 @@ function exibir_publisher () {
                     index++;
                 }
 
-                str += `</div>`
+                str += `</div></div>`
             }
             
-            document.getElementById('publisher-carousel-cards').innerHTML = str
+            document.querySelector('.publisher-area-slide').innerHTML = str;
+            // document.getElementById('publisher-carousel-cards').innerHTML = str
         }); 
 }
+
 /***************
  * REQUISIÇÕES *
  ***************/
