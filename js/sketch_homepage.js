@@ -4,6 +4,10 @@
 function exibir_games_destaques(data) {
     let str = '';
 
+    document.querySelector('.jogos').style.display = "none";
+    document.querySelector('.plataformas').style.display = "none";
+    document.querySelector('.publisher').style.display = "none";
+
     //Inclusao de novo slide no corrousel
     for (let i = 0; i < 3; i++){
         let jogo = data.results[i]
@@ -37,6 +41,10 @@ function exibir_games_destaques(data) {
     }
     document.querySelector('.destaque-carregamento').style.display = "none"
     document.querySelector('.jogos-carregamento').style.display = "flex"
+    document.querySelector('.jogos').style.display = "flex";
+    document.querySelector('.plataformas').style.display = "flex";
+    document.querySelector('.publisher').style.display = "flex";
+
     document.getElementById('destaque-slide').innerHTML = str
 
     return data;
@@ -296,13 +304,15 @@ function exibir_plataformas (data) {
 
     //Inclusao de novo slide no corrousel
     for (let i = 0; i < Math.ceil(data.results.length/4); i++){
-        str += `<div class="carousel-item row no-gutters`
+        str += `<div class="carousel-item`
 
         if (i == 0) {
             str += ` active">`
         } else {
             str += `">`
         }
+
+        str += '<div class="plataforma-slide">'
 
         for (let j = 0; j < 4; j++) {
             let jogo = data.results[index]
@@ -311,8 +321,8 @@ function exibir_plataformas (data) {
                 break;
             }
 
-            str += `<div class="col-6 col-md-6 col-lg-3 float-left">
-                        <div class="plataforma-slide-card">
+            str += `<div class="col-12 col-sm-6 col-md-6 col-lg-3 plataforma-area-card">
+                        <div class="plataforma-card">
                             <div class="plataforma-card-conteudo" style="background-image: url(${jogo.image_background});">
                                 <div class="plataforma-card-titulo">
                                     <h2 id="plataforma-titulo">${jogo.name}</h2>
@@ -320,15 +330,13 @@ function exibir_plataformas (data) {
                             </div>
                         </div>
                     </div>`
-            
-            
             index++;
         }
 
-        str += `</div>`
+        str += `</div></div>`
     }
     
-    document.getElementById('plataforma-cards').innerHTML = str
+    document.querySelector('.plataforma-area-slide').innerHTML = str
     return data;
 }
 

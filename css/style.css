@@ -434,14 +434,22 @@ body {
     padding: 15px 10%;
 }
 
-.plataformas .carousel, .plataformas .carousel .carousel-item {
-    height: 55vh;
+.plataforma-slide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.plataforma-slide-card {
-    margin: auto 10px;
-    padding: 0 10px;
-    height: 300px;
+.plataforma-area-card {
+    padding: 20px;
+    height: 400px;
+}
+
+.plataforma-card {
+    width: 100%;
+    height: 100%;
 }
 
 .plataforma-card-conteudo {
@@ -476,6 +484,7 @@ body {
     position: relative;
     top: 30%;
     color: white;
+    font-size: 20pt;
 }
 
 /*** PUBLISHER ***/
@@ -637,12 +646,8 @@ footer p {
         font-size: 35pt;
     }
 
-    /*  PLATAFORMA */
-    .plataformas .carousel-item .float-left {
-        margin-top: 10%;
-    }
-    
-    .plataforma-slide-card {
+    /*  PLATAFORMA */    
+    .plataforma-area-card {
         height: 200px;
     }
 
@@ -722,6 +727,11 @@ footer p {
     /* JOGOS */
     .filtro, .jogos-pesquisar {
         display: none;
+    }
+
+    /* PLATAFORMA */
+    .plataformas {
+        height: auto;
     }
     
     /* PUBLISHER */
