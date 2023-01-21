@@ -321,15 +321,36 @@ function exibir_plataformas (data) {
                 break;
             }
 
-            str += `<div class="col-12 col-sm-6 col-md-6 col-lg-3 plataforma-area-card">
-                        <div class="plataforma-card">
-                            <div class="plataforma-card-conteudo" style="background-image: url(${jogo.image_background});">
-                                <div class="plataforma-card-titulo">
-                                    <h2 id="plataforma-titulo">${jogo.name}</h2>
+            let background = `background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%), url(${jogo.image_background});`;
+
+            str += ` <div class="col-12 col-sm-6 col-md-6 col-lg-3"> <div class=" plataforma-area-card">
+                <div class="image-flip" >
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="plataforma-card-frontside">
+                                    <div class="plataforma-card-frontside-conteudo" style="${background}">
+                                        <h2 id="plataforma-titulo-frontside">${jogo.name}</h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>`
+                    
+                        <div class="backside">
+                            <div class="card">
+                                <div class="plataforma-card-backside" style="${background}">
+                                    <div class="plataforma-card-backside-content">
+                                        <h2 id="plataforma-titulo-backside">${jogo.name}</h2>
+                                        <div class="plataforma-card-backside-jogos">
+                                            <h3>Alguns jogos</h3>
+                                            <ul id="plataforma-card-backside-topicos">`
+
+            for (let k = 0; k < 3 && k < jogo.games.length; k++) {
+                str+=`<li>${jogo.games[k].name}</li>`
+            }
+                                            
+            str+= `</ul></div></div></div></div></div></div></div></div></div>`
+            
             index++;
         }
 
