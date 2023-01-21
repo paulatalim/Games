@@ -361,57 +361,66 @@ function exibir_plataformas (data) {
     return data;
 }
 
+function requisicao_plataformas(){
+    fetch ('https://api.rawg.io/api/platforms?key=0ae278d26fd24463b3d3c454be18cb17')
+        .then(res => res.json ())
+        .then(data => exibir_plataformas(data)); 
+}
+
 /*************
  * PUBLISHER *
  *************/
 
-function exibir_publisher () {
+function exibir_publisher (data) {
+    let str = '';
+    let index = 0;
+
+    //Inclusao de novo slide no corrousel
+    for (let i = 0; i < Math.ceil(data.results.length/4); i++){
+        str += `<div class="carousel-item`
+
+        if (i == 0) {
+            str += ` active`
+        }
+        
+        str += `"><div class="publisher-slide">`
+
+        for (let j = 0; j < 4; j++) {
+            let jogo = data.results[index];
+
+            if (index < data.results.length) {
+                let background = `background-image: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%), url(${jogo.image_background});`;
+
+                str += `<div class="col-12 col-sm-6 col-md-6 col-lg-3 publisher-area-card">
+                            <div class="publisher-card">
+                                <div class="publisher-card-banner" style="${background}">
+                                    <h2 id="publisher-card-title">${jogo.name}</h2>
+                                </div>
+                                
+                                <div class="publisher-card-conteudo"> 
+                                    <h5>Jogos:</h5>
+                                    <ul id="publisher-card-conteudo-topicos">`
+
+                for (let k = 0; k < jogo.games.length && k < 3; k++) {
+                    str+=`<li>${jogo.games[k].name}</li>`
+                }
+                                        
+                str += `</ul></div></div></div>`
+            }
+            index++;
+        }
+
+        str += `</div></div>`
+    }
+            
+    document.querySelector('.publisher-area-slide').innerHTML = str;
+    return data;
+}
+
+function requisicao_publisher () {
     fetch ('https://api.rawg.io/api/publishers?key=0ae278d26fd24463b3d3c454be18cb17')
         .then(res => res.json ())
-        .then(data => {
-            let str = '';
-            let index = 0;
-
-            //Inclusao de novo slide no corrousel
-            for (let i = 0; i < Math.ceil(data.results.length/4); i++){
-                str += `<div class="carousel-item`
-
-                if (i == 0) {
-                    str += ` active`
-                }
-                
-                str += `"><div class="publisher-slide">`
-
-                for (let j = 0; j < 4; j++) {
-                    let jogo = data.results[index];
-
-                    if (index < data.results.length) {
-                        let background = `background-image: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%), url(${jogo.image_background});`;
-
-                        str += `<div class="col-12 col-sm-6 col-md-6 col-lg-3 publisher-area-card">
-                                    <div class="publisher-card">
-                                        <div class="publisher-card-banner" style="${background}">
-                                            <h2 id="publisher-card-title">${jogo.name}</h2>
-                                        </div>
-                                        
-                                        <div class="publisher-card-conteudo"> 
-                                            <h5>Jogos:</h5>
-                                            <ul id="publisher-card-conteudo-topicos">`
-
-                        for (let k = 0; k < jogo.games.length && k < 3; k++) {
-                            str+=`<li>${jogo.games[k].name}</li>`
-                        }
-                                                
-                        str += `</ul></div></div></div>`
-                    }
-                    index++;
-                }
-
-                str += `</div></div>`
-            }
-            
-            document.querySelector('.publisher-area-slide').innerHTML = str;
-        }); 
+        .then(data => exibir_publisher(data));
 }
 
 /***************
@@ -435,12 +444,6 @@ function requisicao_games_jogos(filtroBusca){
             
     }
     
-}
-
-function requisicao_plataformas(){
-    fetch ('https://api.rawg.io/api/platforms?key=0ae278d26fd24463b3d3c454be18cb17')
-        .then(res => res.json ())
-        .then(data => exibir_plataformas(data)); 
 }
 
 function requisicao_games_jogo_pesquisa (origem) {
@@ -518,7 +521,7 @@ onload = () => {
     requisicao_games_destaques();
     requisicao_games_jogos('');
     requisicao_plataformas();
-    exibir_publisher();
+    requisicao_publisher();
 
     function limpar_pesquisa () {
         document.getElementById('jogos-btn-limpar-pesquisa').style.display = "none";
