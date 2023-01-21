@@ -505,7 +505,7 @@ body {
 }
 
 .plataforma-card-backside-content {
-    background-color: rgba(170, 120, 193, 0.5);
+    background-color: rgba(157, 84, 190, 0.5);
     backdrop-filter: blur(2px);
     height: 100%;
     padding: 30px 25px;
@@ -514,7 +514,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* gap:60px; */
+    overflow: hidden;
 
     color: #fff;
 }
@@ -600,8 +600,8 @@ body {
     transform-style: preserve-3d;
 }
 
-.frontside .card,
-.backside .card {
+.frontside .plataforma-card,
+.backside .plataforma-card {
     border: none;
     padding: 20px 0px;
     height: 400px;
@@ -732,7 +732,7 @@ body {
     justify-content: start;
     padding: 10px 20px;
 
-    transition: height 3s;
+    transition: height 2.5s;
 }
 
 #publisher-card-title {
@@ -913,6 +913,16 @@ footer p {
         font-size: 35pt;
     }
 
+    /* PLATAFORMAS */
+    .plataformas {
+        padding-bottom: 200px;
+    }
+    
+    .plataformas, .publisher {
+        height: auto;
+        min-height: 100vh;
+    }
+
     /* PUBLISHERS */
     .publisher {
         min-height: 960px;
@@ -946,7 +956,7 @@ footer p {
 
     .card {
         background-position-y: 75%;
-    }    
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -956,24 +966,21 @@ footer p {
     }
 
     /* PLATAFORMA */
-    .plataformas {
-        height: auto;
-        padding-bottom: 200px;
-    }
-
     .plataformas-title {
         justify-content: center;
     }
 
-    .plataforma-area-card {
+    .plataforma-area-card,
+    .frontside .plataforma-card,
+    .backside .plataforma-card {
         height: 200px;
+    }
+
+    .plataforma-card-backside-content {
+        padding: 10px 25px;
     }
     
     /* PUBLISHER */
-    .publisher {
-        height: auto;
-    }
-
     .publisher-title {
         justify-content: center;
     }

@@ -327,7 +327,7 @@ function exibir_plataformas (data) {
                 <div class="image-flip" >
                     <div class="mainflip flip-0">
                         <div class="frontside">
-                            <div class="card">
+                            <div class="plataforma-card">
                                 <div class="plataforma-card-frontside">
                                     <div class="plataforma-card-frontside-conteudo" style="${background}">
                                         <h2 id="plataforma-titulo-frontside">${jogo.name}</h2>
@@ -337,12 +337,12 @@ function exibir_plataformas (data) {
                         </div>
                     
                         <div class="backside">
-                            <div class="card">
+                            <div class="plataforma-card">
                                 <div class="plataforma-card-backside" style="${background}">
                                     <div class="plataforma-card-backside-content">
                                         <h2 id="plataforma-titulo-backside">${jogo.name}</h2>
                                         <div class="plataforma-card-backside-jogos">
-                                            <h3>Alguns jogos</h3>
+                                            <h3>Jogos:</h3>
                                             <ul id="plataforma-card-backside-topicos">`
 
             for (let k = 0; k < 3 && k < jogo.games.length; k++) {
@@ -369,8 +369,8 @@ function exibir_publisher () {
     fetch ('https://api.rawg.io/api/publishers?key=0ae278d26fd24463b3d3c454be18cb17')
         .then(res => res.json ())
         .then(data => {
-            let str = ''
-            let index = 0
+            let str = '';
+            let index = 0;
 
             //Inclusao de novo slide no corrousel
             for (let i = 0; i < Math.ceil(data.results.length/4); i++){
@@ -381,31 +381,28 @@ function exibir_publisher () {
                 }
                 
                 str += `"><div class="publisher-slide">`
-                
-
 
                 for (let j = 0; j < 4; j++) {
-                    let jogo = data.results[index]
+                    let jogo = data.results[index];
+
                     if (index < data.results.length) {
+                        let background = `background-image: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%), url(${jogo.image_background});`;
+
                         str += `<div class="col-12 col-sm-6 col-md-6 col-lg-3 publisher-area-card">
                                     <div class="publisher-card">
-                                        <div class="publisher-card-banner" style="background-image: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%), url(${jogo.image_background});">
+                                        <div class="publisher-card-banner" style="${background}">
                                             <h2 id="publisher-card-title">${jogo.name}</h2>
                                         </div>
                                         
                                         <div class="publisher-card-conteudo"> 
                                             <h5>Jogos:</h5>
-                                            
                                             <ul id="publisher-card-conteudo-topicos">`
 
-                                            for (let k = 0; k < jogo.games.length && k < 3; k++) {
-                                                str+=`<li>${jogo.games[k].name}</li>`
-                                            }
+                        for (let k = 0; k < jogo.games.length && k < 3; k++) {
+                            str+=`<li>${jogo.games[k].name}</li>`
+                        }
                                                 
-                                            str += `</ul>
-                                        </div>
-                                    </div>
-                                </div>`
+                        str += `</ul></div></div></div>`
                     }
                     index++;
                 }
