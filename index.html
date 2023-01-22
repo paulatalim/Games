@@ -11,6 +11,7 @@
     <meta name="theme-color" content="#8300ff">
  
     <script src="https://kit.fontawesome.com/e847ef4a17.js" crossorigin="anonymous"></script>
+    <!-- <script src="./js/script_scroll.js"></script> -->
     <script src="./js/sketch_homepage.js"></script>
 
     <link   rel="stylesheet" 
@@ -80,12 +81,12 @@
 
         <!-- Jogos -->
         <section class="row jogos" id="jogos">
-            <div class="col-3 jogos-titulo">
+            <div class="col-3 jogos-titulo" data-anime="left">
                 <h1>Jogos</h1>
             </div>
 
             <!-- filtros -->
-            <div class="col-2 filtro">
+            <div class="col-2 filtro" data-anime="down">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="filtro-ordem"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -100,7 +101,7 @@
                 </div>
             </div>
 
-            <div class="col-2 filtro">
+            <div class="col-2 filtro" data-anime="down">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="filtro-genero"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -118,7 +119,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 jogos-pesquisar">
+
+            <div class="col-4 jogos-pesquisar" data-anime="down">
                 <input 
                     class="form-control mr-sm-2" 
                     type="search" 
@@ -137,7 +139,7 @@
             </div>
 
             <!-- cards -->
-            <div class="cards col-12" id="pesquisa_cards"></div>
+            <div class="cards col-12" id="pesquisa_cards" data-anime="up"></div>
 
             <div class="cards col-12" id="mostrar_mais_cards"></div>
 
@@ -146,7 +148,7 @@
                 <button class="jogos-nenhum-encontrado-btn" id="jogos-nenhum-encontrado-btn">Voltar</button>
             </div>
 
-            <div class="col-12 jogos-ver-mais">
+            <div class="col-12 jogos-ver-mais" data-anime="up">
                 <button
                     id="jogos-ver-mais"
                     onclick="ver_mais_jogos()">
@@ -157,11 +159,11 @@
         </section>
 
         <!-- Ondas -->
-        <img class="row col-12 ondas" id="div-ondas" src="./img/waves.svg" alt="Ondas">
+        <img class="row col-12 ondas" id="div-ondas" src="./img/waves.svg" alt="Ondas" data-anime="up">
         
         <!-- Plataformas -->
         <section class="row plataformas" id="plataformas">            
-            <div class="col-12 plataformas-title">
+            <div class="col-12 plataformas-title" data-anime="left">
                 <h1>Plataformas</h1>
             </div>
 
@@ -170,7 +172,7 @@
                 <div class="load plataforma-load"></div>
             </div>
 
-            <div id="plataforma-carousel" class="carousel slide col-12" data-ride="carousel">
+            <div id="plataforma-carousel" class="carousel slide col-12" data-ride="carousel" data-anime="right">
                 <!-- Cards gerados em js -->
                 <div class="carousel-inner plataforma-area-slide"></div>
 
@@ -187,7 +189,7 @@
 
         <!-- Publishers -->
         <section class="row publisher" id="publisher">
-            <div class="col-12 publisher-title">
+            <div class="col-12 publisher-title" data-anime="left">
                 <h1>Publishers</h1>
             </div>
 
@@ -196,7 +198,7 @@
                 <div class="load publisher-load"></div>
             </div>
 
-            <div id="publisher-carousel" class="carousel slide col-12" data-ride="carousel">
+            <div id="publisher-carousel" class="carousel slide col-12" data-ride="carousel" data-anime="right">
 
                 <!-- Cards gerados em js -->
                 <div class="carousel-inner publisher-area-slide"></div>
@@ -214,7 +216,7 @@
 
         <!-- Sobre -->
         <section class="row sobre">
-            <div class="col-lg-8 col-md-8 col-sm-8 col-10 sobre-info">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-10 sobre-info" data-anime="left">
                 <h1>Sobre</h1>
                 <p>
                     Esse web site é um trabalho acadêmico desenvolvido para a matéria de Desenvolvimento de Interfaces
@@ -223,7 +225,7 @@
                     vídeo games legais para se animar nas horas vagas.
                 </p>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-8 col-10 editorial-info">
+            <div class="col-lg-4 col-md-4 col-sm-8 col-10 editorial-info" data-anime="right">
                 <div class="editorial">
                     <h1>Editorial</h1>
                     <div class="editorial-item">

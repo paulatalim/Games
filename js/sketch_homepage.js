@@ -422,7 +422,7 @@ function exibir_publisher (data) {
     document.getElementById('publisher-carregamento').style.display = 'none'
     document.getElementById('publisher-carousel').style.display = 'flex'
     document.querySelector('.sobre').style.display = 'flex';
-
+   
     return data;
 }
 
@@ -526,6 +526,7 @@ function limpar_pesquisa () {
     console.log('1')
 }
 
+ 
 onload = () => {
     requisicao_games_destaques();
 
@@ -539,4 +540,27 @@ onload = () => {
         requisicao_games_jogos('');
         limpar_pesquisa();
     }
+
+    /*******************
+     * ANIMACAO SCROLL *
+     *******************/
+    const item = document.querySelectorAll("[data-anime]");
+
+    const animeScroll = () => {
+        
+    const window_top = window.pageYOffset + window.innerHeight * 0.85;
+        
+        item.forEach((element) => {
+            if (window_top > element.offsetTop) {
+                element.classList.add("animate");
+            } else {
+            element.classList.remove("animate")
+            }
+        })
+    }
+
+    window.addEventListener('scroll', animeScroll);
+
+
+
 }
