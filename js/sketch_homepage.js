@@ -4,49 +4,40 @@
 function exibir_games_destaques(data) {
     let str = '';
 
-    document.querySelector('.jogos').style.display = "none";
-    document.querySelector('.plataformas').style.display = "none";
-    document.querySelector('.publisher').style.display = "none";
-
     //Inclusao de novo slide no corrousel
     for (let i = 0; i < 3; i++){
         let jogo = data.results[i]
         let lancamento = jogo.released.split("-");
 
+        str+='<div class="carousel-item';
+
         if (i == 0) {
-            str += `<div class="carousel-item active">`
-        } else {
-            str += `<div class="carousel-item">`
+            str += ' active';
         }
 
-        str += `    <div class="slide-destaque" style="background-image: url(${jogo.background_image});">
-                        <div class="destaque-filtro-image">
-                            <div class="col-lg-5 col-9 destaque-conteudo">
-                                <h1>${jogo.name}</h1>
-                                <p id="destaque-conteudo-detalhamento">
-                                    <strong>Lançamento:</strong> ${lancamento[2]}/${lancamento[1]}/${lancamento[0]}<br>
-                                    <strong>Plataformas:</strong> ${jogo.platforms[0].platform.name}`
+        str += `"><div class="slide-destaque" style="background-image: url(${jogo.background_image});">
+                    <div class="destaque-filtro-image">
+                        <div class="col-lg-5 col-9 destaque-conteudo">
+                            <h1>${jogo.name}</h1>
+                            <p id="destaque-conteudo-detalhamento">
+                                <strong>Lançamento:</strong> ${lancamento[2]}/${lancamento[1]}/${lancamento[0]}<br>
+                                <strong>Plataformas:</strong> ${jogo.platforms[0].platform.name}`
                                 
-                                    //Coloca as plataformas
-                                    for (let j = 1; j < jogo.platforms.length; j++) {
-                                        str += `, ${jogo.platforms[j].platform.name}`
-                                    }
+        //Coloca as plataformas
+        for (let j = 1; j < jogo.platforms.length; j++) {
+            str += `, ${jogo.platforms[j].platform.name}`
+        }
 
-                                   str += `<br><strong>Avaliação:</strong> ${jogo.rating}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>`
+        str += `<br><strong>Avaliação:</strong> ${jogo.rating}</p></div></div></div></div>`
     }
-    document.querySelector('.destaque-carregamento').style.display = "none"
-    // document.querySelector('.jogos-carregamento').style.display = "flex"
-    // document.querySelector('.jogos').style.display = "flex";
-    // document.querySelector('.plataformas').style.display = "flex";
-    // document.querySelector('.publisher').style.display = "flex";
 
-    document.getElementById('destaque-slide').innerHTML = str
+    document.getElementById('destaque-slide').innerHTML = str;
+    requisicao_games_jogos('');
 
+    document.querySelector('.destaque-carregamento').style.display = "none";
+    document.querySelector('.destaque-carousel').style.display = 'block';
+    document.querySelector('.jogos').style.display = "flex";
+    
     return data;
 }
 
@@ -158,8 +149,11 @@ function exibir_games_jogos(data, filtroBusca) {
         document.getElementById('pesquisa_cards').innerHTML = str
     }
 
-    document.querySelector('.jogos-carregamento').style.display = "none";
+    document.getElementById('jogos-carregamento').style.display = "none";
     document.getElementById('pesquisa_cards').style.display = "flex";
+    requisicao_plataformas();
+    document.getElementById('div-ondas').style.display = "block";
+    document.querySelector('.plataformas').style.display = "flex";
 
     return data;
 }
@@ -317,12 +311,10 @@ function exibir_plataformas (data) {
         str += `<div class="carousel-item`
 
         if (i == 0) {
-            str += ` active">`
-        } else {
-            str += `">`
+            str += ` active`
         }
 
-        str += '<div class="plataforma-slide">'
+        str += '"><div class="plataforma-slide">'
 
         for (let j = 0; j < 4; j++) {
             let jogo = data.results[index]
@@ -367,7 +359,13 @@ function exibir_plataformas (data) {
         str += `</div></div>`
     }
     
-    document.querySelector('.plataforma-area-slide').innerHTML = str
+    document.querySelector('.plataforma-area-slide').innerHTML = str;
+    document.getElementById('plataforma-carregamento').style.display = 'none';
+    document.getElementById('plataformas').style.display = 'block'
+    document.getElementById('plataforma-carousel').style.display = 'flex';
+    requisicao_publisher();
+    document.querySelector('.publisher').style.display = 'flex';
+    
     return data;
 }
 
@@ -424,6 +422,12 @@ function exibir_publisher (data) {
     }
             
     document.querySelector('.publisher-area-slide').innerHTML = str;
+
+    document.getElementById('publisher').style.display = 'block';
+    document.getElementById('publisher-carregamento').style.display = 'none'
+    document.getElementById('publisher-carousel').style.display = 'flex'
+    document.querySelector('.sobre').style.display = 'flex';
+
     return data;
 }
 
@@ -520,18 +524,15 @@ function requisicao_games_jogo_detalhes (id, url_num, complemento) {
         .then(data => exibir_detalhes_games_jogo(data, id))
 }
 
+function limpar_pesquisa () {
+    document.getElementById('jogos-btn-limpar-pesquisa').style.display = "none";
+    document.getElementById('campo_buscar').value = '';
+    requisicao_games_jogos('');
+    console.log('1')
+}
+
 onload = () => {
     requisicao_games_destaques();
-    requisicao_games_jogos('');
-    requisicao_plataformas();
-    requisicao_publisher();
-
-    function limpar_pesquisa () {
-        document.getElementById('jogos-btn-limpar-pesquisa').style.display = "none";
-        document.getElementById('campo_buscar').value = '';
-        requisicao_games_jogos('');
-    }
-    document.getElementById('jogos-btn-limpar-pesquisa').onclick = limpar_pesquisa();
 
     document.getElementById('campo_buscar').onfocus = () => {
         document.getElementById('jogos-btn-limpar-pesquisa').style.display = "inline";
