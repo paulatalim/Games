@@ -65,11 +65,8 @@ function exibir_card_game_jogo (jogo, id, complemento) {
                                     str += `<p>Lançamento: <span id="jogo-card-info-jogo">${data[2]}/${data[1]}/${data[0]}</span></p>`
                                 }
 
-                        str += `<div><a id="jogo-maisDetalhe" href="./detalhes.html?id=${jogo.id}&num=${id}&adicional=${complemento}">Mais Detalhes...</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>`
+    str += `<div><a id="jogo-maisDetalhe" href="./detalhes.html?id=${jogo.id}&num=${id}&adicional=${complemento}">Mais Detalhes...</a></div>
+            </div></div></div></div>`
 
     return str
 }
@@ -289,13 +286,11 @@ function exibir_detalhes_games_jogo (data, id) {
                 </div>
                 <div class="cartaz" style="background-image: url(${jogo.background_image});"><div class="filtro"></div></div>`
                             
-        document.querySelector('#card').innerHTML = str   
+        document.querySelector('#card').innerHTML = str;
     }
     else {
-        document.querySelector('#card').innerHTML = `<div class="jogo-nao-encontrado">
-                                                        <h1>Jogo não encontrado</h1>
-                                                        <a href="./index.html">Voltar para Homepage</a>
-                                                    </div>`
+        document.querySelector('#card').style.display = 'none';
+        document.querySelector('.jogo-nao-encontrado').style.display = 'flex';
     }
 }
 
