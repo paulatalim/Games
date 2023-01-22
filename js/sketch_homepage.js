@@ -40,10 +40,10 @@ function exibir_games_destaques(data) {
                 </div>`
     }
     document.querySelector('.destaque-carregamento').style.display = "none"
-    document.querySelector('.jogos-carregamento').style.display = "flex"
-    document.querySelector('.jogos').style.display = "flex";
-    document.querySelector('.plataformas').style.display = "flex";
-    document.querySelector('.publisher').style.display = "flex";
+    // document.querySelector('.jogos-carregamento').style.display = "flex"
+    // document.querySelector('.jogos').style.display = "flex";
+    // document.querySelector('.plataformas').style.display = "flex";
+    // document.querySelector('.publisher').style.display = "flex";
 
     document.getElementById('destaque-slide').innerHTML = str
 
@@ -53,7 +53,7 @@ function exibir_games_destaques(data) {
 /*********
  * JOGOS *
  *********/
-
+/*** Exibe os cards ***/
 function exibir_card_game_jogo (jogo, id, complemento) {
     let str = '';
 
@@ -81,14 +81,6 @@ function exibir_card_game_jogo (jogo, id, complemento) {
             </div>`
 
     return str
-}
-
-function exibir_titulo_filtro_genero() {
-    document.getElementById("filtro-genero").innerHTML ="Genero";
-}
-
-function exibir_titulo_filtro_ordem() {
-    document.getElementById("filtro-ordem").innerHTML = "Ordem";
 }
 
 function exibir_todos_jogos (data) {
@@ -142,12 +134,43 @@ function ver_mais_jogos() {
     }
 }
 
-function barra_de_busca(){
-    let barra_de_busca = document.getElementById("campo_buscar").value;
+function exibir_games_jogos(data, filtroBusca) {
+    let str = '';
+    let button_ver_mais = document.getElementById("jogos-ver-mais");
+    let cards_escondidos = document.getElementById("mostrar_mais_cards");
 
-    exibir_titulo_filtro_genero();
-    exibir_titulo_filtro_ordem();
-    requisicao_games_jogos(barra_de_busca.toLowerCase())
+    if (filtroBusca == '') {
+        button_ver_mais.style.display = "inline";
+        exibir_todos_jogos(data);
+
+    } else {
+        //Deixa o sistema de visualizacao de mais cards oculto
+        cards_escondidos.style.display = "none";
+        button_ver_mais.style.display = "none";
+
+        //Pesquisa dos jogos
+        for (let i = 0; i < data.results.length; i++) {
+            let jogo = data.results[i]
+            if(`${jogo.name}`.toLowerCase().startsWith(filtroBusca)){
+                str += exibir_card_game_jogo (jogo, 0, '')
+            }
+        }
+        document.getElementById('pesquisa_cards').innerHTML = str
+    }
+
+    document.querySelector('.jogos-carregamento').style.display = "none";
+    document.getElementById('pesquisa_cards').style.display = "flex";
+
+    return data;
+}
+
+/*** Filtros ***/
+function exibir_titulo_filtro_genero() {
+    document.getElementById("filtro-genero").innerHTML ="Genero";
+}
+
+function exibir_titulo_filtro_ordem() {
+    document.getElementById("filtro-ordem").innerHTML = "Ordem";
 }
 
 function filtrar_genero(genero, nome_genero) {
@@ -191,34 +214,13 @@ function exibir_games_filtro_ordem (data, id, complemento) {
     return data;
 }
 
-function exibir_games_jogos(data, filtroBusca) {
-    let str = '';
-    let button_ver_mais = document.getElementById("jogos-ver-mais");
-    let cards_escondidos = document.getElementById("mostrar_mais_cards");
+/*** Pesquisa ***/
+function barra_de_busca(){
+    let barra_de_busca = document.getElementById("campo_buscar").value;
 
-    if (filtroBusca == '') {
-        button_ver_mais.style.display = "inline";
-        exibir_todos_jogos(data);
-
-    } else {
-        //Deixa o sistema de visualizacao de mais cards oculto
-        cards_escondidos.style.display = "none";
-        button_ver_mais.style.display = "none";
-
-        //Pesquisa dos jogos
-        for (let i = 0; i < data.results.length; i++) {
-            let jogo = data.results[i]
-            if(`${jogo.name}`.toLowerCase().startsWith(filtroBusca)){
-                str += exibir_card_game_jogo (jogo, 0, '')
-            }
-        }
-        document.getElementById('pesquisa_cards').innerHTML = str
-    }
-
-    document.querySelector('.jogos-carregamento').style.display = "none";
-    document.getElementById('pesquisa_cards').style.display = "flex";
-
-    return data;
+    exibir_titulo_filtro_genero();
+    exibir_titulo_filtro_ordem();
+    requisicao_games_jogos(barra_de_busca.toLowerCase())
 }
 
 function exibir_resultado_pesquisa (data, pesquisa, origem) {
@@ -256,6 +258,14 @@ function exibir_resultado_pesquisa (data, pesquisa, origem) {
     return data;
 }
 
+//Ativa o botao enter
+document.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        requisicao_games_jogo_pesquisa(0)
+    }
+})
+
+/*** Detalhes ***/
 function exibir_detalhes_games_jogo (data, id) {
     let str = ''
     let i = data.results.findIndex (elem => elem.id == id)
@@ -509,13 +519,6 @@ function requisicao_games_jogo_detalhes (id, url_num, complemento) {
         .then(res => res.json ())
         .then(data => exibir_detalhes_games_jogo(data, id))
 }
-
-//Ativa o botao enter
-document.addEventListener("keypress", function(e) {
-    if (e.key === "Enter") {
-        requisicao_games_jogo_pesquisa(0)
-    }
-})
 
 onload = () => {
     requisicao_games_destaques();

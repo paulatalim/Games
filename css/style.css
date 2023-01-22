@@ -828,7 +828,7 @@ footer p {
     /* HEADER */
     .header {
         position: fixed;
-        z-index: 1;
+        z-index: 16;
         border: none;
         width: 100%;
     }    
