@@ -245,6 +245,7 @@ body {
 .filtro {
     display: flex;
     align-items: center;
+    z-index: 16;
 }
 
 #filtro-ordem, #filtro-genero {
@@ -881,7 +882,7 @@ footer p {
     /* HEADER */
     .header {
         position: fixed;
-        z-index: 16;
+        z-index: 20;
         border: none;
         width: 100%;
     }    
