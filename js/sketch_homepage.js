@@ -2,12 +2,12 @@
  * DESTAQUES *
  *************/
 function exibir_games_destaques(data) {
-    let str = '';
+    var str = '';
 
     //Inclusao de novo slide no corrousel
-    for (let i = 0; i < 3; i++){
-        let jogo = data.results[i]
-        let lancamento = jogo.released.split("-");
+    for (var i = 0; i < 3; i++){
+        var jogo = data.results[i]
+        var lancamento = jogo.released.split("-");
 
         str+='<div class="carousel-item';
 
@@ -24,7 +24,7 @@ function exibir_games_destaques(data) {
                                 <strong>Plataformas:</strong> ${jogo.platforms[0].platform.name}`
                                 
         //Coloca as plataformas
-        for (let j = 1; j < jogo.platforms.length; j++) {
+        for (var j = 1; j < jogo.platforms.length; j++) {
             str += `, ${jogo.platforms[j].platform.name}`
         }
 
@@ -46,9 +46,9 @@ function exibir_games_destaques(data) {
  *********/
 /*** Exibe os cards ***/
 function exibir_card_game_jogo (jogo, id, complemento) {
-    let str = '';
+    var str = '';
 
-    let data;
+    var data;
 
     if (jogo.released != null) {
         data = jogo.released.split("-");
@@ -72,8 +72,8 @@ function exibir_card_game_jogo (jogo, id, complemento) {
 }
 
 function exibir_todos_jogos (data) {
-    let qnt_cards_exibidos = 0;
-    let viewport = window.screen.width;
+    var qnt_cards_exibidos = 0;
+    var viewport = window.screen.width;
 
     //Deixa o layout responsivo
     if (viewport >= 992) {
@@ -84,11 +84,11 @@ function exibir_todos_jogos (data) {
         qnt_cards_exibidos = 3;
     }
 
-    let str = '';
+    var str = '';
 
     //Exibe cards em destaque
-    for (let i = 0; i < qnt_cards_exibidos; i++) {
-        let jogo = data.results[i];
+    for (var i = 0; i < qnt_cards_exibidos; i++) {
+        var jogo = data.results[i];
         str += exibir_card_game_jogo(jogo, 0, '');
     }
 
@@ -96,8 +96,8 @@ function exibir_todos_jogos (data) {
 
     str = '';
 
-    for (let i = qnt_cards_exibidos; i < data.results.length; i++) {
-        let jogo = data.results[i];
+    for (var i = qnt_cards_exibidos; i < data.results.length; i++) {
+        var jogo = data.results[i];
         str += exibir_card_game_jogo(jogo, 0, '');
     }
     
@@ -107,9 +107,9 @@ function exibir_todos_jogos (data) {
 }
 
 function ver_mais_jogos() {
-    let cards_escondidos = document.getElementById("mostrar_mais_cards");
-    let icone = document.getElementById("jogos-ver-mais-icone");
-    let btn_txt = document.getElementById("jogos-ver-mais-text");
+    var cards_escondidos = document.getElementById("mostrar_mais_cards");
+    var icone = document.getElementById("jogos-ver-mais-icone");
+    var btn_txt = document.getElementById("jogos-ver-mais-text");
 
     if (cards_escondidos.style.display == "none" || cards_escondidos.style.display == "") {
         cards_escondidos.style.display = "flex";
@@ -123,9 +123,9 @@ function ver_mais_jogos() {
 }
 
 function exibir_games_jogos(data, filtroBusca) {
-    let str = '';
-    let button_ver_mais = document.getElementById("jogos-ver-mais");
-    let cards_escondidos = document.getElementById("mostrar_mais_cards");
+    var str = '';
+    var button_ver_mais = document.getElementById("jogos-ver-mais");
+    var cards_escondidos = document.getElementById("mostrar_mais_cards");
 
     if (filtroBusca == '') {
         button_ver_mais.style.display = "inline";
@@ -137,8 +137,8 @@ function exibir_games_jogos(data, filtroBusca) {
         button_ver_mais.style.display = "none";
 
         //Pesquisa dos jogos
-        for (let i = 0; i < data.results.length; i++) {
-            let jogo = data.results[i]
+        for (var i = 0; i < data.results.length; i++) {
+            var jogo = data.results[i]
             if(`${jogo.name}`.toLowerCase().startsWith(filtroBusca)){
                 str += exibir_card_game_jogo (jogo, 0, '')
             }
@@ -165,23 +165,23 @@ function exibir_titulo_filtro_ordem() {
 }
 
 function filtrar_genero(genero, nome_genero) {
-    let button_filtro = document.getElementById("filtro-genero");
-    let button_ver_mais = document.getElementById("jogos-ver-mais");
-    let cards_escondidos = document.getElementById("mostrar_mais_cards");
+    var button_filtro = document.getElementById("filtro-genero");
+    var button_ver_mais = document.getElementById("jogos-ver-mais");
+    var cards_escondidos = document.getElementById("mostrar_mais_cards");
 
     button_filtro.innerHTML = nome_genero
 
     fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
         .then(res => res.json ())
         .then(data => {
-            let str = '';
+            var str = '';
             cards_escondidos.style.display = "none";
             button_ver_mais.style.display = "none";
 
-            for (let i = 0; i < data.results.length; i++) {
-                let jogo = data.results[i]
+            for (var i = 0; i < data.results.length; i++) {
+                var jogo = data.results[i]
 
-                for (let j = 0; j < jogo.genres.length; j++) {
+                for (var j = 0; j < jogo.genres.length; j++) {
                     if(`${jogo.genres[j].name}`.toLowerCase().startsWith(genero.toLowerCase())){
                         str += exibir_card_game_jogo (jogo, 0, '')
                         break;
@@ -194,9 +194,9 @@ function filtrar_genero(genero, nome_genero) {
 }
 
 function exibir_games_filtro_ordem (data, id, complemento) {
-    let str = '';
+    var str = '';
 
-    for (let i = 0; i < data.results.length; i++) {
+    for (var i = 0; i < data.results.length; i++) {
         str += exibir_card_game_jogo (data.results[i], id, complemento);
     }
 
@@ -207,7 +207,7 @@ function exibir_games_filtro_ordem (data, id, complemento) {
 
 /*** Pesquisa ***/
 function barra_de_busca(){
-    let barra_de_busca = document.getElementById("campo_buscar").value;
+    var barra_de_busca = document.getElementById("campo_buscar").value;
 
     exibir_titulo_filtro_genero();
     exibir_titulo_filtro_ordem();
@@ -215,12 +215,12 @@ function barra_de_busca(){
 }
 
 function exibir_resultado_pesquisa (data, pesquisa, origem) {
-    let str = ''
-    let button_ver_mais = document.getElementById("jogos-ver-mais");
-    let cards_escondidos = document.getElementById("mostrar_mais_cards");
-    let mensagem_nenhum_jogo_encontrado = document.querySelector (".jogos-nenhum-encontrado");
-    let sessao_cards = document.getElementById('pesquisa_cards');
-    let repeticao;
+    var str = ''
+    var button_ver_mais = document.getElementById("jogos-ver-mais");
+    var cards_escondidos = document.getElementById("mostrar_mais_cards");
+    var mensagem_nenhum_jogo_encontrado = document.querySelector (".jogos-nenhum-encontrado");
+    var sessao_cards = document.getElementById('pesquisa_cards');
+    var repeticao;
 
     exibir_titulo_filtro_genero();
     exibir_titulo_filtro_ordem();
@@ -237,8 +237,8 @@ function exibir_resultado_pesquisa (data, pesquisa, origem) {
             repeticao = data.results.length
         }
 
-        for (let i = 0; i < repeticao; i++) {
-            let jogo = data.results[i]
+        for (var i = 0; i < repeticao; i++) {
+            var jogo = data.results[i]
             str += exibir_card_game_jogo (jogo, 1, pesquisa)
         }
 
@@ -258,24 +258,24 @@ document.addEventListener("keypress", function(e) {
 
 /*** Detalhes ***/
 function exibir_detalhes_games_jogo (data, id) {
-    let str = ''
-    let i = data.results.findIndex (elem => elem.id == id)
+    var str = ''
+    var i = data.results.findIndex (elem => elem.id == id)
     
     if (i != -1) {
-        let jogo = data.results[i]
+        var jogo = data.results[i]
         str = `<div class="Informacoes">
                         <h1>${jogo.name}</h1>
                         <div class="especificacoes">
                             <p><strong>Plataformas disponíveis:</strong> ${jogo.platforms[0].platform.name}`
         
-        for(let j = 1; j < jogo.platforms.length; j++) {
+        for(var j = 1; j < jogo.platforms.length; j++) {
             str += `, ${jogo.platforms[j].platform.name}`
         }
 
         str += `</p>
                 <p><strong>Gênero:</strong> ${jogo.genres[0].name}`
 
-        for (let j = 1; j < jogo.genres.length; j++) {
+        for (var j = 1; j < jogo.genres.length; j++) {
             str+= `, ${jogo.genres[j].name}`
         }
 
@@ -298,11 +298,11 @@ function exibir_detalhes_games_jogo (data, id) {
  * PLATAFORMAS *
  ***************/
 function exibir_plataformas (data) {
-    let str = ''
-    let index = 0
+    var str = ''
+    var index = 0
 
     //Inclusao de novo slide no corrousel
-    for (let i = 0; i < Math.ceil(data.results.length/4); i++){
+    for (var i = 0; i < Math.ceil(data.results.length/4); i++){
         str += `<div class="carousel-item`
 
         if (i == 0) {
@@ -311,14 +311,14 @@ function exibir_plataformas (data) {
 
         str += '"><div class="plataforma-slide">'
 
-        for (let j = 0; j < 4; j++) {
-            let jogo = data.results[index]
+        for (var j = 0; j < 4; j++) {
+            var jogo = data.results[index]
 
             if (index >= data.results.length) {
                 break;
             }
 
-            let background = `background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%), url(${jogo.image_background});`;
+            var background = `background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%), url(${jogo.image_background});`;
 
             str += ` <div class="col-12 col-sm-6 col-md-6 col-lg-3"> <div class=" plataforma-area-card">
                 <div class="image-flip" >
@@ -342,7 +342,7 @@ function exibir_plataformas (data) {
                                             <h3>Jogos:</h3>
                                             <ul id="plataforma-card-backside-topicos">`
 
-            for (let k = 0; k < 3 && k < jogo.games.length; k++) {
+            for (var k = 0; k < 3 && k < jogo.games.length; k++) {
                 str+=`<li>${jogo.games[k].name}</li>`
             }
                                             
@@ -375,11 +375,11 @@ function requisicao_plataformas(){
  *************/
 
 function exibir_publisher (data) {
-    let str = '';
-    let index = 0;
+    var str = '';
+    var index = 0;
 
     //Inclusao de novo slide no corrousel
-    for (let i = 0; i < Math.ceil(data.results.length/4); i++){
+    for (var i = 0; i < Math.ceil(data.results.length/4); i++){
         str += `<div class="carousel-item`
 
         if (i == 0) {
@@ -388,11 +388,11 @@ function exibir_publisher (data) {
         
         str += `"><div class="publisher-slide">`
 
-        for (let j = 0; j < 4; j++) {
-            let jogo = data.results[index];
+        for (var j = 0; j < 4; j++) {
+            var jogo = data.results[index];
 
             if (index < data.results.length) {
-                let background = `background-image: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%), url(${jogo.image_background});`;
+                var background = `background-image: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%), url(${jogo.image_background});`;
 
                 str += `<div class="col-12 col-sm-6 col-md-6 col-lg-3 publisher-area-card">
                             <div class="publisher-card">
@@ -404,7 +404,7 @@ function exibir_publisher (data) {
                                     <h5>Jogos:</h5>
                                     <ul id="publisher-card-conteudo-topicos">`
 
-                for (let k = 0; k < jogo.games.length && k < 3; k++) {
+                for (var k = 0; k < jogo.games.length && k < 3; k++) {
                     str+=`<li>${jogo.games[k].name}</li>`
                 }
                                         
@@ -456,7 +456,7 @@ function requisicao_games_jogos(filtroBusca){
 }
 
 function requisicao_games_jogo_pesquisa (origem) {
-    let barra_de_busca = document.getElementById("campo_buscar").value;
+    var barra_de_busca = document.getElementById("campo_buscar").value;
 
     fetch(`https://api.rawg.io/api/games?search=${barra_de_busca}&key=0ae278d26fd24463b3d3c454be18cb17`)
         .then(res => res.json())
@@ -464,12 +464,12 @@ function requisicao_games_jogo_pesquisa (origem) {
 }
 
 function requisicao_filtro_ordem (type, ordem, nome_ordem) {
-    let button_filtro = document.getElementById("filtro-ordem");
-    let button_ver_mais = document.getElementById("jogos-ver-mais");
-    let cards_escondidos = document.getElementById("mostrar_mais_cards");
-    let id = 0;
-    let complemento = ``;
-    let caminho = 'https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&'
+    var button_filtro = document.getElementById("filtro-ordem");
+    var button_ver_mais = document.getElementById("jogos-ver-mais");
+    var cards_escondidos = document.getElementById("mostrar_mais_cards");
+    var id = 0;
+    var complemento = ``;
+    var caminho = 'https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&'
     
     button_filtro.innerHTML = nome_ordem;
     cards_escondidos.style.display = "none";
@@ -493,7 +493,7 @@ function requisicao_filtro_ordem (type, ordem, nome_ordem) {
 }
 
 function requisicao_games_jogo_detalhes (id, url_num, complemento) {
-    let url = '';
+    var url = '';
 
     switch (url_num) {
         case 0:
@@ -513,7 +513,7 @@ function requisicao_games_jogo_detalhes (id, url_num, complemento) {
             url = 'https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&dates=2020-12-01,2021-12-19';
             break;
     }
-    console.log(url)
+    
     fetch (url)
         .then(res => res.json ())
         .then(data => exibir_detalhes_games_jogo(data, id))
@@ -526,7 +526,22 @@ function limpar_pesquisa () {
     console.log('1')
 }
 
- 
+/*******************
+ * ANIMACAO SCROLL *
+ *******************/
+const animeScroll = () => {
+    const window_top = window.pageYOffset + window.innerHeight * 0.85;
+    const item = document.querySelectorAll("[data-anime]");
+    
+    item.forEach((element) => {
+        if (window_top > element.offsetTop) {
+            element.classList.add("animate");
+        } else {
+            element.classList.remove("animate")
+        }
+    })
+}
+
 onload = () => {
     requisicao_games_destaques();
 
@@ -541,26 +556,5 @@ onload = () => {
         limpar_pesquisa();
     }
 
-    /*******************
-     * ANIMACAO SCROLL *
-     *******************/
-    const item = document.querySelectorAll("[data-anime]");
-
-    const animeScroll = () => {
-        
-    const window_top = window.pageYOffset + window.innerHeight * 0.85;
-        
-        item.forEach((element) => {
-            if (window_top > element.offsetTop) {
-                element.classList.add("animate");
-            } else {
-            element.classList.remove("animate")
-            }
-        })
-    }
-
     window.addEventListener('scroll', animeScroll);
-
-
-
 }
