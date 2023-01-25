@@ -1,4 +1,4 @@
-/*** VAriaveis globais */
+/*** Variaveis globais */
 let link = 'https://api.rawg.io/api/';
 let chave = '0ae278d26fd24463b3d3c454be18cb17';
 
