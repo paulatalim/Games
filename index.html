@@ -93,10 +93,10 @@
                         Ordem
                     </button>
                     <div class="dropdown-menu opcoes-filtro" aria-labelledby="filtro-ordem">
-                        <button class="dropdown-item item-filtro" onclick="requisicao_games_jogos(''), exibir_titulo_filtro_ordem()">Nenhum</button>
-                        <button class="dropdown-item item-filtro" onclick="requisicao_filtro_ordem('rating', '-rating', 'Mais popular')">Mais popular</button>
-                        <button class="dropdown-item item-filtro" onclick="requisicao_filtro_ordem('rating', 'rating', 'Menos popular')">Menos popular</button>
-                        <button class="dropdown-item item-filtro" onclick="requisicao_filtro_ordem('data', '', 'Lançamentos')">Lançamentos</button>
+                        <button class="dropdown-item item-filtro" id="item-filtro-ordem-nenhum">Nenhum</button>
+                        <button class="dropdown-item item-filtro" id="item-filtro-ordem-mais-papular">Mais popular</button>
+                        <button class="dropdown-item item-filtro" id="item-filtro-ordem-menos-popular">Menos popular</button>
+                        <button class="dropdown-item item-filtro" id="item-filtro-ordem-lancamento">Lançamentos</button>
                     </div>
                 </div>
             </div>
@@ -108,14 +108,14 @@
                         Gênero
                     </button>
                     <div class="dropdown-menu opcoes-filtro" aria-labelledby="filtro-genero">
-                        <button class="dropdown-item item-filtro" onclick="requisicao_games_jogos(''), exibir_titulo_filtro_genero()">Nenhum</button>
-                        <button class="dropdown-item item-filtro" onclick="filtrar_genero('Action', 'Ação')">Ação</button>
-                        <button class="dropdown-item item-filtro" onclick="filtrar_genero('Adventure', 'Aventura')">Aventura</button>
-                        <button class="dropdown-item item-filtro" onclick="filtrar_genero('platformer', 'Plataforma')">Plataforma</button>
-                        <button class="dropdown-item item-filtro" onclick="filtrar_genero('indie', 'Indie')">Indie</button>
-                        <button class="dropdown-item item-filtro" onclick="filtrar_genero('RPG', )">RPG</button>
-                        <button class="dropdown-item item-filtro" onclick="filtrar_genero('Puzzle', 'Quebra-Cabeça')">Quebra-Cabeça</button>
-                        <button class="dropdown-item item-filtro" onclick="filtrar_genero('Shooter', 'Shooter')">Shooter</button>
+                        <button class="dropdown-item item-filtro" id="item-filtro-genero-nenhum">Nenhum</button>
+                        <button class="dropdown-item item-filtro" id="item-filtro-genero-acao">Ação</button>
+                        <button class="dropdown-item item-filtro" id="item-filtro-genero-aventura">Aventura</button>
+                        <button class="dropdown-item item-filtro" id="item-filtro-genero-plataforma">Plataforma</button>
+                        <button class="dropdown-item item-filtro" id="item-filtro-genero-indie" >Indie</button>
+                        <button class="dropdown-item item-filtro" id="item-filtro-genero-rpg">RPG</button>
+                        <button class="dropdown-item item-filtro" id="item-filtro-genero-puzzle">Quebra-Cabeça</button>
+                        <button class="dropdown-item item-filtro" id="item-filtro-genero-shooter">Shooter</button>
                     </div>
                 </div>
             </div>
@@ -127,10 +127,9 @@
                     name="Busca" 
                     placeholder="Pesquisar games"
                     aria-label="Search" 
-                    id="campo_buscar" 
-                    oninput="barra_de_busca()">
-                <button id="jogos-btn-limpar-pesquisa" onclick="limpar_pesquisa()"><i class="fa-solid fa-xmark"></i></button>
-                <button id="jogos-btn-pesquisar" onclick="requisicao_games_jogo_pesquisa(0)"><i id="jogos-pesquisar-lupa-icone" class="fa-solid fa-magnifying-glass"></i></button>
+                    id="campo_buscar" >
+                <button id="jogos-btn-limpar-pesquisa"><i class="fa-solid fa-xmark"></i></button>
+                <button id="jogos-btn-pesquisar"><i id="jogos-pesquisar-lupa-icone" class="fa-solid fa-magnifying-glass"></i></button>
             </div>
 
             <!-- Carregamento -->
@@ -245,9 +244,8 @@
                 <div class="redes-sociais">
                     <h4>Redes Sociais:</h4>
                     <div class="redes-sociais-icones">
-                        <a href="https://github.com/Paula-Talim"><i class="fa-brands fa-github fa-2xl"></i></i></a>
-                        <a href="https://www.linkedin.com/in/paula-talim-693120246/"><i
-                                class="fa-brands fa-linkedin fa-2xl"></i></a>
+                        <a href="https://github.com/Paula-Talim"><i class="fa-brands fa-github fa-2xl"></i></a>
+                        <a href="https://www.linkedin.com/in/paula-talim-693120246/"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
                     </div>
                 </div>
             </div>

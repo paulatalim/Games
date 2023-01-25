@@ -1,3 +1,7 @@
+/*** VAriaveis globais */
+let link = 'https://api.rawg.io/api/';
+let chave = '0ae278d26fd24463b3d3c454be18cb17';
+
 /*************
  * DESTAQUES *
  *************/
@@ -47,7 +51,6 @@ function exibir_games_destaques(data) {
 /*** Exibe os cards ***/
 function exibir_card_game_jogo (jogo, id, complemento) {
     var str = '';
-
     var data;
 
     if (jogo.released != null) {
@@ -171,7 +174,7 @@ function filtrar_genero(genero, nome_genero) {
 
     button_filtro.innerHTML = nome_genero
 
-    fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
+    fetch (`${link}games?key=${chave}`)
         .then(res => res.json ())
         .then(data => {
             var str = '';
@@ -245,7 +248,6 @@ function exibir_resultado_pesquisa (data, pesquisa, origem) {
         sessao_cards.innerHTML = str;
     }
     
-
     return data;
 }
 
@@ -365,7 +367,7 @@ function exibir_plataformas (data) {
 }
 
 function requisicao_plataformas(){
-    fetch ('https://api.rawg.io/api/platforms?key=0ae278d26fd24463b3d3c454be18cb17')
+    fetch (`${link}platforms?key=${chave}`)
         .then(res => res.json ())
         .then(data => exibir_plataformas(data)); 
 }
@@ -427,7 +429,7 @@ function exibir_publisher (data) {
 }
 
 function requisicao_publisher () {
-    fetch ('https://api.rawg.io/api/publishers?key=0ae278d26fd24463b3d3c454be18cb17')
+    fetch (`${link}publishers?key=${chave}`)
         .then(res => res.json ())
         .then(data => exibir_publisher(data));
 }
@@ -436,18 +438,18 @@ function requisicao_publisher () {
  * REQUISIÇÕES *
  ***************/
 function requisicao_games_destaques () {
-    fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&ordering=-rating')
+    fetch (`${link}games?key=${chave}&ordering=-rating`)
         .then(res => res.json ())
         .then(data => exibir_games_destaques(data)); 
 }
 
 function requisicao_games_jogos(filtroBusca){
     if (filtroBusca == '') {
-        fetch ('https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17')
+        fetch (`${link}games?key=${chave}`)
             .then(res => res.json ())
             .then(data => exibir_games_jogos(data, filtroBusca)); 
     } else {
-        fetch(`https://api.rawg.io/api/games?search=${filtroBusca}&key=0ae278d26fd24463b3d3c454be18cb17`)
+        fetch(`${link}games?search=${filtroBusca}&key=${chave}`)
             .then(res => res.json())
             .then(data => exibir_resultado_pesquisa(data, filtroBusca, 1))
             
@@ -458,7 +460,7 @@ function requisicao_games_jogos(filtroBusca){
 function requisicao_games_jogo_pesquisa (origem) {
     var barra_de_busca = document.getElementById("campo_buscar").value;
 
-    fetch(`https://api.rawg.io/api/games?search=${barra_de_busca}&key=0ae278d26fd24463b3d3c454be18cb17`)
+    fetch(`${link}games?search=${barra_de_busca}&key=${chave}`)
         .then(res => res.json())
         .then(data => exibir_resultado_pesquisa(data, barra_de_busca, origem))
 }
@@ -469,7 +471,7 @@ function requisicao_filtro_ordem (type, ordem, nome_ordem) {
     var cards_escondidos = document.getElementById("mostrar_mais_cards");
     var id = 0;
     var complemento = ``;
-    var caminho = 'https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&'
+    var caminho = `${link}games?key=${chave}&`
     
     button_filtro.innerHTML = nome_ordem;
     cards_escondidos.style.display = "none";
@@ -498,19 +500,19 @@ function requisicao_games_jogo_detalhes (id, url_num, complemento) {
     switch (url_num) {
         case 0:
             //url normal
-            url = 'https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17';
+            url = `${link}games?key=${chave}`;
             break;
         case 1:
             //url com pesquisa
-            url = `https://api.rawg.io/api/games?search=${complemento}&key=0ae278d26fd24463b3d3c454be18cb17`;
+            url = `${link}games?search=${complemento}&key=${chave}`;
             break;
         case 2:
             //url com filtro rating
-            url = `https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&ordering=${complemento}`;
+            url = `${link}games?key=${chave}&ordering=${complemento}`;
             break;
         case 3:
             //url com filtro jogo
-            url = 'https://api.rawg.io/api/games?key=0ae278d26fd24463b3d3c454be18cb17&dates=2020-12-01,2021-12-19';
+            url = `${link}games?key=${chave}&dates=2020-12-01,2021-12-19`;
             break;
     }
     
@@ -545,9 +547,35 @@ const animeScroll = () => {
 onload = () => {
     requisicao_games_destaques();
 
+    //Filtro Ordem
+    document.getElementById('item-filtro-ordem-nenhum').onclick = () => {
+        requisicao_games_jogos('');
+        exibir_titulo_filtro_ordem();
+    };
+    document.getElementById('item-filtro-ordem-mais-papular').onclick = () => requisicao_filtro_ordem('rating', '-rating', 'Mais popular');
+    document.getElementById('item-filtro-ordem-menos-popular').onclick = () => requisicao_filtro_ordem('rating', 'rating', 'Menos popular');
+    document.getElementById('item-filtro-ordem-lancamento').onclick = () => requisicao_filtro_ordem('data', '', 'Lançamentos');
+
+    //Filtro Gener
+    document.getElementById('item-filtro-genero-nenhum').onclick = () => {
+        requisicao_games_jogos('');
+        exibir_titulo_filtro_genero();
+    };
+    document.getElementById('item-filtro-genero-acao').onclick = () => filtrar_genero('Action', 'Ação');
+    document.getElementById('item-filtro-genero-aventura').onclick = () => filtrar_genero('Adventure', 'Aventura');
+    document.getElementById('item-filtro-genero-plataforma').onclick = () => filtrar_genero('platformer', 'Plataforma');
+    document.getElementById('item-filtro-genero-indie').onclick = () => filtrar_genero('indie', 'Indie');
+    document.getElementById('item-filtro-genero-rpg').onclick = () => filtrar_genero('RPG', 'RPG');
+    document.getElementById('item-filtro-genero-puzzle').onclick = () => filtrar_genero('Puzzle', 'Quebra-Cabeça');
+    document.getElementById('item-filtro-genero-shooter').onclick = () => filtrar_genero('Shooter', 'Shooter');
+    
+    //Campo de busca pesquisa
     document.getElementById('campo_buscar').onfocus = () => {
         document.getElementById('jogos-btn-limpar-pesquisa').style.display = "inline";
     };
+    document.getElementById('campo_buscar').oninput = () => barra_de_busca();
+    document.getElementById('jogos-btn-limpar-pesquisa').onclick = () => limpar_pesquisa();
+    document.getElementById('jogos-btn-pesquisar').onclick = () => requisicao_games_jogo_pesquisa(0);
 
     document.querySelector('.jogos-nenhum-encontrado-btn').onclick = () => {
         document.getElementById('pesquisa_cards').style.display = "flex";
@@ -556,5 +584,6 @@ onload = () => {
         limpar_pesquisa();
     }
 
-    window.addEventListener('scroll', animeScroll);
+    /* Animacao scroll */
+    window.onscroll = animeScroll;
 }
