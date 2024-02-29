@@ -13,7 +13,7 @@ Esse repositorio possui um web site, o qual é fruto do trabalho acadêmico da m
 ## Implantação do site
 Segue o link do site, publicado atraves do GitHub pages
 
-- [Acesse o site](https://paula-talim.github.io/Games/)
+- [Acesse o site](https://paulatalim.github.io/Games/)
 
 ## Créditos
 Esse repositório foi feito com muito carinho por mim, Paula Talim, me acompanhe no:
