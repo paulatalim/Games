@@ -11,7 +11,11 @@ function exibir_games_destaques(data) {
     //Inclusao de novo slide no corrousel
     for (var i = 0; i < 3; i++){
         var jogo = data.results[i]
-        var lancamento = jogo.released.split("-");
+        let lancamento;
+
+        if(jogo.released != null) {
+            lancamento = jogo.released.split("-");
+        }
 
         str+='<div class="carousel-item';
 
@@ -23,9 +27,13 @@ function exibir_games_destaques(data) {
                     <div class="destaque-filtro-image">
                         <div class="col-lg-5 col-9 destaque-conteudo">
                             <h1>${jogo.name}</h1>
-                            <p id="destaque-conteudo-detalhamento">
-                                <strong>Lançamento:</strong> ${lancamento[2]}/${lancamento[1]}/${lancamento[0]}<br>
-                                <strong>Plataformas:</strong> ${jogo.platforms[0].platform.name}`
+                            <p id="destaque-conteudo-detalhamento">`
+                                
+        if(jogo.released != null) {
+            str += `<strong>Lançamento:</strong> ${lancamento[2]}/${lancamento[1]}/${lancamento[0]}<br>`
+        }
+
+        str += `<strong>Plataformas:</strong> ${jogo.platforms[0].platform.name}`
                                 
         //Coloca as plataformas
         for (var j = 1; j < jogo.platforms.length; j++) {
